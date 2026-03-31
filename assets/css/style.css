@@ -53,7 +53,7 @@ img{
 /* header */
 .site-header{
   position:fixed;
-  z-index:74;
+  z-index:80;
   top:0;
   left:0;
   right:0;
@@ -122,7 +122,7 @@ img{
 
 .menu-list{
   position:fixed;
-  z-index:76;
+  z-index:75;
   top:0;
   left:0;
   right:0;
@@ -148,18 +148,6 @@ img{
 .menu-list a:hover,
 .menu-list a.active{
   border-color:var(--line);
-}
-
-/* desktop hit-testing:
-   menu text만 클릭 가능하게 하고 빈 영역은 클릭을 막지 않음 */
-@media (min-width:641px){
-  .menu-list{
-    pointer-events:none;
-  }
-
-  .menu-list a{
-    pointer-events:auto;
-  }
 }
 
 /* pages */
