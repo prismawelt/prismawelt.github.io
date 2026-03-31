@@ -41,6 +41,11 @@ img{max-width:100%;display:block}
 .menu-list a{padding:0 0 3px 0;border-bottom:1px solid transparent}
 .menu-list a:hover,.menu-list a.active{border-color:var(--line)}
 .lang-list{position:fixed;z-index:80;top:0;right:0;height:var(--menu-h);display:flex;align-items:center;gap:12px;padding-right:var(--page-x);background:var(--bg);font-size:14px;font-weight:600;line-height:1}
+
+.mobile-header-bg{
+  display:none;
+}
+
 .page{padding:68px 0 40px 0}
 .page-home{padding-top:96px}
 .archive-page,.detail-page{padding-top:70px}
@@ -115,6 +120,18 @@ img{max-width:100%;display:block}
     --head:54px;
     --menu-size:14px;
     --menu-h:42px;
+  }
+
+  .mobile-header-bg{
+    display:block;
+    position:fixed;
+    z-index:69;
+    top:0;
+    left:0;
+    right:0;
+    height:calc(var(--menu-h) + var(--safe-top));
+    background:var(--bg);
+    pointer-events:none;
   }
 
   html::before{

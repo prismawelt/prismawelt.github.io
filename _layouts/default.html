@@ -23,6 +23,7 @@
 </head>
 <body>
 <div class="site-shell">
+  <div class="mobile-header-bg" aria-hidden="true"></div>
   {% assign l = page.lang | default: 'ko' %}
   <a class="site-title" href="{{ '/' | append:l | append:'/' | relative_url }}">prismawelt</a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
