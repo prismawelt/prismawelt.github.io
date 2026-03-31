@@ -1,6 +1,6 @@
 title: prismawelt
 baseurl: ""
-url: ""
+url: "https://prismawelt.github.io"
 markdown: kramdown
 kramdown:
   input: GFM
