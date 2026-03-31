@@ -15,7 +15,21 @@
   --safe-top: env(safe-area-inset-top, 0px);
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+html{
+  margin:0;
+  padding:0;
+  background:#ffffff;
+  color:var(--fg);
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Noto Sans KR', Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
 body{font-family:'Noto Sans KR', Arial, sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
@@ -103,7 +117,7 @@ img{max-width:100%;display:block}
     --menu-h:42px;
   }
 
-  body::before{
+  html::before{
     content:"";
     position:fixed;
     z-index:69;
