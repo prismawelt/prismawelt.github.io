@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="page page-home">
+  <h1 class="home-name">{{ page.person_name }}</h1>
+  <p class="home-intro">{{ page.intro }}</p>
+  <div class="cv-grid">
+    {% for item in page.cv %}
+    <div class="cv-row">
+      <div class="cv-label">{{ item.label }}</div>
+      <div class="cv-value{% if item.serif %} serif{% endif %}">{{ item.value }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if page.after_text %}
+  <div class="home-after-text">
+    {% for para in page.after_text %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

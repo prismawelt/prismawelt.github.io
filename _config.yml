@@ -1,0 +1,8 @@
+title: prismawelt
+baseurl: ""
+url: ""
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - README.md

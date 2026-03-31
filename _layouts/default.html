@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'ko' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ site.title }}{% if page.title and page.title != 'HOME' %} — {{ page.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="site-shell">
+  {% assign l = page.lang | default: 'ko' %}
+  <a class="site-title" href="{{ '/' | append:l | append:'/' | relative_url }}">{{ site.title }}</a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
+  <ul class="menu-list" id="site-menu">
+    <li><a href="{{ '/' | append:l | append:'/subculture/' | relative_url }}" {% if page.nav == 'subculture' %}class="active"{% endif %}>SUBCULTURE</a></li>
+    <li><a href="{{ '/' | append:l | append:'/physics/' | relative_url }}" {% if page.nav == 'physics' %}class="active"{% endif %}>PHYSICS</a></li>
+    <li><a href="{{ '/' | append:l | append:'/links/' | relative_url }}" {% if page.nav == 'links' %}class="active"{% endif %}>LINKS</a></li>
+  </ul>
+  <div class="menu-overlay" aria-hidden="true"></div>
+  <div class="lang-list">
+    <a href="{{ page.lang_ko | default:'/ko/' | relative_url }}">KO</a>
+    <a href="{{ page.lang_en | default:'/en/' | relative_url }}">EN</a>
+    <a href="{{ page.lang_ja | default:'/ja/' | relative_url }}">JA</a>
+  </div>
+  {{ content }}
+</div>
+<script src="{{ '/assets/js/captionify.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/archive.js' | relative_url }}"></script>
+</body>
+</html>

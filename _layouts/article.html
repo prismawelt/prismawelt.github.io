@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="page detail-page">
+  <div class="detail-floating-title" aria-hidden="true">{{ page.title }}</div>
+  <a class="back-link" href="{{ page.parent_permalink | relative_url }}">← BACK</a>
+  <div class="detail-head">
+    <div class="detail-meta">
+      <span>{{ page.series }}</span>
+      <span>{{ page.type }}</span>
+      <span>{{ page.date | date: '%Y.%m.%d' }}</span>
+    </div>
+    <h1 class="detail-title">{{ page.title }}</h1>
+  </div>
+  <div class="detail-body">
+    {{ content }}
+  </div>
+</div>

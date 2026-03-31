@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<div class="page archive-page" data-archive-page>
+  <div class="archive-header">
+    <div class="page-title">
+      <h1>{{ page.title }}</h1>
+      <div class="site-wordmark">{{ site.title }}</div>
+    </div>
+    <div class="archive-tools">
+      <div class="filter-line">
+        <div class="tool-label">FILTER</div>
+        <div class="filter-options" data-filter-group>
+          <button type="button" class="active" data-filter="all">ALL</button>
+          {% for item in page.filter_types %}
+          <button type="button" data-filter="{{ item }}">{{ item }}</button>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="search-line">
+        <div class="tool-label">SEARCH</div>
+        <div class="search-box">
+          <input type="text" placeholder="SEARCH" data-search-input>
+        </div>
+      </div>
+      <div class="result-box">
+        <span class="count" data-result-count>0</span> results
+        <div class="empty" data-result-empty>No result found.</div>
+      </div>
+    </div>
+    <div class="archive-index">
+      <button type="button" data-sort="title">TITLE <span class="sort-arrows"><span>↑</span><span>↓</span></span></button>
+      <button type="button" data-sort="series">SERIES <span class="sort-arrows"><span>↑</span><span>↓</span></span></button>
+      <button type="button" data-sort="type">TYPE <span class="sort-arrows"><span>↑</span><span>↓</span></span></button>
+      <button type="button" data-sort="date">DATE <span class="sort-arrows"><span>↑</span><span>↓</span></span></button>
+    </div>
+  </div>
+  <ul class="archive-list" data-archive-list>
+    {% assign docs = site.pages | where: 'article', true | where: 'section', page.collection_name | where: 'lang', page.lang | sort: 'date' | reverse %}
+    {% for doc in docs %}
+    {% capture body_text %}{{ doc.content | markdownify | strip_html | strip_newlines | replace: '  ', ' ' | replace: '  ', ' ' }}{% endcapture %}
+    <li class="archive-row"
+        data-type="{{ doc.type | escape }}"
+        data-title="{{ doc.title | escape }}"
+        data-series="{{ doc.series | escape }}"
+        data-date="{{ doc.date | date: '%Y-%m-%d' }}"
+        data-body="{{ body_text | escape }}">
+      <a href="{{ doc.url | relative_url }}">
+        <div class="title">{{ doc.title }}</div>
+        <div class="series">{{ doc.series }}</div>
+        <div class="type">{{ doc.type }}</div>
+        <div class="date">{{ doc.date | date: '%Y.%m.%d' }}</div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
