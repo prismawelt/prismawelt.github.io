@@ -21,7 +21,7 @@
 <body>
 <div class="site-shell">
   {% assign l = page.lang | default: 'ko' %}
-  <a class="site-title" href="{{ '/' | append:l | append:'/' | relative_url }}">{{ site.title }}</a>
+  <a class="site-title" href="{{ '/' | append:l | append:'/' | relative_url }}">prismawelt</a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
   <ul class="menu-list" id="site-menu">
     <li><a href="{{ '/' | append:l | append:'/subculture/' | relative_url }}" {% if page.nav == 'subculture' %}class="active"{% endif %}>SUBCULTURE</a></li>
