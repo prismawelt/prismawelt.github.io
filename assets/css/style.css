@@ -121,7 +121,7 @@ img{max-width:100%;display:block}
     --menu-h:42px;
   }
 
-  mobile-header-bg{
+  .mobile-header-bg{
     display:block;
     position:fixed;
     z-index:69;
