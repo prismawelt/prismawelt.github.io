@@ -6,7 +6,7 @@ title: HOME
 lang_ko: /ko/
 lang_en: /en/
 lang_ja: /ja/
-person_name: Iheon Kim (김이헌, 金梨憲)
+person_name: Iheon Kim (金梨憲)
 intro: このサイトは、理論物理のノート、講義・セミナーの記録、そしてサブカルチャーについての文章を集めた個人アーカイブである。
 cv:
 - label: AFFILIATION
