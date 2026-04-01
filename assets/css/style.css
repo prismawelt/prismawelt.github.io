@@ -686,7 +686,6 @@ img{
     border-bottom:0;
     font-size:18px;
     line-height:1;
-    pointer-events:auto;
   }
 
   .site-shell.menu-open .menu-list{

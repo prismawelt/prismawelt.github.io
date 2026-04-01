@@ -19,7 +19,9 @@ cv:
 - label: RESEARCH
   value: Gauge theory / quantum field theory / lattice models / neutral-atom simulation
     / automorphic forms
-- label: INTERESTS
+- label: ACADEMIC INTERESTS
+  value: SUSY / string theory
+- label: PERSONAL INTERESTS
   value: Anime / games / music / subculture criticism
 - label: CV
   value: '<a href="/assets/files/cv.pdf">PDF</a> (in preparation)'

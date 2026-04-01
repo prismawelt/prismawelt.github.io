@@ -6,7 +6,7 @@ title: HOME
 lang_ko: /ko/
 lang_en: /en/
 lang_ja: /ja/
-person_name: Iheon Kim
+person_name: Iheon Kim (김이헌)
 intro: 이 사이트는 이론물리 연구, 강의와 세미나 노트, 그리고 서브컬쳐에 대한 비평과 기록을 모아두는 개인 아카이브다.
 cv:
 - label: AFFILIATION
@@ -18,7 +18,9 @@ cv:
 - label: RESEARCH
   value: Gauge theory / quantum field theory / lattice models / neutral-atom simulation
     / automorphic forms
-- label: INTERESTS
+- label: ACADEMIC INTERESTS
+  value: SUSY / string theory
+- label: PERSONAL INTERESTS
   value: Anime / games / music / subculture criticism
 - label: CV
   value: '<a href="/assets/files/cv.pdf">PDF</a> (준비중)'
