@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="google-site-verification" content="Co4yL4q2ScFPCkV-HMeISwIRFabl_Qv1olFsf-4ho0g" />
   <title>{{ site.title }}{% if page.title and page.title != 'HOME' %} — {{ page.title }}{% endif %}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=7' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=8' | relative_url }}">
   <script>
     window.MathJax = {
       tex: {
@@ -27,19 +27,21 @@
 
   <header class="site-header">
     <a class="site-title" href="{{ '/' | append:l | append:'/' | relative_url }}">prismawelt</a>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
+
+    <ul class="menu-list" id="site-menu">
+      <li><a href="{{ '/' | append:l | append:'/subculture/' | relative_url }}" {% if page.nav == 'subculture' %}class="active"{% endif %}>SUBCULTURE</a></li>
+      <li><a href="{{ '/' | append:l | append:'/physics/' | relative_url }}" {% if page.nav == 'physics' %}class="active"{% endif %}>PHYSICS</a></li>
+      <li><a href="{{ '/' | append:l | append:'/links/' | relative_url }}" {% if page.nav == 'links' %}class="active"{% endif %}>LINKS</a></li>
+    </ul>
+
     <div class="lang-list">
       <a href="{{ page.lang_ko | default:'/ko/' | relative_url }}">KO</a>
       <a href="{{ page.lang_en | default:'/en/' | relative_url }}">EN</a>
       <a href="{{ page.lang_ja | default:'/ja/' | relative_url }}">JA</a>
     </div>
   </header>
-
-  <ul class="menu-list" id="site-menu">
-    <li><a href="{{ '/' | append:l | append:'/subculture/' | relative_url }}" {% if page.nav == 'subculture' %}class="active"{% endif %}>SUBCULTURE</a></li>
-    <li><a href="{{ '/' | append:l | append:'/physics/' | relative_url }}" {% if page.nav == 'physics' %}class="active"{% endif %}>PHYSICS</a></li>
-    <li><a href="{{ '/' | append:l | append:'/links/' | relative_url }}" {% if page.nav == 'links' %}class="active"{% endif %}>LINKS</a></li>
-  </ul>
 
   <div class="menu-overlay" aria-hidden="true"></div>
 
