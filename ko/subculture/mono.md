@@ -5,9 +5,9 @@ lang: ko
 nav: subculture
 section: subculture
 title: mono를 위한 변명
-series: Essay Series
-type: ESSAY
-date: '2026-04-02'
+series: TVA 비평
+type: CRITICISM
+date: '2025-07-17'
 lang_ko: /ko/subculture/mono/
 lang_en: /en/subculture/mono/
 lang_ja: /ja/subculture/mono/

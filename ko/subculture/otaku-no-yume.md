@@ -2,17 +2,17 @@
 layout: article
 article: true
 lang: ko
-nav: physics
-section: physics
-title: Maxwell–Chern–Simons의 long-range tail
-series: Research Series
+nav: subculture
+section: subculture
+title: 오타쿠에게는 꾸고 싶은 꿈이 있다는 사실이 있다
+series: 오타쿠를 말하기
 type: ESSAY
-date: '2026-04-05'
-lang_ko: /ko/physics/maxwell-tail/
-lang_en: /en/physics/maxwell-tail/
-lang_ja: /ja/physics/maxwell-tail/
-parent_permalink: /ko/physics/
-permalink: /ko/physics/maxwell-tail/
+date: '2024-12-07'
+lang_ko: /ko/subculture/otaku-no-yume/
+lang_en: /en/subculture/otaku-no-yume/
+lang_ja: /ja/subculture/otaku-no-yume/
+parent_permalink: /ko/subculture/
+permalink: /ko/subculture/otaku-no-yume/
 ---
 
 논리적으로 가능한 것은 상상할 수 있는 것이다. 그러니 우리는 어떤 것이든 꿈꿀 수 있고, 정말로 어떤 것이든 꿈꾸어 왔다...고 말할 때의 꿈은 눈을 감았을 때에 보이는 심상들 일반을 환유하고 있지, 잠을 잘 때 보여 오는 꿈에 대해서는 오로지 가능성만을 지시하고 있을 뿐이다. 하지만 현실의 문제는 대개 이러한 제한 ― 심상 일반에서 잠잘 때 꾸는 꿈으로의 제한과 같은 ― 에서 벌어진다. 이러한 맥락에서 현실의 가장 난해한 문제는 서순을 바꾸면 결과가 달라진다는 것에 있겠다. 말하자면, 그러한 서순 문제는 간단히 시간의 차원을 하나 추가한 우주를 상상하고 있는 우리의 심상 속에서는 일어날 수 없다 (아니면 풀지 못하는 매듭이 존재한다는 문제거나; 이 둘이 같다는 것은 최근에야 알았다).
