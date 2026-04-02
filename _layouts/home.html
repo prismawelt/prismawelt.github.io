@@ -14,9 +14,7 @@ layout: default
   </div>
   {% if page.after_text %}
   <div class="home-after-text">
-    {% for para in page.after_text %}
-    <p>{{ para }}</p>
-    {% endfor %}
+    {{ page.after_text | newline_to_br }}
   </div>
   {% endif %}
 </div>
