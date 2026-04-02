@@ -2,10 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="google-site-verification" content="Co4yL4q2ScFPCkV-HMeISwIRFabl_Qv1olFsf-4ho0g" />
-  <title>prismawelt — 아이돌을 둘러싼 비평의 얼굴</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Iheon Kim (physics) — 아이돌을 둘러싼 비평의 얼굴</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css?v=13">
+  
   <script>
     window.MathJax = {
       tex: {
@@ -21,19 +26,27 @@
 <body>
 <div class="site-shell">
   
-  <a class="site-title" href="/ko/">prismawelt</a>
-  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
-  <ul class="menu-list" id="site-menu">
-    <li><a href="/ko/subculture/" class="active">SUBCULTURE</a></li>
-    <li><a href="/ko/physics/" >PHYSICS</a></li>
-    <li><a href="/ko/links/" >LINKS</a></li>
-  </ul>
+
+  <header class="site-header">
+    <a class="site-title" href="/ko/">prismawelt</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
+
+    <ul class="menu-list" id="site-menu">
+      <li><a href="/ko/subculture/" class="active">SUBCULTURE</a></li>
+      <li><a href="/ko/physics/" >PHYSICS</a></li>
+      <li><a href="/ko/links/" >LINKS</a></li>
+    </ul>
+
+    <div class="lang-list">
+      <a href="/ko/subculture/idol-and-criticism/">KO</a>
+      <a href="/en/subculture/idol-and-criticism/">EN</a>
+      <a href="/ja/subculture/idol-and-criticism/">JA</a>
+    </div>
+  </header>
+
   <div class="menu-overlay" aria-hidden="true"></div>
-  <div class="lang-list">
-    <a href="/ko/subculture/idol-and-criticism/">KO</a>
-    <a href="/en/subculture/idol-and-criticism/">EN</a>
-    <a href="/ja/subculture/idol-and-criticism/">JA</a>
-  </div>
+
   <div class="page detail-page">
   <div class="detail-floating-title" aria-hidden="true">아이돌을 둘러싼 비평의 얼굴</div>
   <a class="back-link" href="/ko/subculture/">← BACK</a>
@@ -56,7 +69,20 @@
 </div>
 
 </div>
+
 <script src="/assets/js/captionify.js"></script>
 <script src="/assets/js/archive.js"></script>
+
+<script src="https://unpkg.com/littlefoot/dist/littlefoot.js" type="application/javascript"></script>
+<script type="application/javascript">
+  littlefoot.default({
+    activateOnHover: true,
+    dismissOnUnhover: true,
+    hoverDelay: 0,
+    /* 클래스 이름 변경: littlefoot__button */
+    buttonTemplate: '<button class="littlefoot__button" title="Footnote <% number %>">[<% number %>]</button>'
+  });
+</script>
+
 </body>
 </html>

@@ -8,7 +8,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="google-site-verification" content="Co4yL4q2ScFPCkV-HMeISwIRFabl_Qv1olFsf-4ho0g" />
   <title>{{ site.title }}{% if page.title and page.title != 'HOME' %} — {{ page.title }}{% endif %}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=8' | relative_url }}">
+  
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=13' | relative_url }}">
+  
   <script>
     window.MathJax = {
       tex: {
@@ -50,5 +52,17 @@
 
 <script src="{{ '/assets/js/captionify.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/archive.js' | relative_url }}"></script>
+
+<script src="https://unpkg.com/littlefoot/dist/littlefoot.js" type="application/javascript"></script>
+<script type="application/javascript">
+  littlefoot.default({
+    activateOnHover: true,
+    dismissOnUnhover: true,
+    hoverDelay: 0,
+    /* 클래스 이름 변경: littlefoot__button */
+    buttonTemplate: '<button class="littlefoot__button" title="Footnote <% number %>">[<% number %>]</button>'
+  });
+</script>
+
 </body>
 </html>

@@ -2,10 +2,15 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="google-site-verification" content="Co4yL4q2ScFPCkV-HMeISwIRFabl_Qv1olFsf-4ho0g" />
-  <title>prismawelt — LINKS</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Iheon Kim (physics) — LINKS</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css?v=13">
+  
   <script>
     window.MathJax = {
       tex: {
@@ -21,30 +26,56 @@
 <body>
 <div class="site-shell">
   
-  <a class="site-title" href="/ja/">prismawelt</a>
-  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
-  <ul class="menu-list" id="site-menu">
-    <li><a href="/ja/subculture/" >SUBCULTURE</a></li>
-    <li><a href="/ja/physics/" >PHYSICS</a></li>
-    <li><a href="/ja/links/" class="active">LINKS</a></li>
-  </ul>
+
+  <header class="site-header">
+    <a class="site-title" href="/ja/">prismawelt</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
+
+    <ul class="menu-list" id="site-menu">
+      <li><a href="/ja/subculture/" >SUBCULTURE</a></li>
+      <li><a href="/ja/physics/" >PHYSICS</a></li>
+      <li><a href="/ja/links/" class="active">LINKS</a></li>
+    </ul>
+
+    <div class="lang-list">
+      <a href="/ko/links/">KO</a>
+      <a href="/en/links/">EN</a>
+      <a href="/ja/links/">JA</a>
+    </div>
+  </header>
+
   <div class="menu-overlay" aria-hidden="true"></div>
-  <div class="lang-list">
-    <a href="/ko/links/">KO</a>
-    <a href="/en/links/">EN</a>
-    <a href="/ja/links/">JA</a>
-  </div>
+
   <div class="page links-page">
   <h1>LINKS</h1>
   <div class="links-grid">
-    <a href="mailto:contact@prismawelt.example"><span class="label">Email</span></a>
+    <a href="mailto:2heon2@postech.ac.kr"><span class="label">Email</span></a>
+    <a href="https://string.postech.ac.kr/"><span class="label">POSTECH String Theory Group</span></a>
     <a href="https://github.com/prismawelt"><span class="label">GitHub</span></a>
+    <a href="https://blog.naver.com/prismawelt"><span class="label">Naver Blog</span></a>
     <a href="https://x.com/prismawelt"><span class="label">X / Twitter</span></a>
+    <a href="https://www.instagram.com/2_heon2/"><span class="label">Instagram</span></a>
+    <a href="https://rateyourmusic.com/~2heon2"><span class="label">Rate Your Music</span></a>
+    <a href="https://open.spotify.com/user/31ciphctwuys2fk7kn3bura3wsfe"><span class="label">Spotify</span></a>
   </div>
 </div>
 
 </div>
+
 <script src="/assets/js/captionify.js"></script>
 <script src="/assets/js/archive.js"></script>
+
+<script src="https://unpkg.com/littlefoot/dist/littlefoot.js" type="application/javascript"></script>
+<script type="application/javascript">
+  littlefoot.default({
+    activateOnHover: true,
+    dismissOnUnhover: true,
+    hoverDelay: 0,
+    /* 클래스 이름 변경: littlefoot__button */
+    buttonTemplate: '<button class="littlefoot__button" title="Footnote <% number %>">[<% number %>]</button>'
+  });
+</script>
+
 </body>
 </html>

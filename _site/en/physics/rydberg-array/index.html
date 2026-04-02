@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="google-site-verification" content="Co4yL4q2ScFPCkV-HMeISwIRFabl_Qv1olFsf-4ho0g" />
-  <title>prismawelt — Constraint Dynamics in a Rydberg Array</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Iheon Kim (physics) — Constraint Dynamics in a Rydberg Array</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css?v=13">
+  
   <script>
     window.MathJax = {
       tex: {
@@ -21,19 +26,27 @@
 <body>
 <div class="site-shell">
   
-  <a class="site-title" href="/en/">prismawelt</a>
-  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
-  <ul class="menu-list" id="site-menu">
-    <li><a href="/en/subculture/" >SUBCULTURE</a></li>
-    <li><a href="/en/physics/" class="active">PHYSICS</a></li>
-    <li><a href="/en/links/" >LINKS</a></li>
-  </ul>
+
+  <header class="site-header">
+    <a class="site-title" href="/en/">prismawelt</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
+
+    <ul class="menu-list" id="site-menu">
+      <li><a href="/en/subculture/" >SUBCULTURE</a></li>
+      <li><a href="/en/physics/" class="active">PHYSICS</a></li>
+      <li><a href="/en/links/" >LINKS</a></li>
+    </ul>
+
+    <div class="lang-list">
+      <a href="/ko/physics/rydberg-array/">KO</a>
+      <a href="/en/physics/rydberg-array/">EN</a>
+      <a href="/ja/physics/rydberg-array/">JA</a>
+    </div>
+  </header>
+
   <div class="menu-overlay" aria-hidden="true"></div>
-  <div class="lang-list">
-    <a href="/ko/physics/rydberg-array/">KO</a>
-    <a href="/en/physics/rydberg-array/">EN</a>
-    <a href="/ja/physics/rydberg-array/">JA</a>
-  </div>
+
   <div class="page detail-page">
   <div class="detail-floating-title" aria-hidden="true">Constraint Dynamics in a Rydberg Array</div>
   <a class="back-link" href="/en/physics/">← BACK</a>
@@ -56,7 +69,20 @@
 </div>
 
 </div>
+
 <script src="/assets/js/captionify.js"></script>
 <script src="/assets/js/archive.js"></script>
+
+<script src="https://unpkg.com/littlefoot/dist/littlefoot.js" type="application/javascript"></script>
+<script type="application/javascript">
+  littlefoot.default({
+    activateOnHover: true,
+    dismissOnUnhover: true,
+    hoverDelay: 0,
+    /* 클래스 이름 변경: littlefoot__button */
+    buttonTemplate: '<button class="littlefoot__button" title="Footnote <% number %>">[<% number %>]</button>'
+  });
+</script>
+
 </body>
 </html>
