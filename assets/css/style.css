@@ -66,6 +66,23 @@ img.half{
   margin-right:auto;
 }
 
+@media (max-width:640px){
+  .md-figure img.half{
+    width:100%;
+    max-width:100%;
+    margin:0;
+  }
+  .md-figure:has(img.half){
+    margin-top:28px;
+    margin-bottom:28px;
+  }
+  .md-figure:has(img.half) figcaption{
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+  }
+}
+
 video{
   max-width:100%;
   display:block;
