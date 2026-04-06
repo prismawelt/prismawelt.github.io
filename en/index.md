@@ -1,7 +1,7 @@
 ---
 layout: home
 lang: en
-nav: home
+section: home
 title: HOME
 lang_ko: /ko/
 lang_en: /en/
@@ -16,7 +16,7 @@ cv:
 - label: PhD ADVISOR
   value: Professor Hee-Cheol Kim
 - label: RESEARCH
-  value: Conformal bootstrap / quantum simulation
+  value: Thermal bootstrap / quantum simulation
 - label: ACADEMIC INTERESTS
   value: Supersymmetry / topological field theory / holography / AQFT / quantum simulation / quantum information
 - label: PERSONAL INTERESTS

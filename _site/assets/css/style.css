@@ -45,6 +45,48 @@ img{
   display:block;
 }
 
+img.half{
+  max-width:50%;
+}
+
+.md-figure img.half{
+  width:50%;
+  max-width:50%;
+  margin:0 auto;
+}
+
+.md-figure:has(img.half){
+  margin-top:4px;
+  margin-bottom:4px;
+}
+
+.md-figure:has(img.half) figcaption{
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+video{
+  max-width:100%;
+  display:block;
+}
+
+.md-embed{
+  position:relative;
+  width:100%;
+  max-width:760px;
+  aspect-ratio:16/9;
+  margin:0;
+}
+
+.md-embed iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
 .site-shell{
   min-height:100vh;
   position:relative;
@@ -271,6 +313,10 @@ img{
   letter-spacing:-.055em;
 }
 
+.page-title h1.cjk{
+  padding-bottom:.12em;
+}
+
 .page-title .site-wordmark{
   display:none !important;
 }
@@ -484,6 +530,43 @@ img{
 .detail-body p{
   margin:0 0 1.05em 0;
   text-indent:var(--indent);
+}
+
+.no-indent{
+  text-indent:0 !important;
+}
+
+.detail-body pre{
+  font-family:ui-monospace, Menlo, Consolas, monospace;
+  background:#f4f4f4;
+  border-radius:4px;
+  padding:.7em 1em;
+  overflow-x:auto;
+  font-size:.88em;
+  line-height:1.6;
+}
+
+.detail-body pre code{
+  background:none;
+  padding:0;
+}
+
+.detail-body :not(pre) > code{
+  font-family:ui-monospace, Menlo, Consolas, monospace;
+  background:#f4f4f4;
+  border-radius:3px;
+  padding:.1em .35em;
+  font-size:.88em;
+}
+
+.detail-body blockquote{
+  font-family:'Noto Sans KR', Arial, sans-serif;
+  margin:0 var(--indent);
+  text-indent:0;
+}
+
+.detail-body blockquote p{
+  text-indent:0;
 }
 
 .detail-floating-title{
@@ -779,11 +862,16 @@ img{
   margin:28px auto;
 }
 
-.md-figure img{
+.md-figure img,
+.md-figure video{
   display:block;
   width:100%;
   max-width:760px;
   height:auto;
+}
+
+.md-figure .md-embed{
+  margin:0;
 }
 
 .md-figure figcaption{
@@ -858,7 +946,6 @@ img{
   background-color: #ffffff !important; 
   background: #ffffff !important;
   color: #000000 !important;
-  
   /* padding: 위 오른쪽 아래 왼쪽 순서입니다. (아래쪽 여백을 12px에서 4px로 대폭 축소) */
   padding: 12px 16px 12px 16px !important; 
   

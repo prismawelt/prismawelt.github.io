@@ -33,9 +33,9 @@
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">≡</button>
 
     <ul class="menu-list" id="site-menu">
-      <li><a href="{{ '/' | append:l | append:'/subculture/' | relative_url }}" {% if page.nav == 'subculture' %}class="active"{% endif %}>SUBCULTURE</a></li>
-      <li><a href="{{ '/' | append:l | append:'/physics/' | relative_url }}" {% if page.nav == 'physics' %}class="active"{% endif %}>PHYSICS</a></li>
-      <li><a href="{{ '/' | append:l | append:'/links/' | relative_url }}" {% if page.nav == 'links' %}class="active"{% endif %}>LINKS</a></li>
+      <li><a href="{{ '/' | append:l | append:'/nichijou/' | relative_url }}" {% if page.section == 'nichijou' %}class="active"{% endif %}>{% if l == 'en' %}NICHIJOU{% else %}日常{% endif %}</a></li>
+      <li><a href="{{ '/' | append:l | append:'/physics/' | relative_url }}" {% if page.section == 'physics' %}class="active"{% endif %}>PHYSICS</a></li>
+      <li><a href="{{ '/' | append:l | append:'/links/' | relative_url }}" {% if page.section == 'links' %}class="active"{% endif %}>LINKS</a></li>
     </ul>
 
     <div class="lang-list">

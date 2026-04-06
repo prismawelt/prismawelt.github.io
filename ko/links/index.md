@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: ko
-nav: links
+section: links
 title: LINKS
 lang_ko: /ko/links/
 lang_en: /en/links/

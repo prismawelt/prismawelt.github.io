@@ -1,7 +1,7 @@
 ---
 layout: archive
 lang: ja
-nav: physics
+section: physics
 title: PHYSICS
 collection_name: physics
 filter_types:
