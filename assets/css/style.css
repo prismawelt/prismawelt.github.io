@@ -1026,6 +1026,11 @@ video{
   display: inline !important;
 }
 
+/* 각주 내 긴 URL 강제 줄바꿈 */
+.footnotes a {
+  word-break: break-all;
+}
+
 /* 6. 되돌아오기 화살표(?)의 도착점 좌표 복구 */
 sup[id^="fnref:"] {
   display: inline-block !important; /* 브라우저가 위치를 찾을 수 있게 강제 노출 */
