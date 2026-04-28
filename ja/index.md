@@ -10,7 +10,7 @@ person_name: Iheon Kim (金 梨憲)
 intro: こんにちは。浦項工科大学校（POSTECH）で理論物理学を学んでいるキム・イホンです。語りえないもの（雲、木、波、歩き、アニメ(ーター)、indie_anime、きらら、vtuber、映画、写真、音楽、UV theory）を語りたいです。
 cv:
 - label: AFFILIATION
-  value: POSTECH, Department of Physics
+  value: Department of Physics, POSTECH
 - label: POSITION
   value: PhD Student
 - label: PhD ADVISOR

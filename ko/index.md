@@ -10,7 +10,7 @@ person_name: 김이헌 (Iheon Kim)
 intro: 안녕하세요, 저는 포항공과대학교에서 이론물리를 공부하고 있는 김이헌입니다. 말할 수 없는 것(구름, 나무, 파도, 걸음걸이, 애니(메이터), indie_anime, 키라라, vtuber, 영화, 사진, 음악, UV theory)에 대해서 이야기하고 싶습니다.
 cv:
 - label: AFFILIATION
-  value: POSTECH, Department of Physics
+  value: Department of Physics, POSTECH
 - label: POSITION
   value: PhD Student
 - label: PhD ADVISOR

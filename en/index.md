@@ -10,7 +10,7 @@ person_name: Iheon Kim
 intro: Hello, I am Iheon Kim, studying theoretical physics at POSTECH. I want to talk about the unspeakable things (clouds, trees, waves, walking, anime(tors), indie_anime, Kirara, vtuber, film, photography, music, UV theory).
 cv:
 - label: AFFILIATION
-  value: POSTECH, Department of Physics
+  value: Department of Physics, POSTECH
 - label: POSITION
   value: PhD Student
 - label: PhD ADVISOR
