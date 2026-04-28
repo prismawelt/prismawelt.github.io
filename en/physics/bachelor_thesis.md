@@ -1,7 +1,7 @@
 ---
 layout: article
 article: true
-lang: ko
+lang: en
 section: physics
 title: Bachelor's thesis
 series: THESIS

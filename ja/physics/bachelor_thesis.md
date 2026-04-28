@@ -1,7 +1,7 @@
 ---
 layout: article
 article: true
-lang: ko
+lang: ja
 section: physics
 title: 学士論文
 series: THESIS
