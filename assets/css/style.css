@@ -146,6 +146,14 @@ video{
   line-height:1;
 }
 
+.site-title,
+.site-title:visited,
+.site-title:hover,
+.site-title:active{
+  color:var(--fg);
+  text-decoration:none;
+}
+
 .menu-toggle{
   display:none;
   position:absolute;

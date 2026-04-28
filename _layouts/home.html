@@ -14,7 +14,7 @@ layout: default
   </div>
   {% if page.after_text %}
   <div class="home-after-text">
-    {{ page.after_text | newline_to_br }}
+    {{ page.after_text | newline_to_br | markdownify | remove_first: '<p>' | remove: '</p>' }}
   </div>
   {% endif %}
 </div>
