@@ -26,8 +26,8 @@ cv:
 - label: CONTACT
   value: '<a href="mailto:2heon2@postech.ac.kr">2heon2@postech.ac.kr</a>'
 after_text: |
-  Introduction to "Spring and Ashura", Kenji Miyazawa
-  English translation by Moss Quanci
+  Opening to "Spring and Ashura", Kenji Miyazawa
+  English translation by [Moss Quanci](https://fieldomoss.com/stories/spring-and-asura#opening)
   
   the phenomenon called I
   is a single blue illumination of
