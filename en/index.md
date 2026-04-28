@@ -26,7 +26,7 @@ cv:
 - label: CONTACT
   value: '<a href="mailto:2heon2@postech.ac.kr">2heon2@postech.ac.kr</a>'
 after_text: |
-  Opening to "Spring and Ashura", Kenji Miyazawa
+  **Preface** from "Spring and Ashura", Kenji Miyazawa
   English translation by [Moss Quanci](https://fieldomoss.com/stories/spring-and-asura#opening)
   
   the phenomenon called I
