@@ -6,7 +6,7 @@ title: HOME
 lang_ko: /ko/
 lang_en: /en/
 lang_ja: /ja/
-person_name: Iheon Kim (金　梨憲)
+person_name: Iheon Kim (金 梨憲)
 intro: こんにちは。浦項工科大学校（POSTECH）で理論物理学を学んでいるキム・イホンです。語りえないもの（雲、木、波、歩き、アニメ(ーター)、indie_anime、きらら、vtuber、映画、写真、音楽、UV theory）を語りたいです。
 cv:
 - label: AFFILIATION
@@ -16,11 +16,11 @@ cv:
 - label: PhD ADVISOR
   value: Professor Hee-Cheol Kim
 - label: RESEARCH
-  value: Thermal bootstrap / quantum simulation
+  value: Thermal bootstrap / Quantum simulation
 - label: ACADEMIC INTERESTS
   value: Conformal bootstrap / Holography / Topological field theory / Quantum simulation / Quantum information
 - label: PERSONAL INTERESTS
-  value: Anime / electronic music / subculture criticism
+  value: Anime / Electronic music, VOCALOID, Noise rock, Contemporary folk / Subculture criticism
 - label: CV
   value: '<a href="/assets/files/cv.pdf">PDF</a>'
 - label: CONTACT
