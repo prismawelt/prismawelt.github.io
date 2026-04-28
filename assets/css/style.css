@@ -189,6 +189,14 @@ video{
   line-height:1;
 }
 
+.lang-list a,
+.lang-list a:visited,
+.lang-list a:hover,
+.lang-list a:active{
+  color:var(--fg);
+  text-decoration:none;
+}
+
 .menu-overlay{
   display:none;
 }
@@ -523,6 +531,14 @@ video{
   padding-right:var(--page-x);
   font-size:14px;
   font-weight:700;
+}
+
+.back-link,
+.back-link:visited,
+.back-link:hover,
+.back-link:active{
+  color:var(--fg);
+  text-decoration:none;
 }
 
 .detail-head{
