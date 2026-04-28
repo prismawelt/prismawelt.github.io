@@ -18,11 +18,11 @@ cv:
 - label: RESEARCH
   value: Thermal bootstrap / quantum simulation
 - label: ACADEMIC INTERESTS
-  value: Supersymmetry / topological field theory / holography / AQFT / quantum simulation / quantum information
+  value: Conformal bootstrap / Holography / Topological field theory / Quantum simulation / Quantum information
 - label: PERSONAL INTERESTS
   value: Anime / electronic music / subculture criticism
 - label: CV
-  value: '<a href="/assets/files/cv.pdf">PDF</a> (in preparation)'
+  value: '<a href="/assets/files/cv.pdf">PDF</a>'
 - label: CONTACT
   value: '<a href="mailto:2heon2@postech.ac.kr">2heon2@postech.ac.kr</a>'
 after_text: |
