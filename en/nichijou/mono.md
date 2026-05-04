@@ -40,14 +40,14 @@ For example, the Yamanashi of 《Yuru Camp△》 is a fictional space that copie
 In this situation ― as the episode title already indicates ― the self-reference in 《mono》 episode 1, “The Journey of mono,” and the protagonists’ club, “cinephoto,” make 《mono》 occupy a position completely different from the nichijou-kei of circular structure. Let us now make this clear.
 
 ## 《mono》 as Essay Manga
-“Sorry, I forgot to mention it!! Please make it a manga with high school girls as the protagonists!!”
-→ “Understood, I’ll try.”
-“It might get a good response if there’s a food element too!!”
-→ “Food manga does sell well these days!”
-“And I think it’d be good if there were some regionality.”
-“Since you live in Kofu, how about setting it in Yamanashi?”
-→ “Sounds good! And I’d like to add a cat as a mascot element!”
-“Since the cat was the protagonist of your previous work, let’s leave it out.”
+“Sorry, I forgot to mention it!! Please make it a manga with high school girls as the protagonists!!”  
+→ “Understood, I’ll try.”  
+“It might get a good response if there’s a food element too!!”  
+→ “Food manga does sell well these days!”  
+“And I think it’d be good if there were some regionality.”  
+“Since you live in Kofu, how about setting it in Yamanashi?”  
+→ “Sounds good! And I’d like to add a cat as a mascot element!”  
+“Since the cat was the protagonist of your previous work, let’s leave it out.”  
 
 After finishing the serialization of 《Take the Cat and Go Just a Little Ways Over There》, Haruno consults with her editor about drawing a four-panel manga about high school girls. The ending of episode 1 shows the storyboard for that four-panel manga, modeled on Satsuki and An. That storyboard points to the first few scenes of 《mono》 itself. The editor’s tsukkomi about that storyboard, “You slipped a cat in there, though,” is subtly connected to the next scene, where Satsuki finds that very cat, Taisho, on the street and films it with a 360-degree camera. In the end, in its ending, 《mono》 episode 1 reverses into the story of Haruno herself up to the serialization of 《mono》, and the Kirara-like story of Satsuki and An “drawn by Haruno.” Moreover, this reversal is repeated every episode. Except for the first and final episodes, the last shot of every ending is a manga storyboard depicting a scene from that episode. The ending of 《mono》 is a [Koi-Kaze-like ending](/en/nichijou/koikaze_ed/) that “cannot be skipped.”
 
@@ -60,12 +60,12 @@ As 《mono》 gives up the presentness of the television serial, and indeed beca
 In that sense, 《mono》 is a feeling of having “lived toward the earth,” and in that sense too, 《mono》 is a documentary “shot of our world.” Therefore, the following two sections should be read in parallel with this one.
 
 ## One Auxiliary Line ― Wim Wenders, 《Tokyo-Ga》(1985)
-“I can’t remember anything. I know I was in Tokyo. I know it was the spring of ’83. I know that. I was with a camera, and I shot images. These images now exist, and they have become my memory. But I cannot remember. If I had not had the camera, I might now be able to remember better.”
+“I can’t remember anything. I know I was in Tokyo. I know it was the spring of ’83. I know that. I was with a camera, and I shot images. These images now exist, and they have become my memory. But I cannot remember. If I had not had the camera, I might now be able to remember better.”  
 《Tokyo-Ga》(1985) begins from this monologue by Wim Wenders. When Nam Soo-young wrote in 2009 in *Historical Memory in the Age of Images* that it was “not easy to figure out exactly what this monologue means,” he could not have known that, in just ten years, a future would arrive in which everyone lives everyday life with a small camera and takes photographs. Now all of us can easily understand this monologue by Wim Wenders. In everyday life, our eyes are often replaced by smartphone cameras, and at tourist sites everyone worries less about how to remember better than about how to take better photographs. Has the problem Wenders felt in 1983 now become everyone’s problem?
 
 《Tokyo-Ga》 also begins with the first scene of 《Tokyo Story》(1953). Wenders, who counted the films of Ozu Yasujiro as a sacred treasury of cinema, boarded a plane to Tokyo to confirm whether the image of Tokyo reflected in Ozu’s works still remained. Praising certain moments in Ozu’s films ― the gesture of a child in the background, the flight of a bird across the frame, the shadow of clouds reflected on the screen ― as “moments of truth,” he wanted to find the familiar image of Tokyo that he had felt in Ozu’s films. In a subway station, Wenders sees a child being dragged by his mother’s hand. From this child he recalls the rebellious children who often appear in Ozu’s films. Or, to borrow his expression, perhaps he wanted to recall them. But he again confesses, “Perhaps what I am looking for is no longer here.” Tokyo has changed, and perhaps the Tokyo of the 1950s no longer exists. Even so, Wenders sees Ozu’s Tokyo in the people and places he finds ― a stubborn child, a golf range, a Shinjuku alley seen with a 50mm lens, and a train. He feels an uncanny familiarity in these images. These feelings of intimacy coming from Ozu’s films interfere with Wenders’s vision. Or, in a better expression, “we read a text with prejudices, and prejudices determine our fore-understanding” (Hans-Georg Gadamer, 1960/2012).
 
-“Only what exists exists, and that is the real and reality. There is no idea as empty and useless when applied to film as this concept. Each person knows for himself what ‘recognition of reality’ means. Each person sees his reality with his eyes. (...) And each person knows for himself the common, extreme gap between personal experience and the depiction of that experience drawn on the screen. Because we have learned to accept the enormous distance separating cinema and life as so natural, when we suddenly discover something real in a film — even if it is only the gesture of a child in the background, a bird crossing the screen, or a cloud casting a shadow on a scene for a very brief moment — we hold our breath and are startled.”
+“Only what exists exists, and that is the real and reality. There is no idea as empty and useless when applied to film as this concept. Each person knows for himself what ‘recognition of reality’ means. Each person sees his reality with his eyes. (...) And each person knows for himself the common, extreme gap between personal experience and the depiction of that experience drawn on the screen. Because we have learned to accept the enormous distance separating cinema and life as so natural, when we suddenly discover something real in a film — even if it is only the gesture of a child in the background, a bird crossing the screen, or a cloud casting a shadow on a scene for a very brief moment — we hold our breath and are startled.”  
 Wenders speaks of skepticism about truth through Ozu’s films. Instead of Tokyo, he saw Tokyo through a camera, and 《Tokyo-Ga》 became his memory. Wenders’s Tokyo is neither the Tokyo of spring 1983 nor Ozu’s truthful Tokyo. Wenders came to Tokyo holding Ozu’s truthful images, but the Tokyo he saw was full of images that seemed empty: people obsessed with poses as they play golf, and fake food models. Yet Wenders says he wants to see them. 《Tokyo-Ga》 juxtaposes Ozu’s truthful images and images that seem empty. This juxtaposition depicts “the extreme gap between experience and the depiction of that experience drawn on the screen.” For that reason, paradoxically, Wenders’s Tokyo is Wenders’s own truthful reality. Documentary is fictional, as in his first monologue, but at the same time truthful.
 
 Now let us read 《mono》 with 《Tokyo-Ga》 as an auxiliary line.
@@ -73,11 +73,11 @@ Now let us read 《mono》 with 《Tokyo-Ga》 as an auxiliary line.
 ## The Camera of 《mono》 Is Ambivalent, or the Theme of 《mono》
 At the start of the new school year, the photography club and the film research club, whose seniors had graduated and which had no new members, “coincidentally” faced the danger of abolition at the same time. And “coincidentally,” the president of the film research club was Shikishima-san, who had been in the same class as Satsuki, and Shikishima-san was “coincidentally” cool. The cinephoto club, a club formed by combining the photography club and the film research club, was made through the overlap of several coincidences. And indeed, without coincidence, a photography club and a film research club cannot merge. The only commonality between photography and film seems to be that they are arts that use a camera.
 
-“Since the cinephoto club is both a photography club and a film research club.”
-“That’s true.”
-“But didn’t we also shoot videos little by little?”
-“This time it’s not video, it’s film.”
-“Well, that makes sense.”
+“Since the cinephoto club is both a photography club and a film research club.”  
+“That’s true.”  
+“But didn’t we also shoot videos little by little?”  
+“This time it’s not video, it’s film.”  
+“Well, that makes sense.”  
 Part B of episode 11 ends with a conversation in which the protagonists, facing the end of summer vacation, decide to shoot a film next term. In response to An’s question, “Didn’t we also shoot videos little by little?”, Satsuki answers that video and film are different. As An’s question suggests, video and film are both iconic in the sense that they resemble reality and point to reality. But as Satsuki points out, video is photographic, while film is not. The monologue of 《Tokyo-Ga》: all of us already know the gap between reality and film on the screen. By contrast, photography possesses, at the level of the medium itself, the indexicality that the image reflected in that photograph really existed in the past. The viewer sees “that very” photograph taken by Satsuki and the others. Therefore, the viewer and the protagonists can share the same reality.
 
 If there is something more realistic than this realistic (still) photograph, it is probably the 360-degree panoramic photograph and Street View. 360-degree photographs and Street View require our action, as if they were games. As An says about 360-degree photos, “it’s more fun to touch them.” Their agency is indexical: like photographs, they are icons of a past appearance and evidence that the objects existed in reality, and further, they are so in the sense that they are determined by how the rotation of the gaze changes a view in reality and by which roads one can drive or walk along. Why not call them photographic sandbox games whose genres are turning one’s head and taking a walk? Because reality is already a sandbox game, or because they “less restrict” the real landscape as a function on spacetime and the unit sphere, they are realistic.
