@@ -702,6 +702,247 @@ video{
   content:none !important;
 }
 
+.ihatov-page,
+.ihatov-photo-page{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding-left:var(--page-x);
+  padding-right:var(--page-x);
+}
+
+.ihatov-center-links{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  font-size:26px;
+  line-height:1;
+  font-weight:700;
+}
+
+.ihatov-center-links a,
+.ihatov-center-links a:visited,
+.ihatov-center-links a:hover,
+.ihatov-center-links a:active{
+  color:var(--fg);
+  text-decoration:none;
+}
+
+.ihatov-center-links a:hover{
+  text-decoration:underline;
+  text-underline-offset:.12em;
+  text-decoration-thickness:1px;
+}
+
+.ihatov-photo-empty{
+  font-size:26px;
+  line-height:1;
+  font-weight:700;
+}
+
+.ihatov-music-page{
+  padding-top:calc(var(--menu-h) + 28px);
+  padding-bottom:0;
+}
+
+.album-cover-swarm{
+  --swarm-bg:#fff;
+  --swarm-ink:#111;
+  --swarm-mut:#888;
+  --swarm-line:#e5e5e5;
+  max-width:1120px;
+  margin:0 auto;
+  padding:22px 20px 80px;
+  background:var(--swarm-bg);
+  color:var(--swarm-ink);
+  font-family:ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (max-width:640px){
+  .album-cover-swarm{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
+.album-cover-swarm .rating-filter{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin:8px 0 0;
+  line-height:1;
+}
+
+.album-cover-swarm .rating-stars{
+  position:relative;
+  display:block;
+  width:70px;
+  height:12.5px;
+  background-image:url('/assets/files/ihatov/music/ratings/0m.png');
+  background-repeat:no-repeat;
+  background-size:70px 12.5px;
+  touch-action:none;
+  user-select:none;
+}
+
+.album-cover-swarm .rating-hit{
+  position:absolute;
+  top:0;
+  width:10%;
+  height:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  font-size:0;
+}
+
+.album-cover-swarm #readout{
+  position:sticky;
+  top:calc(var(--safe-top, 0px) + var(--menu-h));
+  z-index:70;
+  height:52px;
+  min-height:52px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:3px;
+  overflow:hidden;
+  background:var(--swarm-bg);
+  font-size:18px;
+  color:var(--swarm-mut);
+  margin:0 0 10px;
+}
+
+.album-cover-swarm #readout b,
+.album-cover-swarm .readout-artist{
+  color:var(--swarm-ink);
+  font-weight:700;
+}
+
+.album-cover-swarm .readout-line{
+  --marquee-duration:12s;
+  width:100%;
+  overflow:hidden;
+  line-height:1.12;
+  white-space:nowrap;
+}
+
+.album-cover-swarm .readout-track{
+  display:inline-flex;
+  min-width:100%;
+  white-space:nowrap;
+  will-change:transform;
+}
+
+.album-cover-swarm .readout-text,
+.album-cover-swarm .readout-copy{
+  display:inline-block;
+  white-space:nowrap;
+}
+
+.album-cover-swarm .readout-copy{
+  display:none;
+}
+
+.album-cover-swarm .readout-line.is-marquee .readout-track{
+  min-width:auto;
+  animation:ihatov-readout-marquee var(--marquee-duration) linear infinite;
+}
+
+.album-cover-swarm .readout-line.is-marquee .readout-text,
+.album-cover-swarm .readout-line.is-marquee .readout-copy{
+  display:inline-block;
+  padding-right:48px;
+}
+
+@keyframes ihatov-readout-marquee{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+.album-cover-swarm #spectrum{
+  position:relative;
+}
+
+.album-cover-swarm .cover{
+  position:absolute;
+  left:0;
+  top:0;
+  border-radius:2px;
+  cursor:pointer;
+  background-repeat:no-repeat;
+  background-color:#fff;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+
+.album-cover-swarm .cover:hover{
+  z-index:5;
+  outline:1px solid var(--swarm-ink);
+  outline-offset:-1px;
+}
+
+.album-cover-swarm .cover-preview{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:200;
+  pointer-events:none;
+  border-radius:2px;
+  background-repeat:no-repeat;
+  background-color:#fff;
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+}
+
+.album-cover-swarm .cover-preview[hidden]{
+  display:none;
+}
+
+.album-cover-swarm .copy-popup{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:260;
+  max-width:min(520px, calc(100vw - 28px));
+  padding:8px 10px;
+  border:1px solid var(--swarm-ink);
+  border-radius:2px;
+  background:var(--swarm-ink);
+  color:var(--swarm-bg);
+  font-size:13px;
+  line-height:1.15;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  pointer-events:none;
+  opacity:0;
+  transform:translateY(4px);
+  transition:opacity .16s ease, transform .16s ease;
+}
+
+.album-cover-swarm .copy-popup.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.album-cover-swarm .copy-popup[hidden]{
+  display:none;
+}
+
+.ihatov-music-status{
+  min-height:40px;
+  font-size:12.5px;
+  color:var(--swarm-mut);
+  margin:0 0 10px;
+}
+
+.ihatov-music-status[hidden]{
+  display:none;
+}
+
 @media (max-width:980px){
   :root{
     --head:72px;
@@ -854,7 +1095,8 @@ video{
 
   .archive-page,
   .detail-page,
-  .links-page{
+  .links-page,
+  .ihatov-music-page{
     padding-top:calc(60px + var(--safe-top));
   }
 
@@ -898,6 +1140,16 @@ video{
 
   .links-grid a .label{
     font-size:16px;
+  }
+
+  .ihatov-center-links,
+  .ihatov-photo-empty{
+    font-size:22px;
+  }
+
+  .album-cover-swarm{
+    padding-left:14px;
+    padding-right:14px;
   }
 
   .detail-floating-title{

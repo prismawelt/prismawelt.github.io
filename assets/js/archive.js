@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   document.querySelectorAll('[data-archive-page]').forEach(initArchive);
   document.querySelectorAll('.detail-page').forEach(initDetailTitle);
+  document.querySelectorAll('[data-ihatov-music]').forEach(initIhatovMusic);
 });
 
 function initMobileMenu(){
@@ -149,4 +150,349 @@ function initDetailTitle(root){
   update();
   window.addEventListener('scroll', update, {passive:true});
   window.addEventListener('resize', update);
+}
+
+function specSort(items){
+  const chrom = [], grey = [];
+  items.forEach(d => { (d.hsv[1] >= 20 && d.hsv[2] >= 14 ? chrom : grey).push(d); });
+  chrom.sort((a, b) => (a.hsv[0] - b.hsv[0]) || (b.hsv[2] - a.hsv[2]) || a.id.localeCompare(b.id));
+  grey.sort((a, b) => (b.hsv[2] - a.hsv[2]) || a.id.localeCompare(b.id));
+  return chrom.concat(grey);
+}
+
+function specSize(n, W, maxH){
+  let s = 28;
+  while (s > 4 && Math.ceil(n / Math.max(1, Math.floor(W / s))) * s > maxH) s--;
+  return s;
+}
+
+function specLayout(sorted, W, size){
+  const cols = Math.max(1, Math.floor(W / size));
+  const rows = Math.ceil(sorted.length / cols);
+  const pos = {};
+  sorted.forEach((d, i) => {
+    pos[d.id] = { x: (i % cols) * size, y: Math.floor(i / cols) * size };
+  });
+  return { pos, w: cols * size, h: rows * size };
+}
+
+function scaledSpecSize(n, W, maxH, scale){
+  const base = specSize(n, W, maxH);
+  const wanted = Math.max(1, base * scale);
+  return Math.min(wanted, W);
+}
+
+async function loadArchive(root){
+  const [archive, sprite] = await Promise.all([
+    fetch(root.dataset.archiveUrl).then(res => {
+      if(!res.ok) throw new Error('archive');
+      return res.json();
+    }),
+    fetch(root.dataset.spriteJsonUrl).then(res => {
+      if(!res.ok) throw new Error('sprite.json');
+      return res.json();
+    })
+  ]);
+
+  const slotById = new Map(sprite.ids.map((id, slot) => [id, slot]));
+  const items = archive.items
+    .map(item => {
+      const slot = slotById.get(item.id);
+      if(slot === undefined) return null;
+      return {
+        ...item,
+        cover: item.cover || '',
+        slot,
+        hsv: sprite.hsv[item.id] || [0,0,100]
+      };
+    })
+    .filter(Boolean);
+
+  return {
+    items,
+    cols: sprite.cols,
+    spriteUrl: root.dataset.spriteImageUrl
+  };
+}
+
+function initIhatovMusic(root){
+  const board = root.querySelector('#spectrum');
+  const readout = root.querySelector('#readout');
+  const ratingButtons = Array.from(root.querySelectorAll('[data-rating-filter]'));
+  const ratingStars = root.querySelector('[data-rating-stars]');
+  const preview = root.querySelector('[data-cover-preview]');
+  const status = root.querySelector('[data-ihatov-music-status]');
+  if(!board) return;
+
+  let archive = null;
+  let ratingFilter = 'all';
+  let ratingDrag = false;
+  let activeItem = null;
+  let copyPopup = null;
+  let copyPopupTimer = 0;
+
+  function albumLabel(item){
+    const artist = item.artist || item.artist_latin || '';
+    return `${artist} - ${item.title}`;
+  }
+
+  function updateReadout(item){
+    if(!readout) return;
+    activeItem = item;
+    readout.textContent = '';
+    readout.appendChild(readoutLine(item.artist || item.artist_latin || '', 'artist'));
+    readout.appendChild(readoutLine(item.title || '', 'album'));
+    requestAnimationFrame(syncReadoutMarquee);
+  }
+
+  function readoutLine(textValue, kind){
+    const line = document.createElement('div');
+    line.className = `readout-line readout-${kind}`;
+
+    const track = document.createElement('span');
+    track.className = 'readout-track';
+
+    const text = document.createElement('span');
+    text.className = 'readout-text';
+    text.textContent = textValue;
+
+    const copy = document.createElement('span');
+    copy.className = 'readout-copy';
+    copy.setAttribute('aria-hidden', 'true');
+    copy.textContent = textValue;
+
+    track.append(text, copy);
+    line.appendChild(track);
+    return line;
+  }
+
+  function syncReadoutMarquee(){
+    if(!readout) return;
+    readout.querySelectorAll('.readout-line').forEach(line => {
+      const text = line.querySelector('.readout-text');
+      if(!text) return;
+      line.classList.toggle('is-marquee', text.scrollWidth > line.clientWidth);
+      const duration = Math.max(8, Math.min(28, text.scrollWidth / 34));
+      line.style.setProperty('--marquee-duration', `${duration}s`);
+    });
+  }
+
+  function fallbackCopyText(value){
+    const textarea = document.createElement('textarea');
+    textarea.value = value;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    textarea.style.top = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try{
+      copied = document.execCommand('copy');
+    } catch(_error){
+      copied = false;
+    }
+    textarea.remove();
+    return copied;
+  }
+
+  async function copyText(value){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      try{
+        await navigator.clipboard.writeText(value);
+        return true;
+      } catch(_error){
+        return fallbackCopyText(value);
+      }
+    }
+    return fallbackCopyText(value);
+  }
+
+  function ensureCopyPopup(){
+    if(copyPopup) return copyPopup;
+    copyPopup = document.createElement('div');
+    copyPopup.className = 'copy-popup';
+    copyPopup.setAttribute('role', 'status');
+    copyPopup.setAttribute('aria-live', 'polite');
+    copyPopup.hidden = true;
+    root.appendChild(copyPopup);
+    return copyPopup;
+  }
+
+  function showCopyPopup(value, event, copied){
+    const popup = ensureCopyPopup();
+    popup.textContent = copied ? `COPIED ${value}` : 'COPY FAILED';
+    popup.hidden = false;
+    popup.classList.remove('is-visible');
+    window.clearTimeout(copyPopupTimer);
+
+    const gap = 14;
+    requestAnimationFrame(() => {
+      const rect = popup.getBoundingClientRect();
+      const x = Math.min(event.clientX + gap, window.innerWidth - rect.width - gap);
+      const y = Math.min(event.clientY + gap, window.innerHeight - rect.height - gap);
+      popup.style.left = `${Math.max(gap, x)}px`;
+      popup.style.top = `${Math.max(gap, y)}px`;
+      popup.classList.add('is-visible');
+    });
+
+    copyPopupTimer = window.setTimeout(() => {
+      popup.classList.remove('is-visible');
+      window.setTimeout(() => {
+        if(!popup.classList.contains('is-visible')) popup.hidden = true;
+      }, 180);
+    }, 1200);
+  }
+
+  function copyAlbumLabel(item, event){
+    const value = albumLabel(item);
+    copyText(value).then(copied => showCopyPopup(value, event, copied));
+  }
+
+  function filteredItems(){
+    if(!archive) return [];
+    if(ratingFilter === 'all') return archive.items;
+    const rating = Number(ratingFilter);
+    return archive.items.filter(item => Number(item.rating) === rating);
+  }
+
+  function updateRatingStars(){
+    const rating = ratingFilter === 'all' ? 0 : Number(ratingFilter);
+    if(ratingStars){
+      ratingStars.style.backgroundImage = `url(${root.dataset.ratingImageBase}${rating}m.png)`;
+    }
+  }
+
+  function ratingFromPointer(event){
+    if(!ratingStars) return 'all';
+    const rect = ratingStars.getBoundingClientRect();
+    if(event.clientX <= rect.left + 4) return 'all';
+    const x = Math.max(0, Math.min(rect.width - 0.001, event.clientX - rect.left));
+    return String(Math.max(1, Math.min(10, Math.floor((x / rect.width) * 10) + 1)));
+  }
+
+  function setRatingFilter(next){
+    ratingFilter = ratingFilter === next ? 'all' : next;
+    updateRatingStars();
+    render();
+  }
+
+  function scrubRating(event){
+    if(!ratingStars) return;
+    ratingFilter = ratingFromPointer(event);
+    updateRatingStars();
+    render();
+  }
+
+  function movePreview(event){
+    if(!preview || preview.hidden) return;
+    const rect = preview.getBoundingClientRect();
+    const gap = 14;
+    const x = Math.min(event.clientX + gap, window.innerWidth - rect.width - gap);
+    const y = Math.min(event.clientY + gap, window.innerHeight - rect.height - gap);
+    preview.style.left = `${Math.max(gap, x)}px`;
+    preview.style.top = `${Math.max(gap, y)}px`;
+  }
+
+  function showPreview(item, event){
+    if(!preview || !archive) return;
+    const previewSize = Math.round(Math.max(112, Math.min(190, window.innerWidth * 0.16)) / 2);
+    preview.hidden = false;
+    preview.style.width = `${previewSize}px`;
+    preview.style.height = `${previewSize}px`;
+    preview.style.backgroundImage = `url(${archive.spriteUrl})`;
+    preview.style.backgroundSize = `${archive.cols * previewSize}px auto`;
+    preview.style.backgroundPosition =
+      `${-(item.slot % archive.cols) * previewSize}px ${-Math.floor(item.slot / archive.cols) * previewSize}px`;
+    movePreview(event);
+  }
+
+  function hidePreview(){
+    if(preview) preview.hidden = true;
+  }
+
+  function render(){
+    if(!archive) return;
+    const rootStyle = window.getComputedStyle(root);
+    const rootPadding =
+      Number.parseFloat(rootStyle.paddingLeft || '0') +
+      Number.parseFloat(rootStyle.paddingRight || '0');
+    const W = Math.max(1, Math.min(1040, Math.floor(root.clientWidth - rootPadding)));
+    const maxH = 460;
+    const sorted = specSort(filteredItems());
+    const currentSize = Math.round(scaledSpecSize(archive.items.length, W, maxH, 1.5) / 1.5);
+    const size = Math.max(1, Math.min(W, Math.round(currentSize * 1.3)));
+    const lay = specLayout(sorted, W, size);
+    const fragment = document.createDocumentFragment();
+
+    board.style.width = `${lay.w}px`;
+    board.style.height = `${lay.h}px`;
+    board.textContent = '';
+
+    sorted.forEach(item => {
+      const p = lay.pos[item.id];
+      const cover = document.createElement('div');
+      cover.className = 'cover ihatov-cover';
+      cover.setAttribute('role','img');
+      cover.setAttribute('aria-label', albumLabel(item));
+      cover.style.width = `${size}px`;
+      cover.style.height = `${size}px`;
+      cover.style.left = `${p.x}px`;
+      cover.style.top = `${p.y}px`;
+      cover.style.backgroundImage = `url(${archive.spriteUrl})`;
+      cover.style.backgroundSize = `${archive.cols * size}px auto`;
+      cover.style.backgroundPosition =
+        `${-(item.slot % archive.cols) * size}px ${-Math.floor(item.slot / archive.cols) * size}px`;
+      cover.addEventListener('mouseenter', () => {
+        updateReadout(item);
+      });
+      cover.addEventListener('mousemove', event => showPreview(item, event));
+      cover.addEventListener('click', event => copyAlbumLabel(item, event));
+      cover.addEventListener('mouseleave', hidePreview);
+      fragment.appendChild(cover);
+    });
+
+    board.appendChild(fragment);
+  }
+
+  loadArchive(root)
+    .then(data => {
+      archive = data;
+      if(status) status.hidden = true;
+      updateRatingStars();
+      render();
+    })
+    .catch(() => {
+      if(status) status.textContent = 'ERROR';
+    });
+
+  ratingButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+    });
+  });
+
+  if(ratingStars){
+    ratingStars.addEventListener('pointerdown', event => {
+      event.preventDefault();
+      ratingDrag = true;
+      ratingStars.setPointerCapture(event.pointerId);
+      setRatingFilter(ratingFromPointer(event));
+    });
+    ratingStars.addEventListener('pointermove', event => {
+      if(ratingDrag) scrubRating(event);
+    });
+    ratingStars.addEventListener('pointerup', event => {
+      ratingDrag = false;
+      ratingStars.releasePointerCapture(event.pointerId);
+    });
+    ratingStars.addEventListener('pointercancel', () => {
+      ratingDrag = false;
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    render();
+    if(activeItem) syncReadoutMarquee();
+  });
 }

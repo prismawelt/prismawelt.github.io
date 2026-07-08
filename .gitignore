@@ -8,5 +8,10 @@ _site/
 .bundle/
 vendor/bundle/
 
+# Local caches
+.cache/
+__pycache__/
+*.pyc
+
 # Local Codex workspace file
 .codex

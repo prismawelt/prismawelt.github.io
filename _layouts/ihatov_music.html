@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="page ihatov-music-page">
+  <div class="album-cover-swarm"
+       data-ihatov-music
+       data-archive-url="{{ '/assets/data/ihatov/archive.json' | relative_url }}"
+       data-sprite-json-url="{{ '/assets/data/ihatov/sprite.json' | relative_url }}"
+       data-sprite-image-url="{{ '/assets/files/ihatov/music/sprite.webp' | relative_url }}"
+       data-rating-image-base="{{ '/assets/files/ihatov/music/ratings/' | relative_url }}">
+    <div id="readout"></div>
+    <div id="spectrum"></div>
+    <div class="rating-filter" aria-label="rating">
+      <div class="rating-stars" data-rating-stars>
+      {% for value in (1..10) %}
+        {% assign left = value | minus: 1 | times: 10 %}
+        <button type="button"
+                class="rating-hit"
+                data-rating-filter="{{ value }}"
+                style="left:{{ left }}%;"
+                aria-label="{{ value | divided_by: 2.0 }} stars"></button>
+      {% endfor %}
+      </div>
+    </div>
+
+    <div class="cover-preview" data-cover-preview aria-hidden="true" hidden></div>
+    <div class="ihatov-music-status" data-ihatov-music-status>LOADING</div>
+  </div>
+</div>
