@@ -458,7 +458,7 @@ function initIhatovMusic(root){
     }
 
     window.clearTimeout(previewHideTimer);
-    previewHideTimer = window.setTimeout(hidePreview, 900);
+    previewHideTimer = window.setTimeout(hidePreview, 120);
   }
 
   function beginTouchFallback(event){
@@ -511,7 +511,7 @@ function initIhatovMusic(root){
     }
 
     window.clearTimeout(previewHideTimer);
-    previewHideTimer = window.setTimeout(hidePreview, 900);
+    previewHideTimer = window.setTimeout(hidePreview, 120);
   }
 
   function filteredItems(){
@@ -537,6 +537,7 @@ function initIhatovMusic(root){
   }
 
   function setRatingFilter(next){
+    hidePreview();
     ratingFilter = ratingFilter === next ? 'all' : next;
     updateRatingStars();
     render();
@@ -544,6 +545,7 @@ function initIhatovMusic(root){
 
   function scrubRating(event){
     if(!ratingStars) return;
+    hidePreview();
     ratingFilter = ratingFromPointer(event);
     updateRatingStars();
     render();
@@ -677,8 +679,10 @@ function initIhatovMusic(root){
     ratingStars.addEventListener('contextmenu', blockNativeSelection);
     ratingStars.addEventListener('dragstart', blockNativeSelection);
     ratingStars.addEventListener('selectstart', blockNativeSelection);
+    ratingStars.addEventListener('touchstart', hidePreview, { passive:true });
     ratingStars.addEventListener('pointerdown', event => {
       event.preventDefault();
+      hidePreview();
       ratingDrag = true;
       ratingStars.setPointerCapture(event.pointerId);
       setRatingFilter(ratingFromPointer(event));
