@@ -589,11 +589,14 @@ function initIhatovMusic(root){
   }
 
   function hidePreview(){
+    window.clearTimeout(previewHideTimer);
+    previewHideTimer = 0;
     if(preview) preview.hidden = true;
   }
 
   function render(){
     if(!archive) return;
+    hidePreview();
     const rootStyle = window.getComputedStyle(root);
     const rootPadding =
       Number.parseFloat(rootStyle.paddingLeft || '0') +
@@ -708,5 +711,10 @@ function initIhatovMusic(root){
   window.addEventListener('resize', () => {
     render();
     if(activeItem) syncReadoutMarquee();
+  });
+  window.addEventListener('pagehide', hidePreview);
+  window.addEventListener('beforeunload', hidePreview);
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) hidePreview();
   });
 }
