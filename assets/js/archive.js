@@ -230,6 +230,13 @@ function initIhatovMusic(root){
   let activeItem = null;
   let copyPopup = null;
   let copyPopupTimer = 0;
+  let renderedItems = new Map();
+  let touchSelectActive = false;
+  let touchSelectMoved = false;
+  let touchSelectPointerId = null;
+  let touchSelectStart = { x: 0, y: 0 };
+  let touchSelectedCover = null;
+  let suppressNextCoverClick = false;
 
   function albumLabel(item){
     const artist = item.artist || item.artist_latin || '';
@@ -239,9 +246,11 @@ function initIhatovMusic(root){
   function updateReadout(item){
     if(!readout) return;
     activeItem = item;
+    const existingPopup = copyPopup && copyPopup.parentNode === readout ? copyPopup : null;
     readout.textContent = '';
     readout.appendChild(readoutLine(item.artist || item.artist_latin || '', 'artist'));
     readout.appendChild(readoutLine(item.title || '', 'album'));
+    if(existingPopup) readout.appendChild(existingPopup);
     requestAnimationFrame(syncReadoutMarquee);
   }
 
@@ -315,38 +324,99 @@ function initIhatovMusic(root){
     copyPopup.setAttribute('role', 'status');
     copyPopup.setAttribute('aria-live', 'polite');
     copyPopup.hidden = true;
-    root.appendChild(copyPopup);
+    if(readout) readout.appendChild(copyPopup);
+    else root.appendChild(copyPopup);
     return copyPopup;
   }
 
-  function showCopyPopup(value, event, copied){
+  function showCopyPopup(value, copied){
     const popup = ensureCopyPopup();
-    popup.textContent = copied ? `COPIED ${value}` : 'COPY FAILED';
+    popup.textContent = copied ? 'COPIED' : 'FAILED';
     popup.hidden = false;
     popup.classList.remove('is-visible');
+    if(readout) readout.classList.add('has-copy-popup');
     window.clearTimeout(copyPopupTimer);
-
-    const gap = 14;
-    requestAnimationFrame(() => {
-      const rect = popup.getBoundingClientRect();
-      const x = Math.min(event.clientX + gap, window.innerWidth - rect.width - gap);
-      const y = Math.min(event.clientY + gap, window.innerHeight - rect.height - gap);
-      popup.style.left = `${Math.max(gap, x)}px`;
-      popup.style.top = `${Math.max(gap, y)}px`;
-      popup.classList.add('is-visible');
-    });
+    requestAnimationFrame(() => popup.classList.add('is-visible'));
 
     copyPopupTimer = window.setTimeout(() => {
       popup.classList.remove('is-visible');
       window.setTimeout(() => {
-        if(!popup.classList.contains('is-visible')) popup.hidden = true;
+        if(!popup.classList.contains('is-visible')){
+          popup.hidden = true;
+          if(readout) readout.classList.remove('has-copy-popup');
+        }
       }, 180);
     }, 1200);
   }
 
-  function copyAlbumLabel(item, event){
+  function copyAlbumLabel(item){
     const value = albumLabel(item);
-    copyText(value).then(copied => showCopyPopup(value, event, copied));
+    copyText(value).then(copied => showCopyPopup(value, copied));
+  }
+
+  function coverAtPoint(event){
+    const el = document.elementFromPoint(event.clientX, event.clientY);
+    if(!el || !el.closest) return null;
+    const cover = el.closest('.ihatov-cover');
+    if(!cover || !board.contains(cover)) return null;
+    return cover;
+  }
+
+  function selectCover(cover){
+    if(!cover) return;
+    if(touchSelectedCover && touchSelectedCover !== cover){
+      touchSelectedCover.classList.remove('is-selected');
+    }
+    touchSelectedCover = cover;
+    cover.classList.add('is-selected');
+    const item = renderedItems.get(cover.dataset.itemId);
+    if(item) updateReadout(item);
+  }
+
+  function beginTouchSelect(event){
+    if(event.pointerType === 'mouse') return;
+    const cover = coverAtPoint(event);
+    if(!cover) return;
+    event.preventDefault();
+    touchSelectActive = true;
+    touchSelectMoved = false;
+    touchSelectPointerId = event.pointerId;
+    touchSelectStart = { x: event.clientX, y: event.clientY };
+    board.setPointerCapture(event.pointerId);
+    selectCover(cover);
+  }
+
+  function moveTouchSelect(event){
+    if(!touchSelectActive || event.pointerId !== touchSelectPointerId) return;
+    event.preventDefault();
+    const dx = event.clientX - touchSelectStart.x;
+    const dy = event.clientY - touchSelectStart.y;
+    if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
+    selectCover(coverAtPoint(event));
+  }
+
+  function endTouchSelect(event, copyOnTap){
+    if(!touchSelectActive || event.pointerId !== touchSelectPointerId) return;
+    event.preventDefault();
+    const selectedCover = touchSelectedCover;
+    const moved = touchSelectMoved;
+    touchSelectActive = false;
+    touchSelectPointerId = null;
+    try{
+      board.releasePointerCapture(event.pointerId);
+    } catch(_error){
+      // Pointer capture may already be gone after browser cancellation.
+    }
+
+    suppressNextCoverClick = true;
+    window.setTimeout(() => {
+      suppressNextCoverClick = false;
+    }, 250);
+
+    if(copyOnTap && !moved && selectedCover){
+      const item = renderedItems.get(selectedCover.dataset.itemId);
+      if(item) copyAlbumLabel(item);
+    }
   }
 
   function filteredItems(){
@@ -382,6 +452,10 @@ function initIhatovMusic(root){
     ratingFilter = ratingFromPointer(event);
     updateRatingStars();
     render();
+  }
+
+  function blockNativeSelection(event){
+    event.preventDefault();
   }
 
   function movePreview(event){
@@ -428,11 +502,14 @@ function initIhatovMusic(root){
     board.style.width = `${lay.w}px`;
     board.style.height = `${lay.h}px`;
     board.textContent = '';
+    renderedItems = new Map(sorted.map(item => [item.id, item]));
+    touchSelectedCover = null;
 
     sorted.forEach(item => {
       const p = lay.pos[item.id];
       const cover = document.createElement('div');
       cover.className = 'cover ihatov-cover';
+      cover.dataset.itemId = item.id;
       cover.setAttribute('role','img');
       cover.setAttribute('aria-label', albumLabel(item));
       cover.style.width = `${size}px`;
@@ -447,7 +524,13 @@ function initIhatovMusic(root){
         updateReadout(item);
       });
       cover.addEventListener('mousemove', event => showPreview(item, event));
-      cover.addEventListener('click', event => copyAlbumLabel(item, event));
+      cover.addEventListener('click', event => {
+        if(suppressNextCoverClick){
+          event.preventDefault();
+          return;
+        }
+        copyAlbumLabel(item);
+      });
       cover.addEventListener('mouseleave', hidePreview);
       fragment.appendChild(cover);
     });
@@ -467,12 +550,20 @@ function initIhatovMusic(root){
     });
 
   ratingButtons.forEach(button => {
+    button.setAttribute('draggable', 'false');
     button.addEventListener('click', event => {
       event.preventDefault();
     });
+    button.addEventListener('contextmenu', blockNativeSelection);
+    button.addEventListener('dragstart', blockNativeSelection);
+    button.addEventListener('selectstart', blockNativeSelection);
   });
 
   if(ratingStars){
+    ratingStars.setAttribute('draggable', 'false');
+    ratingStars.addEventListener('contextmenu', blockNativeSelection);
+    ratingStars.addEventListener('dragstart', blockNativeSelection);
+    ratingStars.addEventListener('selectstart', blockNativeSelection);
     ratingStars.addEventListener('pointerdown', event => {
       event.preventDefault();
       ratingDrag = true;
@@ -480,9 +571,13 @@ function initIhatovMusic(root){
       setRatingFilter(ratingFromPointer(event));
     });
     ratingStars.addEventListener('pointermove', event => {
-      if(ratingDrag) scrubRating(event);
+      if(ratingDrag){
+        event.preventDefault();
+        scrubRating(event);
+      }
     });
     ratingStars.addEventListener('pointerup', event => {
+      event.preventDefault();
       ratingDrag = false;
       ratingStars.releasePointerCapture(event.pointerId);
     });
@@ -490,6 +585,11 @@ function initIhatovMusic(root){
       ratingDrag = false;
     });
   }
+
+  board.addEventListener('pointerdown', beginTouchSelect);
+  board.addEventListener('pointermove', moveTouchSelect);
+  board.addEventListener('pointerup', event => endTouchSelect(event, true));
+  board.addEventListener('pointercancel', event => endTouchSelect(event, false));
 
   window.addEventListener('resize', () => {
     render();
