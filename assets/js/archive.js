@@ -232,12 +232,14 @@ function initIhatovMusic(root){
   let copyPopupTimer = 0;
   let previewHideTimer = 0;
   let renderedItems = new Map();
+  let renderedCovers = [];
   let touchSelectActive = false;
   let touchSelectMoved = false;
   let touchSelectPointerId = null;
   let touchSelectStart = { x: 0, y: 0 };
   let touchSelectedCover = null;
   let suppressNextCoverClick = false;
+  let touchFallbackActive = false;
 
   function albumLabel(item){
     const artist = item.artist || item.artist_latin || '';
@@ -355,8 +357,33 @@ function initIhatovMusic(root){
     copyText(value).then(copied => showCopyPopup(value, copied));
   }
 
+  function eventPoint(event){
+    const touch =
+      event.touches && event.touches[0] ? event.touches[0] :
+      event.changedTouches && event.changedTouches[0] ? event.changedTouches[0] :
+      event;
+    if(typeof touch.clientX !== 'number' || typeof touch.clientY !== 'number') return null;
+    return { x: touch.clientX, y: touch.clientY };
+  }
+
+  function isTouchLike(event){
+    return event.pointerType === 'touch' || Boolean(event.touches || event.changedTouches);
+  }
+
   function coverAtPoint(event){
-    const el = document.elementFromPoint(event.clientX, event.clientY);
+    const point = eventPoint(event);
+    if(!point) return null;
+    const rect = board.getBoundingClientRect();
+    const x = point.x - rect.left;
+    const y = point.y - rect.top;
+    for(let i = renderedCovers.length - 1; i >= 0; i -= 1){
+      const cover = renderedCovers[i];
+      if(x >= cover.x && x < cover.x + cover.size && y >= cover.y && y < cover.y + cover.size){
+        return cover.el;
+      }
+    }
+
+    const el = document.elementFromPoint(point.x, point.y);
     if(!el || !el.closest) return null;
     const cover = el.closest('.ihatov-cover');
     if(!cover || !board.contains(cover)) return null;
@@ -382,20 +409,28 @@ function initIhatovMusic(root){
     const cover = coverAtPoint(event);
     if(!cover) return;
     event.preventDefault();
+    touchFallbackActive = false;
     touchSelectActive = true;
     touchSelectMoved = false;
     touchSelectPointerId = event.pointerId;
-    touchSelectStart = { x: event.clientX, y: event.clientY };
-    board.setPointerCapture(event.pointerId);
+    touchSelectStart = eventPoint(event);
+    try{
+      board.setPointerCapture(event.pointerId);
+    } catch(_error){
+      // Some mobile browsers expose pointer events without reliable capture.
+    }
     selectCover(cover, event);
   }
 
   function moveTouchSelect(event){
     if(!touchSelectActive || event.pointerId !== touchSelectPointerId) return;
     event.preventDefault();
-    const dx = event.clientX - touchSelectStart.x;
-    const dy = event.clientY - touchSelectStart.y;
-    if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
+    const point = eventPoint(event);
+    if(point && touchSelectStart){
+      const dx = point.x - touchSelectStart.x;
+      const dy = point.y - touchSelectStart.y;
+      if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
+    }
     selectCover(coverAtPoint(event), event);
   }
 
@@ -411,6 +446,59 @@ function initIhatovMusic(root){
     } catch(_error){
       // Pointer capture may already be gone after browser cancellation.
     }
+
+    suppressNextCoverClick = true;
+    window.setTimeout(() => {
+      suppressNextCoverClick = false;
+    }, 250);
+
+    if(copyOnTap && !moved && selectedCover){
+      const item = renderedItems.get(selectedCover.dataset.itemId);
+      if(item) copyAlbumLabel(item);
+    }
+
+    window.clearTimeout(previewHideTimer);
+    previewHideTimer = window.setTimeout(hidePreview, 900);
+  }
+
+  function beginTouchFallback(event){
+    if(touchSelectActive){
+      event.preventDefault();
+      touchFallbackActive = true;
+      return;
+    }
+    const cover = coverAtPoint(event);
+    if(!cover) return;
+    event.preventDefault();
+    touchFallbackActive = true;
+    touchSelectActive = true;
+    touchSelectMoved = false;
+    touchSelectPointerId = null;
+    touchSelectStart = eventPoint(event);
+    selectCover(cover, event);
+  }
+
+  function moveTouchFallback(event){
+    if(!touchSelectActive) return;
+    event.preventDefault();
+    touchFallbackActive = true;
+    const point = eventPoint(event);
+    if(point && touchSelectStart){
+      const dx = point.x - touchSelectStart.x;
+      const dy = point.y - touchSelectStart.y;
+      if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
+    }
+    selectCover(coverAtPoint(event), event);
+  }
+
+  function endTouchFallback(event, copyOnTap){
+    if(!touchSelectActive) return;
+    event.preventDefault();
+    const selectedCover = touchSelectedCover;
+    const moved = touchSelectMoved;
+    touchFallbackActive = false;
+    touchSelectActive = false;
+    touchSelectPointerId = null;
 
     suppressNextCoverClick = true;
     window.setTimeout(() => {
@@ -467,10 +555,19 @@ function initIhatovMusic(root){
 
   function movePreview(event){
     if(!preview || preview.hidden) return;
+    const point = eventPoint(event);
+    if(!point) return;
     const rect = preview.getBoundingClientRect();
     const gap = 14;
-    const x = Math.min(event.clientX + gap, window.innerWidth - rect.width - gap);
-    const y = Math.min(event.clientY + gap, window.innerHeight - rect.height - gap);
+    let x = point.x + gap;
+    let y = point.y + gap;
+    if(isTouchLike(event)){
+      x = point.x - (rect.width / 2);
+      y = point.y - rect.height - 24;
+      if(y < gap) y = point.y + 24;
+    }
+    x = Math.min(x, window.innerWidth - rect.width - gap);
+    y = Math.min(y, window.innerHeight - rect.height - gap);
     preview.style.left = `${Math.max(gap, x)}px`;
     preview.style.top = `${Math.max(gap, y)}px`;
   }
@@ -478,7 +575,9 @@ function initIhatovMusic(root){
   function showPreview(item, event){
     if(!preview || !archive) return;
     window.clearTimeout(previewHideTimer);
-    const previewSize = Math.round(Math.max(112, Math.min(190, window.innerWidth * 0.16)) / 2);
+    const previewSize = isTouchLike(event)
+      ? Math.round(Math.max(84, Math.min(112, window.innerWidth * 0.24)))
+      : Math.round(Math.max(112, Math.min(190, window.innerWidth * 0.16)) / 2);
     preview.hidden = false;
     preview.style.width = `${previewSize}px`;
     preview.style.height = `${previewSize}px`;
@@ -511,6 +610,7 @@ function initIhatovMusic(root){
     board.style.height = `${lay.h}px`;
     board.textContent = '';
     renderedItems = new Map(sorted.map(item => [item.id, item]));
+    renderedCovers = [];
     touchSelectedCover = null;
 
     sorted.forEach(item => {
@@ -537,10 +637,12 @@ function initIhatovMusic(root){
           event.preventDefault();
           return;
         }
+        showPreview(item, event);
         copyAlbumLabel(item);
       });
       cover.addEventListener('mouseleave', hidePreview);
       fragment.appendChild(cover);
+      renderedCovers.push({ el: cover, x: p.x, y: p.y, size });
     });
 
     board.appendChild(fragment);
@@ -598,6 +700,10 @@ function initIhatovMusic(root){
   board.addEventListener('pointermove', moveTouchSelect);
   board.addEventListener('pointerup', event => endTouchSelect(event, true));
   board.addEventListener('pointercancel', event => endTouchSelect(event, false));
+  board.addEventListener('touchstart', beginTouchFallback, { passive:false });
+  board.addEventListener('touchmove', moveTouchFallback, { passive:false });
+  board.addEventListener('touchend', event => endTouchFallback(event, true), { passive:false });
+  board.addEventListener('touchcancel', event => endTouchFallback(event, false), { passive:false });
 
   window.addEventListener('resize', () => {
     render();
