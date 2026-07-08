@@ -230,6 +230,7 @@ function initIhatovMusic(root){
   let activeItem = null;
   let copyPopup = null;
   let copyPopupTimer = 0;
+  let previewHideTimer = 0;
   let renderedItems = new Map();
   let touchSelectActive = false;
   let touchSelectMoved = false;
@@ -362,7 +363,7 @@ function initIhatovMusic(root){
     return cover;
   }
 
-  function selectCover(cover){
+  function selectCover(cover, event){
     if(!cover) return;
     if(touchSelectedCover && touchSelectedCover !== cover){
       touchSelectedCover.classList.remove('is-selected');
@@ -370,7 +371,10 @@ function initIhatovMusic(root){
     touchSelectedCover = cover;
     cover.classList.add('is-selected');
     const item = renderedItems.get(cover.dataset.itemId);
-    if(item) updateReadout(item);
+    if(item){
+      updateReadout(item);
+      if(event) showPreview(item, event);
+    }
   }
 
   function beginTouchSelect(event){
@@ -383,7 +387,7 @@ function initIhatovMusic(root){
     touchSelectPointerId = event.pointerId;
     touchSelectStart = { x: event.clientX, y: event.clientY };
     board.setPointerCapture(event.pointerId);
-    selectCover(cover);
+    selectCover(cover, event);
   }
 
   function moveTouchSelect(event){
@@ -392,7 +396,7 @@ function initIhatovMusic(root){
     const dx = event.clientX - touchSelectStart.x;
     const dy = event.clientY - touchSelectStart.y;
     if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
-    selectCover(coverAtPoint(event));
+    selectCover(coverAtPoint(event), event);
   }
 
   function endTouchSelect(event, copyOnTap){
@@ -417,6 +421,9 @@ function initIhatovMusic(root){
       const item = renderedItems.get(selectedCover.dataset.itemId);
       if(item) copyAlbumLabel(item);
     }
+
+    window.clearTimeout(previewHideTimer);
+    previewHideTimer = window.setTimeout(hidePreview, 900);
   }
 
   function filteredItems(){
@@ -470,6 +477,7 @@ function initIhatovMusic(root){
 
   function showPreview(item, event){
     if(!preview || !archive) return;
+    window.clearTimeout(previewHideTimer);
     const previewSize = Math.round(Math.max(112, Math.min(190, window.innerWidth * 0.16)) / 2);
     preview.hidden = false;
     preview.style.width = `${previewSize}px`;
