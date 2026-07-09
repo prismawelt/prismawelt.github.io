@@ -372,10 +372,6 @@ function initIhatovMusic(root){
     return event.pointerType === 'touch' || Boolean(event.touches || event.changedTouches);
   }
 
-  function markTouchInteraction(event){
-    if(isTouchLike(event)) lastTouchInteractionAt = Date.now();
-  }
-
   function hasRecentTouchInteraction(){
     return Date.now() - lastTouchInteractionAt < recentTouchThreshold;
   }
@@ -400,7 +396,7 @@ function initIhatovMusic(root){
     return cover;
   }
 
-  function selectCover(cover, event){
+  function selectCover(cover, event, forceTouchPreview){
     if(!cover) return;
     if(touchSelectedCover && touchSelectedCover !== cover){
       touchSelectedCover.classList.remove('is-selected');
@@ -410,7 +406,7 @@ function initIhatovMusic(root){
     const item = renderedItems.get(cover.dataset.itemId);
     if(item){
       updateReadout(item);
-      if(event) showPreview(item, event);
+      if(event) showPreview(item, event, forceTouchPreview);
     }
   }
 
@@ -419,7 +415,7 @@ function initIhatovMusic(root){
     const cover = coverAtPoint(event);
     if(!cover) return;
     event.preventDefault();
-    markTouchInteraction(event);
+    lastTouchInteractionAt = Date.now();
     touchFallbackActive = false;
     touchSelectActive = true;
     touchSelectMoved = false;
@@ -430,26 +426,26 @@ function initIhatovMusic(root){
     } catch(_error){
       // Some mobile browsers expose pointer events without reliable capture.
     }
-    selectCover(cover, event);
+    selectCover(cover, event, true);
   }
 
   function moveTouchSelect(event){
     if(!touchSelectActive || event.pointerId !== touchSelectPointerId) return;
     event.preventDefault();
-    markTouchInteraction(event);
+    lastTouchInteractionAt = Date.now();
     const point = eventPoint(event);
     if(point && touchSelectStart){
       const dx = point.x - touchSelectStart.x;
       const dy = point.y - touchSelectStart.y;
       if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
     }
-    selectCover(coverAtPoint(event), event);
+    selectCover(coverAtPoint(event), event, true);
   }
 
   function endTouchSelect(event, copyOnTap){
     if(!touchSelectActive || event.pointerId !== touchSelectPointerId) return;
     event.preventDefault();
-    markTouchInteraction(event);
+    lastTouchInteractionAt = Date.now();
     const selectedCover = touchSelectedCover;
     const moved = touchSelectMoved;
     touchSelectActive = false;
@@ -477,26 +473,26 @@ function initIhatovMusic(root){
   function beginTouchFallback(event){
     if(touchSelectActive){
       event.preventDefault();
-      markTouchInteraction(event);
+      lastTouchInteractionAt = Date.now();
       touchFallbackActive = true;
       return;
     }
     const cover = coverAtPoint(event);
     if(!cover) return;
     event.preventDefault();
-    markTouchInteraction(event);
+    lastTouchInteractionAt = Date.now();
     touchFallbackActive = true;
     touchSelectActive = true;
     touchSelectMoved = false;
     touchSelectPointerId = null;
     touchSelectStart = eventPoint(event);
-    selectCover(cover, event);
+    selectCover(cover, event, true);
   }
 
   function moveTouchFallback(event){
     if(!touchSelectActive) return;
     event.preventDefault();
-    markTouchInteraction(event);
+    lastTouchInteractionAt = Date.now();
     touchFallbackActive = true;
     const point = eventPoint(event);
     if(point && touchSelectStart){
@@ -504,13 +500,13 @@ function initIhatovMusic(root){
       const dy = point.y - touchSelectStart.y;
       if(Math.hypot(dx, dy) > 8) touchSelectMoved = true;
     }
-    selectCover(coverAtPoint(event), event);
+    selectCover(coverAtPoint(event), event, true);
   }
 
   function endTouchFallback(event, copyOnTap){
     if(!touchSelectActive) return;
     event.preventDefault();
-    markTouchInteraction(event);
+    lastTouchInteractionAt = Date.now();
     const selectedCover = touchSelectedCover;
     const moved = touchSelectMoved;
     touchFallbackActive = false;
@@ -572,29 +568,35 @@ function initIhatovMusic(root){
     event.preventDefault();
   }
 
-  function movePreview(event){
+  function movePreview(event, forceTouchPreview){
     if(!preview || preview.hidden) return;
     const point = eventPoint(event);
     if(!point) return;
     const rect = preview.getBoundingClientRect();
     const gap = 14;
+    const touchPreview = forceTouchPreview || isTouchLike(event) || hasRecentTouchInteraction();
     let x = point.x + gap;
     let y = point.y + gap;
-    if(isTouchLike(event)){
+    if(touchPreview){
       x = point.x - (rect.width / 2);
       y = point.y - rect.height - 24;
     }
     x = Math.min(x, window.innerWidth - rect.width - gap);
-    y = Math.min(y, window.innerHeight - rect.height - gap);
     preview.style.left = `${Math.max(gap, x)}px`;
-    preview.style.top = `${Math.max(gap, y)}px`;
+    preview.style.top = touchPreview
+      ? `${y}px`
+      : `${Math.max(gap, Math.min(y, window.innerHeight - rect.height - gap))}px`;
   }
 
-  function showPreview(item, event){
+  function showPreview(item, event, forceTouchPreview){
     if(!preview || !archive) return;
     window.clearTimeout(previewHideTimer);
-    const previewSize = isTouchLike(event)
-      ? Math.round(Math.max(84, Math.min(112, window.innerWidth * 0.24)))
+    const touchPreview = forceTouchPreview || isTouchLike(event) || hasRecentTouchInteraction();
+    const point = eventPoint(event);
+    const touchBaseSize = Math.round(Math.max(84, Math.min(112, window.innerWidth * 0.24)));
+    const touchAvailableAbove = point ? point.y - 38 : touchBaseSize;
+    const previewSize = touchPreview
+      ? Math.round(touchAvailableAbove > 0 ? Math.min(touchBaseSize, Math.max(32, touchAvailableAbove)) : touchBaseSize)
       : Math.round(Math.max(112, Math.min(190, window.innerWidth * 0.16)) / 2);
     preview.hidden = false;
     preview.style.width = `${previewSize}px`;
@@ -603,7 +605,7 @@ function initIhatovMusic(root){
     preview.style.backgroundSize = `${archive.cols * previewSize}px auto`;
     preview.style.backgroundPosition =
       `${-(item.slot % archive.cols) * previewSize}px ${-Math.floor(item.slot / archive.cols) * previewSize}px`;
-    movePreview(event);
+    movePreview(event, touchPreview);
   }
 
   function hidePreview(){
