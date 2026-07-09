@@ -903,7 +903,7 @@ video{
   position:absolute;
   left:0;
   top:0;
-  border-radius:2px;
+  border-radius:0;
   cursor:pointer;
   background-repeat:no-repeat;
   background-color:#fff;
@@ -926,7 +926,7 @@ video{
   top:0;
   z-index:200;
   pointer-events:none;
-  border-radius:2px;
+  border-radius:0;
   background-repeat:no-repeat;
   background-color:#fff;
   box-shadow:0 4px 16px rgba(0,0,0,.35);
