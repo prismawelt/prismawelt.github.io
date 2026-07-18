@@ -254,7 +254,8 @@ function initIhatovMusic(root){
     const existingPopup = copyPopup && copyPopup.parentNode === readout ? copyPopup : null;
     readout.textContent = '';
     readout.appendChild(readoutLine(item.artist || item.artist_latin || '', 'artist'));
-    readout.appendChild(readoutLine(item.title || '', 'album'));
+    const title = item.year ? `${item.title || ''} (${item.year})` : item.title || '';
+    readout.appendChild(readoutLine(title, 'album'));
     readout.appendChild(readoutRatingLine(item));
     if(existingPopup) readout.appendChild(existingPopup);
     requestAnimationFrame(syncReadoutMarquee);
