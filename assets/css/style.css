@@ -830,12 +830,12 @@ video{
   position:sticky;
   top:calc(var(--safe-top, 0px) + var(--menu-h));
   z-index:70;
-  height:52px;
-  min-height:52px;
+  height:70px;
+  min-height:70px;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:3px;
+  gap:2px;
   overflow:hidden;
   background:var(--swarm-bg);
   font-size:18px;
@@ -858,8 +858,21 @@ video{
   --marquee-duration:12s;
   width:100%;
   overflow:hidden;
-  line-height:1.12;
+  line-height:1.08;
   white-space:nowrap;
+}
+
+.album-cover-swarm .readout-rating{
+  height:12.5px;
+  line-height:1;
+}
+
+.album-cover-swarm .readout-rating-stars{
+  display:block;
+  width:70px;
+  height:12.5px;
+  background-repeat:no-repeat;
+  background-size:70px 12.5px;
 }
 
 .album-cover-swarm .readout-track{

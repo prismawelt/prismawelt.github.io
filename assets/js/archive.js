@@ -255,8 +255,14 @@ function initIhatovMusic(root){
     readout.textContent = '';
     readout.appendChild(readoutLine(item.artist || item.artist_latin || '', 'artist'));
     readout.appendChild(readoutLine(item.title || '', 'album'));
+    readout.appendChild(readoutRatingLine(item));
     if(existingPopup) readout.appendChild(existingPopup);
     requestAnimationFrame(syncReadoutMarquee);
+  }
+
+  function ratingImageUrl(rating){
+    const value = Math.max(0, Math.min(10, Number(rating) || 0));
+    return `${root.dataset.ratingImageBase}${value}m.png`;
   }
 
   function readoutLine(textValue, kind){
@@ -277,6 +283,20 @@ function initIhatovMusic(root){
 
     track.append(text, copy);
     line.appendChild(track);
+    return line;
+  }
+
+  function readoutRatingLine(item){
+    const line = document.createElement('div');
+    line.className = 'readout-rating';
+
+    const stars = document.createElement('span');
+    stars.className = 'readout-rating-stars';
+    stars.style.backgroundImage = `url(${ratingImageUrl(item.rating)})`;
+    stars.setAttribute('role', 'img');
+    stars.setAttribute('aria-label', `${Number(item.rating) / 2} stars`);
+
+    line.appendChild(stars);
     return line;
   }
 
@@ -537,7 +557,7 @@ function initIhatovMusic(root){
   function updateRatingStars(){
     const rating = ratingFilter === 'all' ? 0 : Number(ratingFilter);
     if(ratingStars){
-      ratingStars.style.backgroundImage = `url(${root.dataset.ratingImageBase}${rating}m.png)`;
+      ratingStars.style.backgroundImage = `url(${ratingImageUrl(rating)})`;
     }
   }
 
