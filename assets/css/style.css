@@ -830,17 +830,19 @@ video{
   position:sticky;
   top:calc(var(--safe-top, 0px) + var(--menu-h));
   z-index:70;
-  height:70px;
-  min-height:70px;
+  height:67px;
+  min-height:67px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   gap:2px;
+  box-sizing:border-box;
+  padding-top:7px;
   overflow:hidden;
   background:var(--swarm-bg);
   font-size:18px;
   color:var(--swarm-mut);
-  margin:0 0 10px;
+  margin:0;
 }
 
 .album-cover-swarm #readout b,
