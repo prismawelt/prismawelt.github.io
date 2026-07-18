@@ -245,7 +245,8 @@ function initIhatovMusic(root){
 
   function albumLabel(item){
     const artist = item.artist || item.artist_latin || '';
-    return `${artist} - ${item.title}`;
+    const year = item.year ? ` (${item.year})` : '';
+    return `${artist} - ${item.title}${year}`;
   }
 
   function updateReadout(item){
