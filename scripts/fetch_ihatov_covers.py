@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import datetime as dt
 import hashlib
+import io
 import json
 import math
 import random
@@ -21,6 +22,7 @@ DEFAULT_SPRITE_JSON = "assets/data/ihatov/sprite.json"
 DEFAULT_SPRITE_IMAGE = "assets/files/ihatov/music/sprite.webp"
 DEFAULT_CACHE_DIR = ".cache/ihatov_music"
 DEFAULT_LASTFM_ENV = ".cache/ihatov_music/lastfm.env"
+DEFAULT_OVERRIDES = "scripts/ihatov_cover_overrides.json"
 COUNTRIES = ("KR", "JP", "US", "GB", "FR", "DE", "CA", "AU", "TW", "HK", "SG")
 USER_AGENT = "prismawelt.github.io ihatov cover builder (https://prismawelt.github.io)"
 MIN_MATCH_SCORE = 14
@@ -1114,6 +1116,105 @@ def utc_now():
     return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 
+def override_local_path(location):
+    windows_path = re.match(r"^([A-Za-z]):[\\/](.*)$", location)
+    if windows_path:
+        drive = windows_path.group(1).lower()
+        suffix = windows_path.group(2).replace("\\", "/")
+        return Path("/mnt") / drive / suffix
+    return Path(location) if not location.startswith(("http://", "https://")) else None
+
+
+def download_override(item, location, cache_dir):
+    local_path = override_local_path(location)
+    if local_path is not None:
+        content = local_path.read_bytes()
+    else:
+        response = requests.get(
+            location,
+            timeout=30,
+            allow_redirects=True,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+            },
+        )
+        response.raise_for_status()
+        content = response.content
+    with Image.open(io.BytesIO(content)) as image:
+        image_format = (image.format or "").upper()
+        image.verify()
+    extension = {
+        "JPEG": ".jpg",
+        "PNG": ".png",
+        "WEBP": ".webp",
+        "GIF": ".gif",
+    }.get(image_format, ".img")
+    rel_path = f"covers/{item['id']}{extension}"
+    cover_path = cache_dir / rel_path
+    cover_path.parent.mkdir(parents=True, exist_ok=True)
+    cover_path.write_bytes(content)
+    return {
+        "status": "ok",
+        "path": rel_path,
+        "source": "override",
+        "matched_artist": item.get("artist", ""),
+        "matched_title": item.get("title", ""),
+        "matched_score": MIN_MATCH_SCORE,
+        "url": location,
+        "updated_at": utc_now(),
+    }
+
+
+def apply_cover_overrides(items, cache_dir, cache, overrides_path, workers=2):
+    if not overrides_path.exists():
+        return
+    overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
+    items_by_id = {item["id"]: item for item in items}
+    pending = []
+    for item_id, location in overrides.items():
+        item = items_by_id.get(item_id)
+        if not item:
+            print(f"override ignored; unknown id: {item_id}", flush=True)
+            continue
+        cached = cache.get(item_id, {})
+        cover_path = cache_dir / cached.get("path", "")
+        if (
+            cached.get("status") == "ok"
+            and cached.get("source") == "override"
+            and cached.get("url") == location
+            and cover_path.exists()
+        ):
+            continue
+        pending.append((item, location))
+
+    if not pending:
+        return
+    print(f"downloading {len(pending)} cover overrides", flush=True)
+    completed = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, workers)) as executor:
+        futures = {
+            executor.submit(download_override, item, location, cache_dir): item
+            for item, location in pending
+        }
+        for future in concurrent.futures.as_completed(futures):
+            item = futures[future]
+            try:
+                cache[item["id"]] = future.result()
+            except Exception as exc:
+                print(
+                    f"override failed: {item['artist']} - {item['title']}: {type(exc).__name__}: {exc}",
+                    flush=True,
+                )
+            completed += 1
+            if completed % 5 == 0 or completed == len(pending):
+                (cache_dir / "cover-cache.json").write_text(
+                    json.dumps(cache, ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+                print(f"{completed}/{len(pending)} overrides processed", flush=True)
+
+
 def find_font(size, bold=False):
     candidates = [
         "/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
@@ -1260,6 +1361,7 @@ def main():
     parser.add_argument("--sprite-json", default=DEFAULT_SPRITE_JSON)
     parser.add_argument("--sprite-image", default=DEFAULT_SPRITE_IMAGE)
     parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR)
+    parser.add_argument("--overrides", default=DEFAULT_OVERRIDES)
     parser.add_argument("--tile-size", type=int, default=96)
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--limit", type=int, default=0, help="Limit items for testing; 0 means all.")
@@ -1304,6 +1406,15 @@ def main():
         cache = json.loads(cache_path.read_text(encoding="utf-8"))
     else:
         cache = {}
+
+    if not args.skip_network:
+        apply_cover_overrides(
+            items,
+            cache_dir,
+            cache,
+            Path(args.overrides),
+            workers=args.workers,
+        )
 
     if not args.skip_network:
         pending = [

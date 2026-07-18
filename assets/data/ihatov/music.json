@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T15:01:13+00:00",
+  "generated_at": "2026-07-18T09:11:31+00:00",
   "source": "/mnt/d/00_Inbox/2heon2-music-export.csv",
   "count": 2339,
   "items": [
@@ -414,7 +414,7 @@
     {
       "id": "rym-1303691",
       "source_id": "1303691",
-      "cover": "",
+      "cover": "https://image.bugsm.co.kr/album/images/500/80027/8002785.jpg",
       "artist": "이문세",
       "artist_latin": "Lee Moon-sae",
       "title": "사랑이 지나가면 / 깊은 밤을 날아서",
@@ -425,8 +425,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Lee Moon-sae 1987 사랑이 지나가면 / 깊은 밤을 날아서",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1303691.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9137499",
@@ -618,7 +618,7 @@
     {
       "id": "rym-8117294",
       "source_id": "8117294",
-      "cover": "",
+      "cover": "https://mblogthumb-phinf.pstatic.net/20130611_93/okonechu_137096141213255CeQ_JPEG/Cover.jpg?type=w420",
       "artist": "한량사",
       "artist_latin": "한량사",
       "title": "折衝 Project Vol. 02",
@@ -629,8 +629,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "한량사 2003 折衝 Project Vol. 02",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8117294.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14893462",
@@ -873,7 +873,7 @@
     {
       "id": "rym-4020511",
       "source_id": "4020511",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/828eb359d85b2f72f30c01c31886b8b5/4220637",
       "artist": "국립국악원",
       "artist_latin": "National Gugak Center",
       "title": "Court Music",
@@ -884,8 +884,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "National Gugak Center 1995 Court Music",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-4020511.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-8433045",
@@ -2131,7 +2131,7 @@
     {
       "id": "rym-12870043",
       "source_id": "12870043",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/e8ad8891b1ee5b006fb06374ec4495c4/8890646",
       "artist": "한갑득, 박정희 & 정철호",
       "artist_latin": "Han Gap-deuk, Park Jung-hee & Jeong Cheol-ho",
       "title": "거문고 산조 / 아쟁 산조 (Gumoongo-Sanjoh; A Jaing Sanjoh)",
@@ -2142,8 +2142,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Han Gap-deuk, Park Jung-hee & Jeong Cheol-ho 1977 거문고 산조 / 아쟁 산조 (Gumoongo-Sanjoh; A Jaing Sanjoh)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12870043.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14921086",
@@ -2845,7 +2845,7 @@
     {
       "id": "rym-413208",
       "source_id": "413208",
-      "cover": "",
+      "cover": "https://i.discogs.com/fs3719s6KH9eZTtyvnEhnfQTr_ueOQdnjkgw0W1sHTc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMzEy/NTcxLTE2ODYwODE0/NjEtNTkwOC5qcGVn.jpeg",
       "artist": "A Sei Voci / Bernard Fabre-Garrus",
       "artist_latin": "A Sei Voci / Bernard Fabre-Garrus",
       "title": "Ave Maria; Missa de Oliveria",
@@ -2856,8 +2856,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "A Sei Voci / Bernard Fabre-Garrus 2000 Ave Maria; Missa de Oliveria",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-413208.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14755149",
@@ -2930,7 +2930,7 @@
     {
       "id": "rym-9698892",
       "source_id": "9698892",
-      "cover": "",
+      "cover": "https://mblogthumb-phinf.pstatic.net/20130610_127/okonechu_1370792146866H51QB_JPEG/cover.jpg?type=w420",
       "artist": "AT431",
       "artist_latin": "AT431",
       "title": "절충 (折衝) Project Vol. 01",
@@ -2941,8 +2941,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "AT431 2002 절충 (折衝) Project Vol. 01",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-9698892.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9186813",
@@ -3899,7 +3899,7 @@
     {
       "id": "rym-16252688",
       "source_id": "16252688",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a4040006101_16.jpg",
       "artist": "Bedroom Angel",
       "artist_latin": "Bedroom Angel",
       "title": "美味しい水道水",
@@ -3910,8 +3910,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Bedroom Angel 2025 美味しい水道水",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-16252688.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-4585847",
@@ -4307,7 +4307,7 @@
     {
       "id": "rym-1770197",
       "source_id": "1770197",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/49ea5ef38d1b01ad1942ca8f0db5f8f0/2394199",
       "artist": "Robert Black / Eberhard Blum / Iven Hausmann / Gudrun Reschke / John Patrick Thomas / Jan Williams",
       "artist_latin": "Robert Black / Eberhard Blum / Iven Hausmann / Gudrun Reschke / John Patrick Thomas / Jan Williams",
       "title": "Ryoanji",
@@ -4318,8 +4318,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Robert Black / Eberhard Blum / Iven Hausmann / Gudrun Reschke / John Patrick Thomas / Jan Williams 1996 Ryoanji",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1770197.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14941636",
@@ -5208,7 +5208,7 @@
     {
       "id": "rym-14817682",
       "source_id": "14817682",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/6a0639e678f16a1b982be72ac0a8deb5/10074557",
       "artist": "BRANDON",
       "artist_latin": "BRANDON",
       "title": "ER RSER",
@@ -5219,8 +5219,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "BRANDON 1999 ER RSER",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14817682.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-1941089",
@@ -5327,7 +5327,7 @@
     {
       "id": "rym-208414",
       "source_id": "208414",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a2265400055_10.jpg",
       "artist": "Thomas Brinkmann",
       "artist_latin": "Thomas Brinkmann",
       "title": "96:VR",
@@ -5338,8 +5338,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Thomas Brinkmann 1998 96:VR",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-208414.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-4954406",
@@ -6483,7 +6483,7 @@
     {
       "id": "rym-3490767",
       "source_id": "3490767",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a2981058962_10.jpg",
       "artist": "Christmas at CPH",
       "artist_latin": "Christmas at CPH",
       "title": "Christmas at CPH",
@@ -6494,8 +6494,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Christmas at CPH 1979 Christmas at CPH",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3490767.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-4373703",
@@ -7775,7 +7775,7 @@
     {
       "id": "rym-11095581",
       "source_id": "11095581",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/16bc11c95fafe96f51feeea6373c77d6/10649462",
       "artist": "Curley",
       "artist_latin": "Curley",
       "title": "Curley",
@@ -7786,8 +7786,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Curley  Curley",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11095581.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-15883798",
@@ -9509,7 +9509,7 @@
     {
       "id": "rym-760190",
       "source_id": "760190",
-      "cover": "",
+      "cover": "https://i.discogs.com/c8HDjKVQJ_acpZul7x_kq7EZ0rbhYJ6_Ywrapl4q4D8/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4OTc0/Ny0xNDkxMzE3NzM0/LTE1OTkuanBlZw.jpeg",
       "artist": "DJ Brisk",
       "artist_latin": "DJ Brisk",
       "title": "Happy Hardcore Foundation 2",
@@ -9520,13 +9520,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "DJ Brisk 1999 Happy Hardcore Foundation 2",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-760190.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-3128202",
       "source_id": "3128202",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/5940b1b205235497f0ab919eb8f69b40/3348036",
       "artist": "DJ Clent",
       "artist_latin": "DJ Clent",
       "title": "100% Ghetto Vol 4",
@@ -9537,8 +9537,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "DJ Clent 2010 100% Ghetto Vol 4",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3128202.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14866645",
@@ -9594,7 +9594,7 @@
     {
       "id": "rym-11790234",
       "source_id": "11790234",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/00603a7888f7ccc78cdb3f16c5a4f61a/8759126",
       "artist": "DJ EJ",
       "artist_latin": "DJ EJ",
       "title": "EJucation Volume 02",
@@ -9605,8 +9605,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "DJ EJ 2015 EJucation Volume 02",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11790234.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-477853",
@@ -9662,7 +9662,7 @@
     {
       "id": "rym-15073574",
       "source_id": "15073574",
-      "cover": "",
+      "cover": "https://i1.sndcdn.com/artworks-000244394688-pg1jnk-t500x500.jpg",
       "artist": "DJ Junk",
       "artist_latin": "DJ Junk",
       "title": "Intelligent Ambient Jungle Mix Vol. 2",
@@ -9673,8 +9673,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "DJ Junk 1997 Intelligent Ambient Jungle Mix Vol. 2",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-15073574.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-12540648",
@@ -9968,7 +9968,7 @@
     {
       "id": "rym-13378716",
       "source_id": "13378716",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/4266290b63d0716437a77bdd19e169e9/9165974",
       "artist": "DJ Slant",
       "artist_latin": "DJ Slant",
       "title": "Ease the Pressure",
@@ -9979,8 +9979,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "DJ Slant 1996 Ease the Pressure",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-13378716.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9452913",
@@ -11090,7 +11090,7 @@
     {
       "id": "rym-4225327",
       "source_id": "4225327",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/1ab5ec476c4351c117edbb4c74746cb3/4418658",
       "artist": "Ensemble du Conservatoire Supérieur de Xian (Chang'An)",
       "artist_latin": "Ensemble du Conservatoire Supérieur de Xian (Chang'An)",
       "title": "Chine: Musique ancienne de Chang'an",
@@ -11101,8 +11101,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Ensemble du Conservatoire Supérieur de Xian (Chang'An) 1991 Chine: Musique ancienne de Chang'an",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-4225327.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-566528",
@@ -11141,7 +11141,7 @@
     {
       "id": "rym-198117",
       "source_id": "198117",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/fe698ecf0dd32cd4f82421edcf149894/13532623",
       "artist": "Ensemble of Unique Instruments / Danlee Mitchell",
       "artist_latin": "Ensemble of Unique Instruments / Danlee Mitchell",
       "title": "Delusion of the Fury: A Ritual of Dream and Delusion",
@@ -11152,8 +11152,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Ensemble of Unique Instruments / Danlee Mitchell 1971 Delusion of the Fury: A Ritual of Dream and Delusion",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-198117.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-416371",
@@ -11379,7 +11379,7 @@
     {
       "id": "rym-14885414",
       "source_id": "14885414",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/0ec22fc643f6e4748fdb4ce0796bde3a/10207079",
       "artist": "Carlina Erres",
       "artist_latin": "Carlina Erres",
       "title": "Disco Modern - Bali India",
@@ -11390,8 +11390,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Carlina Erres 1992 Disco Modern - Bali India",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14885414.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-6715368",
@@ -11668,7 +11668,7 @@
     {
       "id": "rym-14810171",
       "source_id": "14810171",
-      "cover": "",
+      "cover": "https://thumbnailer.mixcloud.com/unsafe/580x580/extaudio/b/0/1/a/d94e-fefc-470e-8b7b-7ff6962fa5a0.jpg",
       "artist": "Fabio & Grooverider",
       "artist_latin": "Fabio & Grooverider",
       "title": "Fabio, Grooverider @ Prototype Night, fabric, London",
@@ -11679,8 +11679,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Fabio & Grooverider 2000 Fabio, Grooverider @ Prototype Night, fabric, London",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14810171.webp",
+      "cover_status": "ok"
     },
     {
       "id": "rym-6063879",
@@ -12212,7 +12212,7 @@
     {
       "id": "rym-4297888",
       "source_id": "4297888",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/73ae10ec561d0c5416295b0e2539bcf9/4485962",
       "artist": "Flat 7",
       "artist_latin": "Flat 7",
       "title": "スウィート・グロウ・オブ・サイレンス",
@@ -12223,8 +12223,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Flat 7 2012 スウィート・グロウ・オブ・サイレンス",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-4297888.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-12037945",
@@ -12382,7 +12382,7 @@
     {
       "id": "rym-1237003",
       "source_id": "1237003",
-      "cover": "",
+      "cover": "https://m.media-amazon.com/images/I/716Anth8ztL._UF894,1000_QL80_.jpg",
       "artist": "Samson François",
       "artist_latin": "Samson François",
       "title": "Préludes; Images; Rêveries; 2 arabesques; La plus que lente; Études; Masques; L'isle joyeuse; Berceuse héroïque",
@@ -12393,8 +12393,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Samson François 2002 Préludes; Images; Rêveries; 2 arabesques; La plus que lente; Études; Masques; L'isle joyeuse; Berceuse héroïque",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1237003.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-10612921",
@@ -13844,7 +13844,7 @@
     {
       "id": "rym-602309",
       "source_id": "602309",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/2bb0db9790217a0726e4e5013200d19f/5263127",
       "artist": "Groupe de Recherches Musicales de la RTF / The Institute of Sonology / NHK電子音楽スタジオ / Studio Eksperymentalne Polskiego Radia",
       "artist_latin": "Groupe de Recherches Musicales de la RTF / The Institute of Sonology / NHK Electronic Music Studio / Studio Eksperymentalne Polskiego Radia",
       "title": "Electronic Panorama: Paris, Tokyo, Utrecht, Warszawa",
@@ -13855,8 +13855,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Groupe de Recherches Musicales de la RTF / The Institute of Sonology / NHK Electronic Music Studio / Studio Eksperymentalne Polskiego Radia 1970 Electronic Panorama: Paris, Tokyo, Utrecht, Warszawa",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-602309.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-70181",
@@ -13878,7 +13878,7 @@
     {
       "id": "rym-2221899",
       "source_id": "2221899",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/27041433192b390e835b833e9d2483d1/2627464",
       "artist": "Youra Guller",
       "artist_latin": "Youra Guller",
       "title": "The Art of Youra Guller: Chopin - 11 Mazurkas; 5 Nocturnes",
@@ -13889,8 +13889,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Youra Guller 2009 The Art of Youra Guller: Chopin - 11 Mazurkas; 5 Nocturnes",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-2221899.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9728861",
@@ -14048,7 +14048,7 @@
     {
       "id": "rym-3071700",
       "source_id": "3071700",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/d230478058ddbd3dace0b532b2ace776/4342126",
       "artist": "The Gyuto Monks of Tibet",
       "artist_latin": "The Gyuto Monks of Tibet",
       "title": "Tibet: Monastère de Gyütö - La voix des Tantra",
@@ -14059,13 +14059,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "The Gyuto Monks of Tibet 2000 Tibet: Monastère de Gyütö - La voix des Tantra",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3071700.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-3209182",
       "source_id": "3209182",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/908b94ab8d7b70f9c4d5115bad41c568/13391719",
       "artist": "Monique Haas",
       "artist_latin": "Monique Haas",
       "title": "Les enregistrements Erato",
@@ -14076,8 +14076,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Monique Haas 2007 Les enregistrements Erato",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3209182.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-194002",
@@ -14592,7 +14592,7 @@
     {
       "id": "rym-3022548",
       "source_id": "3022548",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release/8860394c-dc80-4f1f-9206-1e23553a3022/37504073856.jpg",
       "artist": "High Contrast",
       "artist_latin": "High Contrast",
       "title": "Essential Mix",
@@ -14603,13 +14603,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "High Contrast 2003 Essential Mix",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3022548.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-3984878",
       "source_id": "3984878",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/c6252ed2504dfc06f8a05378037cb41f/4185698",
       "artist": "Fumie Hihara & Sôzan Chiaki Kariya",
       "artist_latin": "Fumie Hihara & Sôzan Chiaki Kariya",
       "title": "Japon traditionnel : koto & shakuachi",
@@ -14620,8 +14620,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Fumie Hihara & Sôzan Chiaki Kariya 2011 Japon traditionnel : koto & shakuachi",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3984878.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-1973743",
@@ -16649,7 +16649,7 @@
     {
       "id": "rym-15468065",
       "source_id": "15468065",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/746f74260ad22c5de62c64f1941e6e0b/11345091",
       "artist": "Kanzaki Hiro",
       "artist_latin": "Kanzaki Hiro",
       "title": "Holo Mix",
@@ -16660,8 +16660,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Kanzaki Hiro 2021 Holo Mix",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-15468065.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14216345",
@@ -17023,7 +17023,7 @@
     {
       "id": "rym-2070118",
       "source_id": "2070118",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/edac0e234e59cbf5f2f1632b11af802e/2549776",
       "artist": "Kifu Mitsuhashi",
       "artist_latin": "Kifu Mitsuhashi",
       "title": "Selected Works Vol. II: Poem",
@@ -17034,13 +17034,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Kifu Mitsuhashi 1996 Selected Works Vol. II: Poem",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-2070118.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-8490185",
       "source_id": "8490185",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7sbHschpWM4wvdnzm-IlWamhvLK6GOxZHYL8PrpU1HFe3vGMPIWPGsRi&s=10",
       "artist": "Mami Kikuchi",
       "artist_latin": "Mami Kikuchi",
       "title": "Morning Dew",
@@ -17051,8 +17051,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Mami Kikuchi 1982 Morning Dew",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8490185.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-10615203",
@@ -17448,7 +17448,7 @@
     {
       "id": "rym-596071",
       "source_id": "596071",
-      "cover": "",
+      "cover": "https://image.bugsm.co.kr/album/images/500/12192/1219248.jpg",
       "artist": "Evgeni Koroliov",
       "artist_latin": "Evgeni Koroliov",
       "title": "Goldberg Variations BWV 988",
@@ -17459,13 +17459,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Evgeni Koroliov 1999 Goldberg Variations BWV 988",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-596071.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-13287895",
       "source_id": "13287895",
-      "cover": "",
+      "cover": "https://i1.sndcdn.com/avatars-000203500310-sjy0vx-t1080x1080.jpg",
       "artist": "Kota oogaki a.k.a MO",
       "artist_latin": "Kota oogaki a.k.a MO",
       "title": "MOのロリコア天国から地獄mix",
@@ -17476,8 +17476,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Kota oogaki a.k.a MO 2019 MOのロリコア天国から地獄mix",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-13287895.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-1277453",
@@ -17550,7 +17550,7 @@
     {
       "id": "rym-7934344",
       "source_id": "7934344",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBDPKKbNmx3jt_R7Bcyym1pSQABZkOOJ7SKjOv5T2ks4l19Y-fS_6KMd2R&s=10",
       "artist": "Seishiro Kusunose",
       "artist_latin": "Seishiro Kusunose",
       "title": "冒険者たち Island Cruise",
@@ -17561,8 +17561,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Seishiro Kusunose 1987 冒険者たち Island Cruise",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-7934344.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-33363",
@@ -18859,7 +18859,7 @@
     {
       "id": "rym-8475902",
       "source_id": "8475902",
-      "cover": "",
+      "cover": "https://propermusic.com/cdn/shop/products/5018081901029.jpg?v=1677084046&width=700",
       "artist": "Pipe Major William MacLean",
       "artist_latin": "Pipe Major William MacLean",
       "title": "Scottish Tradition 10: Pibroch",
@@ -18870,8 +18870,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Pipe Major William MacLean 2015 Scottish Tradition 10: Pibroch",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8475902.webp",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9856985",
@@ -18927,7 +18927,7 @@
     {
       "id": "rym-12927339",
       "source_id": "12927339",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8VbunagnAS0JRfywJEnbFgGevq3P-wxZvvtt_aEhMPxZEImgf-ESsoUQ&s=10",
       "artist": "Miles Maeda",
       "artist_latin": "Miles Maeda",
       "title": "きく",
@@ -18938,8 +18938,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Miles Maeda 1997 きく",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12927339.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-212368",
@@ -19828,7 +19828,7 @@
     {
       "id": "rym-16998433",
       "source_id": "16998433",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a4188551948_10.jpg",
       "artist": "mey_0u0_",
       "artist_latin": "mey_0u0_",
       "title": "さくらいろの日々に",
@@ -19839,13 +19839,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "mey_0u0_ 2026 さくらいろの日々に",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-16998433.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-16911217",
       "source_id": "16911217",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a2562316052_10.jpg",
       "artist": "mey_0u0_",
       "artist_latin": "mey_0u0_",
       "title": "夢と現実のはざまで僕は",
@@ -19856,8 +19856,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "mey_0u0_ 2025 夢と現実のはざまで僕は",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-16911217.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-185833",
@@ -19981,7 +19981,7 @@
     {
       "id": "rym-14967178",
       "source_id": "14967178",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d0000b273c89abe9d47aa416c834312df",
       "artist": "Lee Mi Ja",
       "artist_latin": "Lee Mi Ja",
       "title": "그시절 그노래 43집 - 이미자",
@@ -19992,8 +19992,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Lee Mi Ja 1999 그시절 그노래 43집 - 이미자",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14967178.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14830359",
@@ -20202,7 +20202,7 @@
     {
       "id": "rym-7489473",
       "source_id": "7489473",
-      "cover": "",
+      "cover": "https://img17.shop-pro.jp/PA01153/466/product/169050894.png?cmsp_timestamp=20220623175404",
       "artist": "Noriko Miyamoto With Isao Suzuki",
       "artist_latin": "Noriko Miyamoto With Isao Suzuki",
       "title": "プッシュ",
@@ -20213,13 +20213,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Noriko Miyamoto With Isao Suzuki 1978 プッシュ",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-7489473.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-8470792",
       "source_id": "8470792",
-      "cover": "",
+      "cover": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPjY_aUuchyphenhyphenrKj8XPlE4qatmhw7o3dP1zLpdCxk9HyB2pXN3i7Qbe87VisvEc2-6jP6-YQOIVquSxhDIJGnmD3ulw6q6v08rf7wRVr0Dn8pk47giB5d5-YGwX7E6li2tIn9CwdGrzrOg/s1600/Tiako+mi+Madagasikara.JPG",
       "artist": "Mizeha",
       "artist_latin": "Mizeha",
       "title": "Mizeha de Morondava",
@@ -20230,8 +20230,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Mizeha  Mizeha de Morondava",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8470792.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-15205614",
@@ -20780,7 +20780,7 @@
     {
       "id": "rym-16825949",
       "source_id": "16825949",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/76899e3b09ffab86c3d57de0c0c9d9c8/14079364",
       "artist": "Munhwa",
       "artist_latin": "Munhwa",
       "title": "Korean Shitpost",
@@ -20791,8 +20791,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Munhwa 2025 Korean Shitpost",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-16825949.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-6673736",
@@ -21817,7 +21817,7 @@
     {
       "id": "rym-172821",
       "source_id": "172821",
-      "cover": "",
+      "cover": "https://e.snmc.io/i/300/s/dfa97f3bf02191375aeca725f84d68e2/7740845/",
       "artist": "NHK電子音楽スタジオ",
       "artist_latin": "NHK Electronic Music Studio",
       "title": "日本の電子音楽 '69",
@@ -21828,8 +21828,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "NHK Electronic Music Studio 1969 日本の電子音楽 '69",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-172821.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-2368200",
@@ -22531,7 +22531,7 @@
     {
       "id": "rym-10573773",
       "source_id": "10573773",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhluyL4X50dT0lkQUi6LN3usJP6P3eLriDuLdBQezuc5avet6dDh7yTyd&s=10",
       "artist": "ONCEIM / Frédéric Blondy",
       "artist_latin": "ONCEIM / Frédéric Blondy",
       "title": "Occam Ocean 2",
@@ -22542,8 +22542,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "ONCEIM / Frédéric Blondy 2019 Occam Ocean 2",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-10573773.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-3990774",
@@ -22667,7 +22667,7 @@
     {
       "id": "rym-5109353",
       "source_id": "5109353",
-      "cover": "",
+      "cover": "https://i.discogs.com/sQpxUvqi0RswG4Hi9XCH5H-M8kuXUXTneYl1rZ8xELk/rs:fit/g:sm/q:90/h:566/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwMDk0/MjAyLTE3MTA0MjA5/NzMtMzM2NS5qcGVn.jpeg",
       "artist": "Orchestre de chambre Jean-François Paillard / Jean-Pierre Rampal / Lily Laskine / Pierre Pasquier / Paul Tortelier / Jean Hubeau / Charles Cyroulnik",
       "artist_latin": "Orchestre de chambre Jean-François Paillard / Jean-Pierre Rampal / Lily Laskine / Pierre Pasquier / Paul Tortelier / Jean Hubeau / Charles Cyroulnik",
       "title": "3 sonates pour violoncelles & piano; flute, alto & harpe; violon & piano; danses sacrées et profane",
@@ -22678,8 +22678,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Orchestre de chambre Jean-François Paillard / Jean-Pierre Rampal / Lily Laskine / Pierre Pasquier / Paul Tortelier / Jean Hubeau / Charles Cyroulnik 1962 3 sonates pour violoncelles & piano; flute, alto & harpe; violon & piano; danses sacrées et profane",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-5109353.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-4314492",
@@ -22701,7 +22701,7 @@
     {
       "id": "rym-3128941",
       "source_id": "3128941",
-      "cover": "",
+      "cover": "https://i.discogs.com/Mna4ikYup3PkuakY6TqXjyiP148jw_9xMaPMYhS9pwI/rs:fit/g:sm/q:90/h:535/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY0Njgy/NTMtMTQ0NDMwMzI5/Ny05Mjk2LmpwZWc.jpeg",
       "artist": "Orchestre de Paris / Ensemble Court-Circuit / Bernhard Kontarsky / Pierre-André Valade / Jean-Marie Cottet / Jean Geoffroy",
       "artist_latin": "Orchestre de Paris / Ensemble Court-Circuit / Bernhard Kontarsky / Pierre-André Valade / Jean-Marie Cottet / Jean Geoffroy",
       "title": "Flash-Back",
@@ -22712,8 +22712,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Orchestre de Paris / Ensemble Court-Circuit / Bernhard Kontarsky / Pierre-André Valade / Jean-Marie Cottet / Jean Geoffroy 2001 Flash-Back",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3128941.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-645451",
@@ -22735,7 +22735,7 @@
     {
       "id": "rym-254234",
       "source_id": "254234",
-      "cover": "",
+      "cover": "https://m.media-amazon.com/images/I/811CDolavSL._UF1000,1000_QL80_.jpg",
       "artist": "Orchestre philharmonique du Luxembourg / Arturo Tamayo / Hiroaki Ooï",
       "artist_latin": "Orchestre philharmonique du Luxembourg / Arturo Tamayo / Hiroaki Ooï",
       "title": "Orchestral Works Vol. IV: Erikhthon; Ata; Akrata; Krinoïdi",
@@ -22746,8 +22746,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Orchestre philharmonique du Luxembourg / Arturo Tamayo / Hiroaki Ooï 2004 Orchestral Works Vol. IV: Erikhthon; Ata; Akrata; Krinoïdi",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-254234.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-7661",
@@ -23585,7 +23585,7 @@
     {
       "id": "rym-3266194",
       "source_id": "3266194",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKx9CUrP19PAwGpr0XIlYxn5QIzL84Peq7BlPQn-U-2ddBcVEkcc2RHhg&s=10",
       "artist": "La Petite Bande / Sigiswald Kuijken",
       "artist_latin": "La Petite Bande / Sigiswald Kuijken",
       "title": "Matthäus-Passion",
@@ -23596,8 +23596,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "La Petite Bande / Sigiswald Kuijken 2010 Matthäus-Passion",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3266194.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14603267",
@@ -25642,7 +25642,7 @@
     {
       "id": "rym-560213",
       "source_id": "560213",
-      "cover": "",
+      "cover": "https://i.discogs.com/Ho-buYx-mHRqsj2gpbHeptxr2lOq-wHrcHMXWck-BMQ/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMjQx/NjEtMTMxNjkwMjAw/Ni5qcGVn.jpeg",
       "artist": "Royal Concertgebouw Orchestra / Riccardo Chailly / Brautigam / Masseurs",
       "artist_latin": "Royal Concertgebouw Orchestra / Riccardo Chailly / Brautigam / Masseurs",
       "title": "Jazz Music",
@@ -25653,8 +25653,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Royal Concertgebouw Orchestra / Riccardo Chailly / Brautigam / Masseurs 1993 Jazz Music",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-560213.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-1371417",
@@ -25676,7 +25676,7 @@
     {
       "id": "rym-8271022",
       "source_id": "8271022",
-      "cover": "",
+      "cover": "https://img.hearthis.at/9/4/1/_/uploads/10547413/image_track/10047288/w600_h600_c3a3a3a_q70_ptrue_v2_----cropped_1696166005149.jpg",
       "artist": "Ed Rush & Optical",
       "artist_latin": "Ed Rush & Optical",
       "title": "Essential Mix (07/02/99)",
@@ -25687,8 +25687,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Ed Rush & Optical 1999 Essential Mix (07/02/99)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8271022.webp",
+      "cover_status": "ok"
     },
     {
       "id": "rym-2150773",
@@ -25829,7 +25829,7 @@
     {
       "id": "rym-418639",
       "source_id": "418639",
-      "cover": "",
+      "cover": "https://m.zooropa.co.kr/web/product/big/202211/673484c4c884e03beca2a1cf3765d8a4.jpg",
       "artist": "Saito Kinen Orchestra / Seiji Ozawa / Nobuko Imai",
       "artist_latin": "Saito Kinen Orchestra / Seiji Ozawa / Nobuko Imai",
       "title": "Viola Concerto «A String Around Autumn»; «November Steps»; Eclipse for Shakuhachi and Biwa",
@@ -25840,8 +25840,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Saito Kinen Orchestra / Seiji Ozawa / Nobuko Imai 1992 Viola Concerto «A String Around Autumn»; «November Steps»; Eclipse for Shakuhachi and Biwa",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-418639.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-16855034",
@@ -26407,7 +26407,7 @@
     {
       "id": "rym-8487224",
       "source_id": "8487224",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv-kkEgLDgaKFrSIE07LPaKRsUmScOR_ZVw8SkV9n3xAyiZtVbzXeq1O8U&s=10",
       "artist": "Yumi Seino",
       "artist_latin": "Yumi Seino",
       "title": "U･TA･GE: Songs for Seino Yumi",
@@ -26418,8 +26418,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Yumi Seino 1981 U･TA･GE: Songs for Seino Yumi",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8487224.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-7504608",
@@ -26662,7 +26662,7 @@
     {
       "id": "rym-3426801",
       "source_id": "3426801",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8oTnkxt-eqPbWpGT0eCyOPgVVK_VUWm15CsLJgVS-H9DT6JcpPx-YmvqS&s=10",
       "artist": "Les Shleu Shleu",
       "artist_latin": "Les Shleu Shleu",
       "title": "Shleu Shleu",
@@ -26673,8 +26673,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Les Shleu Shleu 1969 Shleu Shleu",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3426801.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14786564",
@@ -28430,7 +28430,7 @@
     {
       "id": "rym-2620111",
       "source_id": "2620111",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/eb8cb1e285ec32b1f3a5a4ed4f7e586e/2866756",
       "artist": "Studio für elektronische Musik des Westdeutschen Rundfunks, Köln",
       "artist_latin": "Studio für elektronische Musik des Westdeutschen Rundfunks, Köln",
       "title": "Studie I; Studie II; Gesang der Jünglinge",
@@ -28441,8 +28441,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Studio für elektronische Musik des Westdeutschen Rundfunks, Köln 1957 Studie I; Studie II; Gesang der Jünglinge",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-2620111.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-1148177",
@@ -29314,7 +29314,7 @@
     {
       "id": "rym-4239947",
       "source_id": "4239947",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d0000b273ec7fe37757cbff97bead674f",
       "artist": "Soichi Terada",
       "artist_latin": "Soichi Terada",
       "title": "サルゲッチュ オリジサル サウンドトラック",
@@ -29325,8 +29325,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Soichi Terada 2011 サルゲッチュ オリジサル サウンドトラック",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-4239947.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-44772",
@@ -29654,7 +29654,7 @@
     {
       "id": "rym-11416204",
       "source_id": "11416204",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-FbCGUcsiEYLhs3FsYSnCMDTzxyKQwo042OVsDYKnWC_rX5UOtojnAqI&s=10",
       "artist": "Tiku Sens",
       "artist_latin": "Tiku Sens",
       "title": "Vanilla Girl",
@@ -29665,8 +29665,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Tiku Sens 2020 Vanilla Girl",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11416204.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9826542",
@@ -29688,7 +29688,7 @@
     {
       "id": "rym-1857754",
       "source_id": "1857754",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfIeD5WWco5Xr-eWZe2c4_DWxmi61dJQNtQL1FwEDYXPAYXQ4XvwMemG4Q&s=10",
       "artist": "Timecode",
       "artist_latin": "Timecode",
       "title": "00.1",
@@ -29699,8 +29699,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Timecode 2000 00.1",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1857754.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-234926",
@@ -30623,7 +30623,7 @@
     {
       "id": "rym-3538892",
       "source_id": "3538892",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVbAxiOxNSQ14-5R36YfrL9OkqUCsZdXinrQrjNGk8b1xUA0cvWDFFmY&s=10",
       "artist": "[unknown artist]",
       "artist_latin": "[unknown artist]",
       "title": "The Wit and Wisdom of Ronald Reagan",
@@ -30634,13 +30634,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "[unknown artist] 1980 The Wit and Wisdom of Ronald Reagan",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3538892.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-5180461",
       "source_id": "5180461",
-      "cover": "",
+      "cover": "https://i.discogs.com/dPSY5rMRjtHPu0BkxXXhI-3aj5qeiVDZa2kUxwCEa1s/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTM1/NzUzLTE3Mzk1Mjk4/MDgtNTkwNi5qcGVn.jpeg",
       "artist": "[unknown artist]",
       "artist_latin": "[unknown artist]",
       "title": "เพลงไทยเดิม: มอญร้องไห้",
@@ -30651,8 +30651,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "[unknown artist]  เพลงไทยเดิม: มอญร้องไห้",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-5180461.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-10631261",
@@ -30861,7 +30861,7 @@
     {
       "id": "rym-9435601",
       "source_id": "9435601",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpkKiSRo4ASkl8islk2yHwDACAiCFQkfBUKdQlXKnvfsyINbz4EOpTHde_&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Buddhist Drums, Bells and Chants",
@@ -30872,8 +30872,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 1969 Buddhist Drums, Bells and Chants",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-9435601.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-270291",
@@ -31065,7 +31065,7 @@
     {
       "id": "rym-12825483",
       "source_id": "12825483",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ999P2iOpMtMvWOeA3wMubggioJkoa1mnXp2XszOFOwxpSzytBoaXTaDw&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Hidden Music: Equador · Colombia · Peru",
@@ -31076,8 +31076,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists  Hidden Music: Equador · Colombia · Peru",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12825483.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-4187533",
@@ -31116,7 +31116,7 @@
     {
       "id": "rym-1786551",
       "source_id": "1786551",
-      "cover": "",
+      "cover": "https://i.discogs.com/YpD_uvDy0au0zEPm0MNWk3f9RrCc0LdCegSIfm_KYr0/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTc5/MzctMTI1NDkwMzYx/NC5qcGVn.jpeg",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Kassettentäter Vol.1: Deutscher-Kassetten-Untergrund 1979-1983",
@@ -31127,8 +31127,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 2002 Kassettentäter Vol.1: Deutscher-Kassetten-Untergrund 1979-1983",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1786551.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-41653",
@@ -31150,7 +31150,7 @@
     {
       "id": "rym-11929114",
       "source_id": "11929114",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/5b4858d622444bf5b6d529362fabbb9b/9030164",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Maplestory",
@@ -31161,8 +31161,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 2011 Maplestory",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11929114.png",
+      "cover_status": "ok"
     },
     {
       "id": "rym-193356",
@@ -31252,7 +31252,7 @@
     {
       "id": "rym-8780186",
       "source_id": "8780186",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYg5KGqleC2_05I45UljwyUgNvY06HRagQjgS3-n7vVRm3YXlkFxFCsDo&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Musique pygmée de la Haute Sangha",
@@ -31263,8 +31263,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 1957 Musique pygmée de la Haute Sangha",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8780186.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-15097231",
@@ -31286,7 +31286,7 @@
     {
       "id": "rym-15250652",
       "source_id": "15250652",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a4145303656_16.jpg",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "No Vocaloid",
@@ -31297,8 +31297,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 2016 No Vocaloid",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-15250652.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-228112",
@@ -31388,7 +31388,7 @@
     {
       "id": "rym-689769",
       "source_id": "689769",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVWNv49QrlZ1kGXaLd9X95CBxrc3b7LNJmzeJIx_7P_IqVAaVhfwW8cBo&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Retro: 10 Years of Israeli Trance 1",
@@ -31399,13 +31399,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 2001 Retro: 10 Years of Israeli Trance 1",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-689769.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-747270",
       "source_id": "747270",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPNMXLvkw-vM0MW7e3IV80CIFqwUT2eXzYMqzB-ff3zdMrRlXNXxrfaA&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "Shomyo: Secte Tendai",
@@ -31416,8 +31416,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 1995 Shomyo: Secte Tendai",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-747270.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9963963",
@@ -31473,7 +31473,7 @@
     {
       "id": "rym-13107014",
       "source_id": "13107014",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfB64frZ6PLczQfEQ3M0mf0ovTG6DU4ByhsBMcJIsdxfOkK1HTNJXRdo&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "TalesWeaver Original Soundtrack Plus",
@@ -31484,8 +31484,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 2008 TalesWeaver Original Soundtrack Plus",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-13107014.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-553008",
@@ -31626,7 +31626,7 @@
     {
       "id": "rym-17034818",
       "source_id": "17034818",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d0000b273a5627209b238bb47aafa5a04",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "多重合成音声",
@@ -31637,13 +31637,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 2025 多重合成音声",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-17034818.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-12334649",
       "source_id": "12334649",
-      "cover": "",
+      "cover": "https://i.discogs.com/a3FrkCg2v8UDlyf_t4QN07S8tggLFNZrQEPiM7vdSI4/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTA4/MjcwLTE3MjE2OTI0/NjctMjYyMC5qcGVn.jpeg",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "実録 恐山 未知を招くイタコ-死者との出会い",
@@ -31654,8 +31654,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 1980 実録 恐山 未知を招くイタコ-死者との出会い",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12334649.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9475442",
@@ -31728,7 +31728,7 @@
     {
       "id": "rym-6256640",
       "source_id": "6256640",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/9068f9cffcb38040e1b8a5cd1fc635ae/5602774",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "藏族民歌: Tibetan Folk Songs",
@@ -31739,13 +31739,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists 1994 藏族民歌: Tibetan Folk Songs",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-6256640.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14542443",
       "source_id": "14542443",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXBQ9xH3zj3lJ_OuJ3sD07l6HSv_P4-xJLcGIXMTtuMmxofeVn1APRdrQ&s=10",
       "artist": "Various Artists",
       "artist_latin": "Various Artists",
       "title": "雪月花",
@@ -31756,8 +31756,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Various Artists  雪月花",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14542443.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-434150",
@@ -32272,7 +32272,7 @@
     {
       "id": "rym-16003527",
       "source_id": "16003527",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/a24987465230cf6d467f32168c9326c3/12419300",
       "artist": "warmth.",
       "artist_latin": "warmth.",
       "title": "guilt sudden by the moment.flesh.happiness.why",
@@ -32283,8 +32283,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "warmth. 2024 guilt sudden by the moment.flesh.happiness.why",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-16003527.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-798313",
@@ -32476,7 +32476,7 @@
     {
       "id": "rym-14322574",
       "source_id": "14322574",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHT8nK9Hz8R3O67uPlwqQLV6XGtR2w4zd1Gu-_osibYQ&s",
       "artist": "WDR Sinfonieorchester / SWR Symphonieorchester / Klangforum Wien / Ilan Volkov / Peter Rundel / Pascal Rophé / Enno Poppe / Uli Fussenegger / Jonny Axelsson",
       "artist_latin": "WDR Sinfonieorchester / SWR Symphonieorchester / Klangforum Wien / Ilan Volkov / Peter Rundel / Pascal Rophé / Enno Poppe / Uli Fussenegger / Jonny Axelsson",
       "title": "Works for Orchestra",
@@ -32487,8 +32487,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "WDR Sinfonieorchester / SWR Symphonieorchester / Klangforum Wien / Ilan Volkov / Peter Rundel / Pascal Rophé / Enno Poppe / Uli Fussenegger / Jonny Axelsson 2022 Works for Orchestra",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14322574.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-100544",
@@ -32697,7 +32697,7 @@
     {
       "id": "rym-523721",
       "source_id": "523721",
-      "cover": "",
+      "cover": "https://m.media-amazon.com/images/I/81EzLLrp26L._UF1000,1000_QL80_.jpg",
       "artist": "John Lee \"Sonny Boy\" Williamson",
       "artist_latin": "John Lee \"Sonny Boy\" Williamson",
       "title": "Complete Recorded Works in Chronological Order: Volume I (5 May 1937 to 17 June 1938)",
@@ -32708,8 +32708,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "John Lee \"Sonny Boy\" Williamson 1991 Complete Recorded Works in Chronological Order: Volume I (5 May 1937 to 17 June 1938)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-523721.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-54341",
@@ -33309,7 +33309,7 @@
     {
       "id": "rym-2628573",
       "source_id": "2628573",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX23Meq-FEtCvqDqpMmh3JyGDQRcrLW8B7925neGYk6PWgeBsn9hWyVyo&s=10",
       "artist": "Kiyoshi Yoshida",
       "artist_latin": "Kiyoshi Yoshida",
       "title": "カイバ",
@@ -33320,8 +33320,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Kiyoshi Yoshida 2008 カイバ",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-2628573.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9027615",
@@ -33377,7 +33377,7 @@
     {
       "id": "rym-7460407",
       "source_id": "7460407",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc5n9zpIRpaj69f96vKcqP6rpEmLeHNuqV2YVETO0tczLubqUSM6sMgdo&s=10",
       "artist": "You & Explosion Band",
       "artist_latin": "You & Explosion Band",
       "title": "ルパン三世",
@@ -33388,8 +33388,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "You & Explosion Band 1978 ルパン三世",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-7460407.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-2850401",
@@ -33462,7 +33462,7 @@
     {
       "id": "rym-11137848",
       "source_id": "11137848",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSln2m08Np9Aa8bkZxe4g2Ci5RgNp8rrODgulexD-9PA2CgK2rcSmsjKeoq&s=10",
       "artist": "Yuji Nomi & Kenichi Maeyamada",
       "artist_latin": "Yuji Nomi & Kenichi Maeyamada",
       "title": "Nichijou BGM & Radio Bangumi 1",
@@ -33473,13 +33473,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Yuji Nomi & Kenichi Maeyamada 2011 Nichijou BGM & Radio Bangumi 1",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11137848.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-3738749",
       "source_id": "3738749",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1p2OKu6zA1uQuAOf5Qvas1lu-xABfIdxDA3H258t3uUOvW4IDQDkWLy8&s=10",
       "artist": "Yuming",
       "artist_latin": "Yuming",
       "title": "パール・ピアス",
@@ -33490,13 +33490,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Yuming 1982 パール・ピアス",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-3738749.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-13002903",
       "source_id": "13002903",
-      "cover": "",
+      "cover": "https://cdn.sonemic.net/i/fullres/s/ae75ca06f91cd3f4cefb884184ca8831/8958672",
       "artist": "Yung Peter Griffin 420",
       "artist_latin": "Yung Peter Griffin 420",
       "title": "THE MISSION (x8) TO MAKE YUNG MOD FLOP (x8)",
@@ -33507,8 +33507,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Yung Peter Griffin 420 2021 THE MISSION (x8) TO MAKE YUNG MOD FLOP (x8)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-13002903.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-11925807",
@@ -33649,7 +33649,7 @@
     {
       "id": "rym-690553",
       "source_id": "690553",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS084hcaNverPP_YR73szK4cJj1gGKjP00tn9ffuOL8rCGtOb7OCX4rd7g&s=10",
       "artist": "Νικόλας Άσιμος",
       "artist_latin": "Nikolas Asimos",
       "title": "Ο Ξαναπές - Η μαγική λέξη είναι ξαναπές (ο) αυτό που δε μπήκε",
@@ -33660,8 +33660,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Nikolas Asimos 1982 Ο Ξαναπές - Η μαγική λέξη είναι ξαναπές (ο) αυτό που δε μπήκε",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-690553.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-15266569",
@@ -35060,7 +35060,7 @@
     {
       "id": "rym-14248098",
       "source_id": "14248098",
-      "cover": "",
+      "cover": "https://stat.ameba.jp/user_images/20201216/19/kikusuimaru0214/d4/6b/j/o0728072014867409198.jpg",
       "artist": "三代目桜川梅勇",
       "artist_latin": "Baiyu Sakuragawa III",
       "title": "江州音頭 / 湖国自慢 / 嫁取橋の物語 / 紺屋高尾",
@@ -35071,13 +35071,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Baiyu Sakuragawa III  江州音頭 / 湖国自慢 / 嫁取橋の物語 / 紺屋高尾",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-14248098.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-12774618",
       "source_id": "12774618",
-      "cover": "",
+      "cover": "https://img07.shop-pro.jp/PA01027/662/product/121300730.jpg?cmsp_timestamp=20250318110755",
       "artist": "三橋美智也",
       "artist_latin": "Michiya Mihashi",
       "title": "美智也民謡リサイタル",
@@ -35088,8 +35088,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Michiya Mihashi  美智也民謡リサイタル",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12774618.webp",
+      "cover_status": "ok"
     },
     {
       "id": "rym-12764977",
@@ -35349,7 +35349,7 @@
     {
       "id": "rym-11411873",
       "source_id": "11411873",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d0000b2733d0c2bd0853391028e22ebbd",
       "artist": "代代代",
       "artist_latin": "Dai Dai Dai",
       "title": "∅",
@@ -35360,8 +35360,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Dai Dai Dai 2020 ∅",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11411873.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14149855",
@@ -35536,7 +35536,7 @@
     {
       "id": "rym-8001939",
       "source_id": "8001939",
-      "cover": "",
+      "cover": "https://i.namu.wiki/i/2kfOhY5MzAeFJZXTcyJwTGEtTTpLTs_7tu2kXqBrVTMgO6UMEhavnTYt0aMnd9YSQlmmblFdYfY_H8lMdfPbbA.webp",
       "artist": "光の緒",
       "artist_latin": "Hikari no Itoguchi",
       "title": "光の緒",
@@ -35547,8 +35547,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Hikari no Itoguchi 2015 光の緒",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8001939.webp",
+      "cover_status": "ok"
     },
     {
       "id": "rym-479054",
@@ -35621,7 +35621,7 @@
     {
       "id": "rym-5873364",
       "source_id": "5873364",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzrQOGWC0I8ymm-josSozXAt9ac0qddDJhSYGpKVliTA&s=10",
       "artist": "前田龍之, 小河幸男 & 曳地正則",
       "artist_latin": "Tatsuyuki Maeda, Sachio Ogawa & Masanori Hikichi",
       "title": "Sonic the Hedgehog 3 & Knuckles",
@@ -35632,8 +35632,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Tatsuyuki Maeda, Sachio Ogawa & Masanori Hikichi 1994 Sonic the Hedgehog 3 & Knuckles",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-5873364.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-8377542",
@@ -35655,7 +35655,7 @@
     {
       "id": "rym-10580507",
       "source_id": "10580507",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d0000b27300ce3d4e3feffa33b86c082b",
       "artist": "加藤達也",
       "artist_latin": "Tatsuya Kato",
       "title": "『Fate/kaleid liner プリズマイリヤ ツヴァイ ヘルツ!』オリジナルサウンドトラック「ツヴァイ デ プレッツェ」",
@@ -35666,8 +35666,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Tatsuya Kato 2015 『Fate/kaleid liner プリズマイリヤ ツヴァイ ヘルツ!』オリジナルサウンドトラック「ツヴァイ デ プレッツェ」",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-10580507.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-10302234",
@@ -36029,7 +36029,7 @@
     {
       "id": "rym-11673575",
       "source_id": "11673575",
-      "cover": "",
+      "cover": "https://m.media-amazon.com/images/I/51bhdbxImYL._UF1000,1000_QL80_.jpg",
       "artist": "土取利行",
       "artist_latin": "Toshiyuki Tsuchitori",
       "title": "明治の壮士演歌と革命歌",
@@ -36040,8 +36040,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Toshiyuki Tsuchitori 2014 明治の壮士演歌と革命歌",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11673575.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-15371",
@@ -36063,7 +36063,7 @@
     {
       "id": "rym-1807353",
       "source_id": "1807353",
-      "cover": "",
+      "cover": "https://cdn.tower.jp/za/o/6W/zaP5_G3379326W.JPG",
       "artist": "増田俊郎",
       "artist_latin": "Toshio Masuda",
       "title": "「蟲師」蟲音 前",
@@ -36074,13 +36074,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Toshio Masuda 2006 「蟲師」蟲音 前",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1807353.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-1807356",
       "source_id": "1807356",
-      "cover": "",
+      "cover": "https://i.discogs.com/swLt70VzMH8gs_zgVLJSwUd6y1fvf5vJQR9M8AXwHIA/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2MTky/MDUtMTM5ODE1NDcw/NS01MjA2LmpwZWc.jpeg",
       "artist": "増田俊郎",
       "artist_latin": "Toshio Masuda",
       "title": "「蟲師」蟲音 後",
@@ -36091,8 +36091,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Toshio Masuda 2006 「蟲師」蟲音 後",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1807356.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-3659722",
@@ -36335,7 +36335,7 @@
     {
       "id": "rym-16830413",
       "source_id": "16830413",
-      "cover": "/mnt/d/35_Music/25.12.27 絶対的アイドル (Live)/cover.png",
+      "cover": "D:\\35_Music\\25.12.27 絶対的アイドル (Live)\\cover.png",
       "artist": "天音かなた",
       "artist_latin": "Amane Kanata",
       "title": "絶対的アイドル",
@@ -36845,7 +36845,7 @@
     {
       "id": "rym-370447",
       "source_id": "370447",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d00001e02853f82b683f02dcd2e348c07",
       "artist": "巻上公一",
       "artist_latin": "Koichi Makigami",
       "title": "John Zorn's Cobra: Tokyo Operations '94",
@@ -36856,13 +36856,13 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Koichi Makigami 1995 John Zorn's Cobra: Tokyo Operations '94",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-370447.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-7336492",
       "source_id": "7336492",
-      "cover": "",
+      "cover": "https://i.ytimg.com/vi/kU96g9rP0j0/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AH-BIAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLAgxccvgNmU97QeVdQY7zlxa_3IPg",
       "artist": "平井英子",
       "artist_latin": "Hideko Hirai",
       "title": "村祭",
@@ -36873,8 +36873,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Hideko Hirai 1930 村祭",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-7336492.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-577761",
@@ -37083,7 +37083,7 @@
     {
       "id": "rym-11986361",
       "source_id": "11986361",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjR2peEsv9hGMhcr96omYBCwGF-w94XTiz13mvDShNK0Cs9m21oC_pG6V8&s=10",
       "artist": "成田雲竹",
       "artist_latin": "Unchiku Narita",
       "title": "津軽民謡集 第一集",
@@ -37094,8 +37094,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Unchiku Narita 1961 津軽民謡集 第一集",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11986361.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-213410",
@@ -37168,7 +37168,7 @@
     {
       "id": "rym-16610048",
       "source_id": "16610048",
-      "cover": "",
+      "cover": "https://cdn.albumoftheyear.org/album/1429531-eurasian-echoes-vol-2_110744.jpg",
       "artist": "斉藤徹",
       "artist_latin": "Tetsu Saitoh",
       "title": "ユーラシアン・エコーズ Ⅱ / 유라시안 에코즈 2",
@@ -37179,8 +37179,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Tetsu Saitoh 2014 ユーラシアン・エコーズ Ⅱ / 유라시안 에코즈 2",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-16610048.webp",
+      "cover_status": "ok"
     },
     {
       "id": "rym-4102243",
@@ -37202,7 +37202,7 @@
     {
       "id": "rym-12516394",
       "source_id": "12516394",
-      "cover": "",
+      "cover": "https://i.discogs.com/4tuApdO1MKj4ubvqXn4f8VUdUVE8lj9IO0FcLvOIHek/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2NTIy/ODY2LTE2MTAwODc4/NjMtMjQzOS5qcGVn.jpeg",
       "artist": "日本工学院専門学校芸術専門課程音響芸術科3期生",
       "artist_latin": "日本工学院専門学校芸術専門課程音響芸術科3期生",
       "title": "Pink Papaia",
@@ -37213,8 +37213,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "日本工学院専門学校芸術専門課程音響芸術科3期生 1985 Pink Papaia",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12516394.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-14845117",
@@ -37899,7 +37899,7 @@
     {
       "id": "rym-8536068",
       "source_id": "8536068",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf_RVpHsnmL0pYVA3ZH0bIl_KHgdMAjVNkWv9GxLddqHkm4gr7p9DIJOE&s=10",
       "artist": "湖北编钟乐团 / 王原平",
       "artist_latin": "Hubei Chime Bells Orchestra / Wang Yuanping",
       "title": "千古绝响 曾侯乙編鐘之聲 (公元前四三三年左右)",
@@ -37910,8 +37910,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Hubei Chime Bells Orchestra / Wang Yuanping 1989 千古绝响 曾侯乙編鐘之聲 (公元前四三三年左右)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-8536068.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-6419508",
@@ -38137,7 +38137,7 @@
     {
       "id": "rym-11082393",
       "source_id": "11082393",
-      "cover": "",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-C495XjlfRdFEoEqe_9xdorTM-ogZX8eMW5K7gaUtZn_GeX4p_6yJEeNM&s=10",
       "artist": "石川さゆり",
       "artist_latin": "Sayuri Ishikawa",
       "title": "童 ～日本童謡唱歌集～ 石川さゆり in Los Angeles (Warashi ～Nihon doyo shoka shu～ Sayuri Ishikawa in Los Angeles)",
@@ -38148,8 +38148,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Sayuri Ishikawa 1988 童 ～日本童謡唱歌集～ 石川さゆり in Los Angeles (Warashi ～Nihon doyo shoka shu～ Sayuri Ishikawa in Los Angeles)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-11082393.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-7209857",
@@ -38715,7 +38715,7 @@
     {
       "id": "rym-2246156",
       "source_id": "2246156",
-      "cover": "",
+      "cover": "https://i.scdn.co/image/ab67616d0000b2739afda59c5300d52f4bf75939",
       "artist": "菊谷知樹",
       "artist_latin": "Tomoki Kikuya",
       "title": "ひだまりスケッチ (Hidamari Sketch)",
@@ -38726,8 +38726,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Tomoki Kikuya 2007 ひだまりスケッチ (Hidamari Sketch)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-2246156.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-16549048",
@@ -39157,7 +39157,7 @@
     {
       "id": "rym-12282516",
       "source_id": "12282516",
-      "cover": "",
+      "cover": "https://f4.bcbits.com/img/a4105603346_10.jpg",
       "artist": "難波拓哉",
       "artist_latin": "Takuya Namba",
       "title": "Doujin Weapon",
@@ -39168,8 +39168,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Takuya Namba 2020 Doujin Weapon",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-12282516.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-16272360",
@@ -39497,7 +39497,7 @@
     {
       "id": "rym-7867624",
       "source_id": "7867624",
-      "cover": "",
+      "cover": "https://cdn.image.st-hatena.com/image/scale/5b2d227b4be8e26b3f170ab50269597da40e2c49/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Ft%2Fthytimes%2F20200305%2F20200305124409.jpg",
       "artist": "飯吉新 / 石綱淳泰",
       "artist_latin": "Arata Iiyoshi / Atsuhiro Ishizuna",
       "title": "ポケモン不思議のダンジョン 赤の救助隊・青の救助隊",
@@ -39508,8 +39508,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Arata Iiyoshi / Atsuhiro Ishizuna 2005 ポケモン不思議のダンジョン 赤の救助隊・青の救助隊",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-7867624.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-614215",
@@ -39650,7 +39650,7 @@
     {
       "id": "rym-1949614",
       "source_id": "1949614",
-      "cover": "",
+      "cover": "https://i.discogs.com/aieG-Rk6ijV2WB0AF9GbVUtuE46wCPSWKzrok_z3cGI/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk5Njc5/MTEtMTYwNjAzMjYz/OC05OTU0LmpwZWc.jpeg",
       "artist": "高橋竹山 / 高橋祐次郎",
       "artist_latin": "Chikuzan Takahashi / Yujiro Takahashi",
       "title": "豪華競演: 津軽三味線の神髄 (Goka Kyoen: Tsugaru Shamisen no Shinzui)",
@@ -39661,8 +39661,8 @@
       "purchase_date": "",
       "media_type": "",
       "sort_key": "Chikuzan Takahashi / Yujiro Takahashi 1974 豪華競演: 津軽三味線の神髄 (Goka Kyoen: Tsugaru Shamisen no Shinzui)",
-      "cover_cache": "",
-      "cover_status": "missing"
+      "cover_cache": "covers/rym-1949614.jpg",
+      "cover_status": "ok"
     },
     {
       "id": "rym-9692344",
