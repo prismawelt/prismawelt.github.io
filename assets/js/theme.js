@@ -2,9 +2,6 @@
   const STORAGE_KEY = 'prismawelt-theme';
   const root = document.documentElement;
   const themeColor = document.querySelector('meta[name="theme-color"]');
-  const systemTheme = window.matchMedia
-    ? window.matchMedia('(prefers-color-scheme: dark)')
-    : null;
 
   const labels = {
     ko: {
@@ -20,15 +17,6 @@
       light: 'Switch to light mode'
     }
   };
-
-  function savedTheme() {
-    try {
-      const value = localStorage.getItem(STORAGE_KEY);
-      return value === 'light' || value === 'dark' ? value : null;
-    } catch (error) {
-      return null;
-    }
-  }
 
   function pageLanguage() {
     const language = (root.lang || 'en').toLowerCase().split('-')[0];
@@ -72,25 +60,11 @@
     });
   });
 
-  if (systemTheme) {
-    const handleSystemThemeChange = (event) => {
-      if (!savedTheme()) {
-        applyTheme(event.matches ? 'dark' : 'light', false);
-      }
-    };
-
-    if (systemTheme.addEventListener) {
-      systemTheme.addEventListener('change', handleSystemThemeChange);
-    } else {
-      systemTheme.addListener(handleSystemThemeChange);
-    }
-  }
-
   window.addEventListener('storage', (event) => {
     if (event.key !== STORAGE_KEY) return;
     const theme = event.newValue === 'dark' || event.newValue === 'light'
       ? event.newValue
-      : (systemTheme && systemTheme.matches ? 'dark' : 'light');
+      : 'light';
     applyTheme(theme, false);
   });
 

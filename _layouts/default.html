@@ -16,13 +16,9 @@
         var savedTheme = localStorage.getItem('prismawelt-theme');
         if (savedTheme === 'light' || savedTheme === 'dark') {
           theme = savedTheme;
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          theme = 'dark';
         }
       } catch (error) {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          theme = 'dark';
-        }
+        theme = 'light';
       }
 
       document.documentElement.setAttribute('data-theme', theme);
@@ -85,7 +81,7 @@
   {{ content }}
 </div>
 
-<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/theme.js' | relative_url }}?v=2"></script>
 <script src="{{ '/assets/js/captionify.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/archive.js?v=33' | relative_url }}"></script>
 
