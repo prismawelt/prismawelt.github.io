@@ -220,6 +220,7 @@ async function loadArchive(root){
 function initIhatovMusic(root){
   const board = root.querySelector('#spectrum');
   const readout = root.querySelector('#readout');
+  const ratingControl = root.querySelector('.rating-filter');
   const ratingButtons = Array.from(root.querySelectorAll('[data-rating-filter]'));
   const ratingStars = root.querySelector('[data-rating-stars]');
   const preview = root.querySelector('[data-cover-preview]');
@@ -363,7 +364,11 @@ function initIhatovMusic(root){
     popup.textContent = copied ? 'COPIED' : 'FAILED';
     popup.hidden = false;
     popup.classList.remove('is-visible');
-    if(readout) readout.classList.add('has-copy-popup');
+    if(readout){
+      readout.classList.add('has-copy-popup');
+      const popupSpace = Math.ceil(popup.getBoundingClientRect().width) + 4;
+      readout.style.setProperty('--copy-popup-space', `${popupSpace}px`);
+    }
     window.clearTimeout(copyPopupTimer);
     requestAnimationFrame(() => popup.classList.add('is-visible'));
 
@@ -372,7 +377,10 @@ function initIhatovMusic(root){
       window.setTimeout(() => {
         if(!popup.classList.contains('is-visible')){
           popup.hidden = true;
-          if(readout) readout.classList.remove('has-copy-popup');
+          if(readout){
+            readout.classList.remove('has-copy-popup');
+            readout.style.removeProperty('--copy-popup-space');
+          }
         }
       }, 180);
     }, 1200);
@@ -671,12 +679,8 @@ function initIhatovMusic(root){
 
     board.style.width = `${lay.w}px`;
     board.style.height = `${lay.h}px`;
-    board.style.transform = 'none';
-    const boardLeft = board.getBoundingClientRect().left;
-    const boardOffset = snapToDevicePixel(boardLeft) - boardLeft;
-    board.style.transform = Math.abs(boardOffset) < 0.001
-      ? 'none'
-      : `translateX(${boardOffset}px)`;
+    if(readout) readout.style.width = `${lay.w}px`;
+    if(ratingControl) ratingControl.style.width = `${lay.w}px`;
     board.textContent = '';
     renderedItems = new Map(sorted.map(item => [item.id, item]));
     renderedCovers = [];
