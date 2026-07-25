@@ -2,10 +2,17 @@
 @import url("https://unpkg.com/littlefoot/dist/littlefoot.css");
 
 :root{
+  color-scheme:light;
   --bg:#ffffff;
   --fg:#000000;
   --line:#111111;
   --link:#FF78A9;
+  --muted:#777777;
+  --subtle-bg:#f4f4f4;
+  --overlay:rgba(255,255,255,.92);
+  --shadow:rgba(0,0,0,.35);
+  --scroll-thumb:#dddddd;
+  --toggle-hover:#f1f1f1;
   --page-x:18px;
   --menu-size:17px;
   --small:13px;
@@ -16,6 +23,20 @@
   --menu-h:46px;
 }
 
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101010;
+  --fg:#f5f5f5;
+  --line:#d6d6d6;
+  --link:#ff8fba;
+  --muted:#aaaaaa;
+  --subtle-bg:#242424;
+  --overlay:rgba(16,16,16,.94);
+  --shadow:rgba(0,0,0,.72);
+  --scroll-thumb:#555555;
+  --toggle-hover:#292929;
+}
+
 *{
   box-sizing:border-box;
 }
@@ -23,7 +44,7 @@
 html{
   margin:0;
   padding:0;
-  background:#ffffff;
+  background:var(--bg);
   color:var(--fg);
 }
 
@@ -116,7 +137,7 @@ video{
 .site-shell{
   min-height:100vh;
   position:relative;
-  background:#ffffff;
+  background:var(--bg);
 }
 
 /* header */
@@ -127,7 +148,7 @@ video{
   left:0;
   right:0;
   height:var(--menu-h);
-  background:#ffffff;
+  background:var(--bg);
 }
 
 .site-title{
@@ -195,6 +216,52 @@ video{
 .lang-list a:active{
   color:var(--fg);
   text-decoration:none;
+}
+
+.theme-toggle{
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:var(--fg);
+  cursor:pointer;
+}
+
+.theme-toggle:hover{
+  background:var(--toggle-hover);
+}
+
+.theme-toggle:focus-visible{
+  outline:2px solid var(--fg);
+  outline-offset:2px;
+}
+
+.theme-icon{
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.theme-icon-sun{
+  display:none;
+}
+
+:root[data-theme="dark"] .theme-icon-moon{
+  display:none;
+}
+
+:root[data-theme="dark"] .theme-icon-sun{
+  display:block;
 }
 
 .menu-overlay{
@@ -437,8 +504,8 @@ video{
 }
 
 .search-box input::placeholder{
-  color:#000;
-  opacity:0.15;
+  color:var(--fg);
+  opacity:0.28;
 }
 
 .search-actions{
@@ -453,7 +520,7 @@ video{
   text-align:right;
   font-size:14px;
   white-space:nowrap;
-  color:#000;
+  color:var(--fg);
 }
 
 .archive-index,
@@ -556,7 +623,7 @@ video{
   margin-bottom:10px;
   font-size:13px;
   font-weight:700;
-  color:#000;
+  color:var(--fg);
 }
 
 .detail-title{
@@ -577,7 +644,7 @@ video{
   font-family:'Noto Serif KR', Georgia, serif;
   font-size:20px;
   line-height:1.72;
-  color:#000;
+  color:var(--fg);
 }
 
 .detail-body p{
@@ -591,7 +658,7 @@ video{
 
 .detail-body pre{
   font-family:ui-monospace, Menlo, Consolas, monospace;
-  background:#f4f4f4;
+  background:var(--subtle-bg);
   border-radius:4px;
   padding:.7em 1em;
   overflow-x:auto;
@@ -606,7 +673,7 @@ video{
 
 .detail-body :not(pre) > code{
   font-family:ui-monospace, Menlo, Consolas, monospace;
-  background:#f4f4f4;
+  background:var(--subtle-bg);
   border-radius:3px;
   padding:.1em .35em;
   font-size:.88em;
@@ -679,8 +746,8 @@ video{
   margin:0;
   box-sizing:border-box;
   border:1px solid var(--line);
-  background:#fff;
-  color:#000;
+  background:var(--bg);
+  color:var(--fg);
   text-decoration:none;
   position:relative;
 }
@@ -748,10 +815,10 @@ video{
 }
 
 .album-cover-swarm{
-  --swarm-bg:#fff;
-  --swarm-ink:#111;
-  --swarm-mut:#888;
-  --swarm-line:#e5e5e5;
+  --swarm-bg:var(--bg);
+  --swarm-ink:var(--fg);
+  --swarm-mut:var(--muted);
+  --swarm-line:var(--line);
   max-width:1120px;
   margin:0 auto;
   padding:22px 20px 80px;
@@ -921,7 +988,7 @@ video{
   border-radius:0;
   cursor:pointer;
   background-repeat:no-repeat;
-  background-color:#fff;
+  background-color:var(--swarm-bg);
   touch-action:none;
   user-select:none;
   -webkit-user-select:none;
@@ -943,8 +1010,8 @@ video{
   pointer-events:none;
   border-radius:0;
   background-repeat:no-repeat;
-  background-color:#fff;
-  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  background-color:var(--swarm-bg);
+  box-shadow:0 4px 16px var(--shadow);
 }
 
 .album-cover-swarm .cover-preview[hidden]{
@@ -1054,8 +1121,8 @@ video{
 
   .site-header{
     height:calc(var(--safe-top) + var(--menu-h));
-    background:#ffffff;
-    box-shadow:0 1px 0 #ffffff;
+    background:var(--bg);
+    box-shadow:0 1px 0 var(--bg);
   }
 
   .site-title,
@@ -1079,6 +1146,7 @@ video{
 
   .lang-list{
     padding-right:var(--page-x);
+    gap:10px;
     font-size:12px;
   }
 
@@ -1126,7 +1194,7 @@ video{
     position:fixed;
     z-index:71;
     inset:calc(var(--safe-top) + var(--menu-h)) 0 0 0;
-    background:rgba(255,255,255,.92);
+    background:var(--overlay);
     opacity:0;
     pointer-events:none;
     transition:opacity .2s ease;
@@ -1251,7 +1319,7 @@ video{
   background-color: transparent !important; /* 회색 배경 강제 투명화 */
   background: none !important;
   border: none !important;
-  color: #000000 !important;
+  color: var(--fg) !important;
   padding: 0 !important;
   margin: 0 1px !important;
   font-size: 0.75em !important;
@@ -1290,9 +1358,9 @@ video{
 }
 
 .littlefoot__wrapper {
-  background-color: #ffffff !important; 
-  background: #ffffff !important;
-  border: 1px solid #111111 !important; 
+  background-color: var(--bg) !important;
+  background: var(--bg) !important;
+  border: 1px solid var(--line) !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   margin: 0 !important;
@@ -1300,9 +1368,9 @@ video{
 
 /* 3. 팝업 내부 텍스트 영역 */
 .littlefoot__content {
-  background-color: #ffffff !important; 
-  background: #ffffff !important;
-  color: #000000 !important;
+  background-color: var(--bg) !important;
+  background: var(--bg) !important;
+  color: var(--fg) !important;
   /* padding: 위 오른쪽 아래 왼쪽 순서입니다. (아래쪽 여백을 12px에서 4px로 대폭 축소) */
   padding: 12px 16px 12px 16px !important; 
   
@@ -1332,7 +1400,7 @@ video{
   width: 6px;
 }
 .littlefoot__content::-webkit-scrollbar-thumb {
-  background-color: #dddddd;
+  background-color: var(--scroll-thumb);
   border-radius: 3px;
 }
 
