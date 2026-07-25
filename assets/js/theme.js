@@ -51,7 +51,7 @@
     root.style.colorScheme = theme;
 
     if (themeColor) {
-      themeColor.setAttribute('content', theme === 'dark' ? '#101010' : '#ffffff');
+      themeColor.setAttribute('content', theme === 'dark' ? '#121314' : '#ffffff');
     }
 
     updateControls(theme);
