@@ -381,7 +381,7 @@ video{
   display:grid;
   grid-template-columns:180px 1fr;
   gap:20px;
-  align-items:start;
+  align-items:center;
   width:100%;
   margin:0;
   padding:8px var(--page-x) 9px var(--page-x);
