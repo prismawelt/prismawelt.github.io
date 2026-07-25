@@ -211,6 +211,8 @@ async function loadArchive(root){
   return {
     items,
     cols: sprite.cols,
+    tile: sprite.tile || 96,
+    gutter: sprite.gutter || 0,
     spriteUrl: root.dataset.spriteImageUrl
   };
 }
@@ -590,6 +592,11 @@ function initIhatovMusic(root){
     event.preventDefault();
   }
 
+  function snapToDevicePixel(value){
+    const ratio = Math.max(1, window.devicePixelRatio || 1);
+    return Math.round(value * ratio) / ratio;
+  }
+
   function movePreview(event, forceTouchPreview){
     if(!preview || preview.hidden) return;
     const point = eventPoint(event);
@@ -604,10 +611,12 @@ function initIhatovMusic(root){
       y = point.y - rect.height - 24;
     }
     x = Math.min(x, window.innerWidth - rect.width - gap);
-    preview.style.left = `${Math.max(gap, x)}px`;
-    preview.style.top = touchPreview
-      ? `${y}px`
-      : `${Math.max(gap, Math.min(y, window.innerHeight - rect.height - gap))}px`;
+    const left = Math.max(gap, x);
+    const top = touchPreview
+      ? y
+      : Math.max(gap, Math.min(y, window.innerHeight - rect.height - gap));
+    preview.style.left = `${snapToDevicePixel(left)}px`;
+    preview.style.top = `${snapToDevicePixel(top)}px`;
   }
 
   function showPreview(item, event, forceTouchPreview){
@@ -623,10 +632,7 @@ function initIhatovMusic(root){
     preview.hidden = false;
     preview.style.width = `${previewSize}px`;
     preview.style.height = `${previewSize}px`;
-    preview.style.backgroundImage = `url(${archive.spriteUrl})`;
-    preview.style.backgroundSize = `${archive.cols * previewSize}px auto`;
-    preview.style.backgroundPosition =
-      `${-(item.slot % archive.cols) * previewSize}px ${-Math.floor(item.slot / archive.cols) * previewSize}px`;
+    paintSpriteTile(preview, item, previewSize);
     movePreview(event, touchPreview);
   }
 
@@ -634,6 +640,18 @@ function initIhatovMusic(root){
     window.clearTimeout(previewHideTimer);
     previewHideTimer = 0;
     if(preview) preview.hidden = true;
+  }
+
+  function paintSpriteTile(element, item, size){
+    const scale = size / archive.tile;
+    const gutter = archive.gutter * scale;
+    const spriteTileSize = (archive.tile + (archive.gutter * 2)) * scale;
+    const column = item.slot % archive.cols;
+    const row = Math.floor(item.slot / archive.cols);
+    element.style.backgroundImage = `url(${archive.spriteUrl})`;
+    element.style.backgroundSize = `${archive.cols * spriteTileSize}px auto`;
+    element.style.backgroundPosition =
+      `${-(column * spriteTileSize) - gutter}px ${-(row * spriteTileSize) - gutter}px`;
   }
 
   function render(){
@@ -653,6 +671,12 @@ function initIhatovMusic(root){
 
     board.style.width = `${lay.w}px`;
     board.style.height = `${lay.h}px`;
+    board.style.transform = 'none';
+    const boardLeft = board.getBoundingClientRect().left;
+    const boardOffset = snapToDevicePixel(boardLeft) - boardLeft;
+    board.style.transform = Math.abs(boardOffset) < 0.001
+      ? 'none'
+      : `translateX(${boardOffset}px)`;
     board.textContent = '';
     renderedItems = new Map(sorted.map(item => [item.id, item]));
     renderedCovers = [];
@@ -669,10 +693,7 @@ function initIhatovMusic(root){
       cover.style.height = `${size}px`;
       cover.style.left = `${p.x}px`;
       cover.style.top = `${p.y}px`;
-      cover.style.backgroundImage = `url(${archive.spriteUrl})`;
-      cover.style.backgroundSize = `${archive.cols * size}px auto`;
-      cover.style.backgroundPosition =
-        `${-(item.slot % archive.cols) * size}px ${-Math.floor(item.slot / archive.cols) * size}px`;
+      paintSpriteTile(cover, item, size);
       cover.addEventListener('mouseenter', () => {
         updateReadout(item);
       });

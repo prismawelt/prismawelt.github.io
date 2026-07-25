@@ -1020,8 +1020,6 @@ video{
 .album-cover-swarm .cover:hover,
 .album-cover-swarm .cover.is-selected{
   z-index:5;
-  outline:1px solid var(--swarm-ink);
-  outline-offset:-1px;
 }
 
 .album-cover-swarm .cover-preview{

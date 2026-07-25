@@ -1290,6 +1290,33 @@ def crop_cover(path, tile_size):
         return ImageOps.fit(image.convert("RGB"), (tile_size, tile_size), method=Image.Resampling.LANCZOS)
 
 
+def add_edge_gutter(tile, gutter):
+    if gutter <= 0:
+        return tile
+    tile_size = tile.width
+    stride = tile_size + (gutter * 2)
+    padded = Image.new("RGB", (stride, stride))
+    padded.paste(tile, (gutter, gutter))
+    padded.paste(tile.crop((0, 0, tile_size, 1)).resize((tile_size, gutter)), (gutter, 0))
+    padded.paste(
+        tile.crop((0, tile_size - 1, tile_size, tile_size)).resize((tile_size, gutter)),
+        (gutter, gutter + tile_size),
+    )
+    padded.paste(tile.crop((0, 0, 1, tile_size)).resize((gutter, tile_size)), (0, gutter))
+    padded.paste(
+        tile.crop((tile_size - 1, 0, tile_size, tile_size)).resize((gutter, tile_size)),
+        (gutter + tile_size, gutter),
+    )
+    padded.paste(tile.getpixel((0, 0)), (0, 0, gutter, gutter))
+    padded.paste(tile.getpixel((tile_size - 1, 0)), (gutter + tile_size, 0, stride, gutter))
+    padded.paste(tile.getpixel((0, tile_size - 1)), (0, gutter + tile_size, gutter, stride))
+    padded.paste(
+        tile.getpixel((tile_size - 1, tile_size - 1)),
+        (gutter + tile_size, gutter + tile_size, stride, stride),
+    )
+    return padded
+
+
 def average_hsv(image):
     small = image.resize((1, 1), Image.Resampling.BOX)
     r, g, b = [channel / 255.0 for channel in small.getpixel((0, 0))]
@@ -1312,11 +1339,12 @@ def write_archive_files(music_path, items, cache, cache_dir):
     archive_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def build_sprite(items, cache_dir, cache, sprite_image_path, sprite_json_path, tile_size):
+def build_sprite(items, cache_dir, cache, sprite_image_path, sprite_json_path, tile_size, gutter):
     count = len(items)
     cols = max(1, math.ceil(math.sqrt(count)))
     rows = math.ceil(count / cols)
-    sprite = Image.new("RGB", (cols * tile_size, rows * tile_size), (255, 255, 255))
+    stride = tile_size + (gutter * 2)
+    sprite = Image.new("RGB", (cols * stride, rows * stride), (255, 255, 255))
     hsv = {}
     missing = 0
 
@@ -1334,9 +1362,9 @@ def build_sprite(items, cache_dir, cache, sprite_image_path, sprite_json_path, t
         if tile is None:
             missing += 1
             tile = make_text_tile(item, tile_size)
-        x = (slot % cols) * tile_size
-        y = (slot // cols) * tile_size
-        sprite.paste(tile, (x, y))
+        x = (slot % cols) * stride
+        y = (slot // cols) * stride
+        sprite.paste(add_edge_gutter(tile, gutter), (x, y))
         hsv[item_id] = average_hsv(tile)
 
     sprite_image_path.parent.mkdir(parents=True, exist_ok=True)
@@ -1344,6 +1372,7 @@ def build_sprite(items, cache_dir, cache, sprite_image_path, sprite_json_path, t
     sprite_payload = {
         "generated_at": utc_now(),
         "tile": tile_size,
+        "gutter": gutter,
         "cols": cols,
         "rows": rows,
         "count": count,
@@ -1363,6 +1392,7 @@ def main():
     parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR)
     parser.add_argument("--overrides", default=DEFAULT_OVERRIDES)
     parser.add_argument("--tile-size", type=int, default=96)
+    parser.add_argument("--gutter", type=int, default=6)
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--limit", type=int, default=0, help="Limit items for testing; 0 means all.")
     parser.add_argument("--only-id", action="append", default=[], help="Only process the given item id; can be repeated.")
@@ -1471,6 +1501,7 @@ def main():
         sprite_image_path=Path(args.sprite_image),
         sprite_json_path=Path(args.sprite_json),
         tile_size=args.tile_size,
+        gutter=max(0, args.gutter),
     )
     ok = sum(1 for item in items if cache.get(item["id"], {}).get("status") == "ok")
     print(f"sprite complete: {ok}/{len(items)} downloaded covers, {len(items) - ok} text tiles", flush=True)
