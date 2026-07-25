@@ -13,6 +13,8 @@
   --shadow:rgba(0,0,0,.35);
   --scroll-thumb:#dddddd;
   --toggle-hover:#f1f1f1;
+  --selection-fg:#EDEDED;
+  --selection-link:#121314;
   --page-x:18px;
   --menu-size:17px;
   --small:13px;
@@ -35,10 +37,30 @@
   --shadow:rgba(0,0,0,.72);
   --scroll-thumb:#555555;
   --toggle-hover:#292929;
+  --selection-fg:#000000;
+  --selection-link:#121314;
 }
 
 *{
   box-sizing:border-box;
+}
+
+::selection{
+  background:rgba(255,120,169,.75) !important;
+  color:var(--selection-fg) !important;
+}
+
+a::selection{
+  color:var(--selection-link) !important;
+}
+
+::-moz-selection{
+  background:rgba(255,120,169,.75) !important;
+  color:var(--selection-fg) !important;
+}
+
+a::-moz-selection{
+  color:var(--selection-link) !important;
 }
 
 html{
