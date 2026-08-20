@@ -177,7 +177,10 @@ video{
 
 .back-link,
 .detail-meta,
-.detail-floating-title{
+.detail-floating-title,
+.page-title,
+.links-page h1,
+.result-box{
   user-select:none;
   -webkit-user-select:none;
 }
