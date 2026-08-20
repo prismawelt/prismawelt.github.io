@@ -25,12 +25,12 @@
       document.documentElement.style.colorScheme = theme;
       document.querySelector('meta[name="theme-color"]').setAttribute(
         'content',
-        theme === 'dark' ? '#121314' : '#ffffff'
+        theme === 'dark' ? '#1e1e1e' : '#ffffff'
       );
     }());
   </script>
 
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=33' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=35' | relative_url }}">
   
   <script>
     window.MathJax = {
@@ -81,7 +81,7 @@
   {{ content }}
 </div>
 
-<script src="{{ '/assets/js/theme.js' | relative_url }}?v=2"></script>
+<script src="{{ '/assets/js/theme.js' | relative_url }}?v=3"></script>
 <script src="{{ '/assets/js/captionify.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/archive.js?v=33' | relative_url }}"></script>
 

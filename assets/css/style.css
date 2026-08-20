@@ -27,16 +27,16 @@
 
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --bg:#121314;
+  --bg:#1E1E1E;
   --fg:#EDEDED;
-  --line:#d6d6d6;
+  --line:#D6D6D6;
   --link:#ff8fba;
-  --muted:#aaaaaa;
-  --subtle-bg:#242424;
-  --overlay:rgba(16,16,16,.94);
+  --muted:#AAAAAA;
+  --subtle-bg:#303030;
+  --overlay:rgba(30,30,30,.94);
   --shadow:rgba(0,0,0,.72);
-  --scroll-thumb:#555555;
-  --toggle-hover:#292929;
+  --scroll-thumb:#666666;
+  --toggle-hover:#303030;
   --selection-fg:#000000;
   --selection-link:#FFFFFF;
 }
