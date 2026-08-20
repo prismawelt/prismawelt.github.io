@@ -175,6 +175,13 @@ video{
   -webkit-user-select:none;
 }
 
+.back-link,
+.detail-meta,
+.detail-floating-title{
+  user-select:none;
+  -webkit-user-select:none;
+}
+
 .site-title{
   position:absolute;
   z-index:83;
