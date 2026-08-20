@@ -180,6 +180,7 @@ video{
 .detail-floating-title,
 .page-title,
 .links-page h1,
+.links-grid,
 .result-box{
   user-select:none;
   -webkit-user-select:none;
