@@ -181,6 +181,8 @@ video{
 .page-title,
 .links-page h1,
 .links-grid,
+.ihatov-center-links,
+.ihatov-music-page button,
 .result-box{
   user-select:none;
   -webkit-user-select:none;
