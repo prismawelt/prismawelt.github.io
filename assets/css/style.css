@@ -947,6 +947,20 @@ video{
   font-size:18px;
   color:var(--swarm-mut);
   margin:0 auto;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+@media (max-width:980px){
+  .album-cover-swarm #readout{
+    font-size:17px;
+  }
+}
+
+@media (max-width:640px){
+  .album-cover-swarm #readout{
+    font-size:16px;
+  }
 }
 
 .album-cover-swarm #readout b,
@@ -985,6 +999,7 @@ video{
   display:inline-flex;
   min-width:100%;
   white-space:nowrap;
+  font:inherit;
   will-change:transform;
 }
 
@@ -992,6 +1007,7 @@ video{
 .album-cover-swarm .readout-copy{
   display:inline-block;
   white-space:nowrap;
+  font:inherit;
 }
 
 .album-cover-swarm .readout-copy{
