@@ -171,6 +171,8 @@ video{
   right:0;
   height:var(--menu-h);
   background:var(--bg);
+  user-select:none;
+  -webkit-user-select:none;
 }
 
 .site-title{
