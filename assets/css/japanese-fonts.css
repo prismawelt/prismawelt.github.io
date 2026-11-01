@@ -1,0 +1,31 @@
+@font-face{
+  font-family:'Prismawelt Mincho';
+  src:url('../fonts/prismawelt-mincho/PrismaweltMincho-Regular.woff2') format('woff2');
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Prismawelt Mincho';
+  src:url('../fonts/prismawelt-mincho/PrismaweltMincho-Bold.woff2') format('woff2');
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+}
+
+html:lang(ja){
+  --japanese-serif:'Prismawelt Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+}
+
+html:lang(ja) .home-intro,
+html:lang(ja) .cv-value.serif,
+html:lang(ja) .home-after-text,
+html:lang(ja) .detail-body,
+html:lang(ja) .detail-body blockquote{
+  font-family:var(--japanese-serif);
+}
+
+html:lang(ja) .littlefoot__content{
+  font-family:var(--japanese-serif) !important;
+}

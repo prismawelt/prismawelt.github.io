@@ -1,0 +1,21 @@
+Prismawelt Mincho web fonts
+==========================
+
+Source: 倫明朝 (RinMincho) v1.0.0, by 雨々 (Ameame)
+Project: https://rinmincho.pages.dev/
+Original distribution:
+https://rinmincho.pages.dev/RinMincho_v1.0.0.zip
+
+These Regular and Bold WOFF2 files are derived from the original TTF files.
+All glyphs and character mappings are retained. Only font naming metadata
+and the container format are changed. The family is named "Prismawelt Mincho"
+to respect the original fonts' Reserved Font Names.
+
+The fonts are distributed under the SIL Open Font License 1.1.
+See OFL.txt for the complete license and all upstream copyright notices.
+
+Rebuild on the source machine with Python fontTools and woff2 installed:
+    python scripts/build_japanese_fonts.py /path/to/RinMincho_v1.0.0.zip
+
+The font build is not needed for a normal Jekyll build; the WOFF2 files
+are checked into the repository and served as static assets.
