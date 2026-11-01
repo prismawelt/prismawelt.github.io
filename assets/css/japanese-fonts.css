@@ -4,6 +4,10 @@
   font-style:normal;
   font-weight:400;
   font-display:swap;
+  unicode-range:U+2E80-2FDF, U+3000-30FF, U+31F0-31FF,
+    U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE30-FE4F,
+    U+FF01-FF0F, U+FF1A-FF20, U+FF3B-FF40, U+FF5B-FF9F,
+    U+1AFF0-1AFFF, U+1B000-1B16F, U+20000-3FFFF;
 }
 
 @font-face{
@@ -12,18 +16,25 @@
   font-style:normal;
   font-weight:700;
   font-display:swap;
+  unicode-range:U+2E80-2FDF, U+3000-30FF, U+31F0-31FF,
+    U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE30-FE4F,
+    U+FF01-FF0F, U+FF1A-FF20, U+FF3B-FF40, U+FF5B-FF9F,
+    U+1AFF0-1AFFF, U+1B000-1B16F, U+20000-3FFFF;
 }
 
 html:lang(ja){
-  --japanese-serif:'Prismawelt Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --japanese-serif:'Prismawelt Mincho', 'Noto Serif KR', Georgia, serif;
 }
 
 html:lang(ja) .home-intro,
 html:lang(ja) .cv-value.serif,
 html:lang(ja) .home-after-text,
-html:lang(ja) .detail-body,
-html:lang(ja) .detail-body blockquote{
+html:lang(ja) .detail-body{
   font-family:var(--japanese-serif);
+}
+
+html:lang(ja) .detail-body blockquote{
+  font-family:'Prismawelt Mincho', 'Noto Sans KR', Arial, sans-serif;
 }
 
 html:lang(ja) .littlefoot__content{
