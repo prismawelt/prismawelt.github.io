@@ -59,3 +59,29 @@ main {
 .gsc-reply-footer {
   display: none;
 }
+
+/* A plain composer: text area and its submit/sign-in action. */
+.gsc-left-header > em,
+.gsc-comment-box-tabs,
+.gsc-comment-box-textarea-extras,
+.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-bottom > button {
+  display: none !important;
+}
+
+.gsc-comment-box:not(.gsc-comment-box-is-reply) {
+  border: 0;
+}
+
+.gsc-comment-box-main {
+  margin: 0;
+}
+
+.gsc-comment-box-textarea {
+  display: block;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-canvas-default);
+}
+
+.gsc-comment-box-bottom {
+  margin: 12px 0 0;
+}

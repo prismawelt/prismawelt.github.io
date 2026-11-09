@@ -1,8 +1,10 @@
 .article-comments {
   margin-top: 64px;
-  padding-top: 28px;
+  padding: 28px var(--page-x) 0;
   border-top: 1px solid var(--line);
 }
 .article-comments .giscus {
   width: 100%;
+  max-width: calc(760px - (var(--page-x) * 2));
+  margin: 0 auto;
 }

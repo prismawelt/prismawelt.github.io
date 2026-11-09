@@ -25,8 +25,8 @@ function setup({ language = 'ko', theme = 'light', hasComments = true } = {}) {
       category: 'Announcements',
       categoryId: 'DIC_kwDOR1tSCc4DKuik',
       term: '/ko/nichijou/mono/',
-      themeLight: 'https://prismawelt.github.io/assets/css/giscus-light.css?v=1',
-      themeDark: 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=1',
+      themeLight: 'https://prismawelt.github.io/assets/css/giscus-light.css?v=2',
+      themeDark: 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=2',
       language
     },
     querySelector() { return container; },
@@ -68,7 +68,7 @@ test('all languages share one discussion with localized UI and strict matching',
     assert.equal(script.attributes['data-term'], '/ko/nichijou/mono/');
     assert.equal(script.attributes['data-lang'], language);
     assert.equal(script.attributes['data-strict'], '1');
-    assert.equal(script.attributes['data-theme'], 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=1');
+    assert.equal(script.attributes['data-theme'], 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=2');
     assert.equal(script.attributes['data-reactions-enabled'], '0');
     assert.equal(script.attributes['data-loading'], 'lazy');
     assert.equal(script.crossOrigin, 'anonymous');
@@ -80,9 +80,9 @@ test('theme changes survive delayed iframe loading and target only giscus', () =
   app.toggle('dark');
   assert.equal(app.sent.length, 0);
   app.loadFrame();
-  assert.equal(app.sent[0].data.giscus.setConfig.theme, 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=1');
+  assert.equal(app.sent[0].data.giscus.setConfig.theme, 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=2');
   app.toggle('light');
-  assert.equal(app.sent[1].data.giscus.setConfig.theme, 'https://prismawelt.github.io/assets/css/giscus-light.css?v=1');
+  assert.equal(app.sent[1].data.giscus.setConfig.theme, 'https://prismawelt.github.io/assets/css/giscus-light.css?v=2');
   assert.ok(app.sent.every(message => message.origin === 'https://giscus.app'));
 });
 

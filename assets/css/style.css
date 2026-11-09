@@ -645,9 +645,15 @@ video{
   text-decoration:none;
 }
 
-.detail-head{
+.detail-head,
+.article-comments{
   width:100%;
   max-width:calc(760px + (var(--page-x) * 2));
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.detail-head{
   margin:0 auto 14px auto;
   padding:0 var(--page-x) 12px var(--page-x);
   border-bottom:1px solid var(--line);
@@ -673,8 +679,7 @@ video{
   font-weight:900;
 }
 
-.detail-body,
-.article-comments{
+.detail-body{
   max-width:760px;
   margin-left:auto;
   margin-right:auto;
