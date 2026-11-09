@@ -1535,3 +1535,12 @@ sup[id^="fnref:"] {
 sup[id^="fnref:"] > a.footnote {
   display: none !important; /* 안에 들어있는 기존 중복 숫자는 완벽히 숨김 */
 }
+
+/* Keep fixed navigation and the duplicate scroll title out of printed pages. */
+@media print{
+  .site-header,
+  .detail-floating-title,
+  .menu-overlay{
+    display:none;
+  }
+}
