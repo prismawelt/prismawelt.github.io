@@ -11,3 +11,8 @@
 .gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-bottom > button {
   display: none !important;
 }
+
+/* Retain the default right inset after hiding the reaction group. */
+.gsc-comment-replies-count {
+  margin-left: auto;
+}
