@@ -1,15 +1,16 @@
 {% if site.comments.enabled and page.comments != false %}
 {% assign comment_term = page.lang_ko | default: page.url %}
-<section class="article-comments" aria-labelledby="comments-heading"
+<section class="article-comments" id="comments-heading" aria-label="{% case page.lang %}{% when 'ko' %}댓글{% when 'ja' %}コメント{% else %}Comments{% endcase %}"
   data-comments
   data-repo="{{ site.comments.repository | escape }}"
   data-repo-id="{{ site.comments.repository_id | escape }}"
   data-category="{{ site.comments.category | escape }}"
   data-category-id="{{ site.comments.category_id | escape }}"
   data-term="{{ comment_term | escape }}"
+  data-theme-light="{{ '/assets/css/giscus-light.css?v=1' | absolute_url }}"
+  data-theme-dark="{{ '/assets/css/giscus-dark.css?v=1' | absolute_url }}"
   data-language="{{ page.lang | default: 'en' }}">
-  <h2 id="comments-heading">{% case page.lang %}{% when 'ko' %}댓글{% when 'ja' %}コメント{% else %}Comments{% endcase %}</h2>
   <div class="giscus"></div>
 </section>
-<script defer src="{{ '/assets/js/comments.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/comments.js?v=2' | relative_url }}"></script>
 {% endif %}

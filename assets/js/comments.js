@@ -10,7 +10,9 @@
   const origin = 'https://giscus.app';
 
   function theme() {
-    return root.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+    return root.getAttribute('data-theme') === 'dark'
+      ? section.dataset.themeDark
+      : section.dataset.themeLight;
   }
 
   function syncTheme() {
@@ -30,7 +32,7 @@
     'data-mapping': 'specific',
     'data-term': section.dataset.term,
     'data-strict': '1',
-    'data-reactions-enabled': '1',
+    'data-reactions-enabled': '0',
     'data-emit-metadata': '0',
     'data-input-position': 'top',
     'data-theme': theme(),
