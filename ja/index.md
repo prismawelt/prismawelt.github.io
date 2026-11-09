@@ -7,7 +7,7 @@ lang_ko: /ko/
 lang_en: /en/
 lang_ja: /ja/
 person_name: Iheon Kim (金 利憲)
-intro: こんにちは。浦項工科大学校（POSTECH）で理論物理学を学んでいるキム・イホンです。語りえないもの（雲、木、波、歩き方、アニメ（ーター）、indie_anime、きらら、VTuber、映画、写真、音楽、UV theory）について話したいと思っています。
+intro: こんにちは。浦項工科大学校（POSTECH）で理論物理学を学んでいるキム・イホンです。語りえないもの（雲、木、波、歩き方、アニメ（ーター）、indie_anime、きらら、VTuber、映画、写真、音楽、UV theory）を語りたいです。
 cv:
 - label: AFFILIATION
   value: Department of Physics, POSTECH
