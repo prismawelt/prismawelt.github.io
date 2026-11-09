@@ -16,9 +16,9 @@ cv:
 - label: PhD ADVISOR
   value: Professor Hee-Cheol Kim
 - label: RESEARCH
-  value: Thermal bootstrap / Quantum simulation
+  value: Resurgence
 - label: ACADEMIC INTERESTS
-  value: Conformal bootstrap / Holography / Topological field theory / Quantum simulation / Quantum information
+  value: nonperturbative string theory, thermal bootstrap, quantum gravity, quantum simulation of topological quantum field theories, quantum error correction, foundations of quantum information.
 - label: PERSONAL INTERESTS
   value: Anime / Electronic music, VOCALOID, Noise rock, Contemporary folk / Subculture criticism
 - label: CV

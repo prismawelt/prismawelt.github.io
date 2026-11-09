@@ -7,7 +7,7 @@ lang_ko: /ko/
 lang_en: /en/
 lang_ja: /ja/
 person_name: Iheon Kim
-intro: Hello, I am Iheon Kim, studying theoretical physics at POSTECH. I want to talk about the unspeakable things (clouds, trees, waves, walking, anime(tors), indie_anime, Kirara, vtuber, film, photography, music, UV theory).
+intro: Hello, I’m Iheon Kim, studying theoretical physics at POSTECH. I want to talk about things that cannot be said (clouds, trees, waves, ways of walking, anime (and animators), indie_anime, Kirara, VTubers, film, photography, music, UV theory).
 cv:
 - label: AFFILIATION
   value: Department of Physics, POSTECH
@@ -16,9 +16,9 @@ cv:
 - label: PhD ADVISOR
   value: Professor Hee-Cheol Kim
 - label: RESEARCH
-  value: Thermal bootstrap / Quantum simulation
+  value: Resurgence
 - label: ACADEMIC INTERESTS
-  value: Conformal bootstrap / Holography / Topological field theory / Quantum simulation / Quantum information
+  value: nonperturbative string theory, thermal bootstrap, quantum gravity, quantum simulation of topological quantum field theories, quantum error correction, foundations of quantum information.
 - label: PERSONAL INTERESTS
   value: Anime / Electronic music, VOCALOID, Noise rock, Contemporary folk / Subculture criticism
 - label: CV
