@@ -16,9 +16,9 @@ cv:
 - label: PhD ADVISOR
   value: Professor Hee-Cheol Kim
 - label: RESEARCH
-  value: Resurgence
+  value: Resurgence / Supersymmetric quantum field theory
 - label: ACADEMIC INTERESTS
-  value: nonperturbative string theory, thermal bootstrap, quantum gravity, quantum simulation of topological quantum field theories, quantum error correction, foundations of quantum information.
+  value: Nonperturbative string theory, Thermal bootstrap, Quantum gravity, Quantum simulation of topological quantum field theories, Quantum error correction, Foundations of quantum information.
 - label: PERSONAL INTERESTS
   value: Anime / Electronic music, VOCALOID, Noise rock, Contemporary folk / Subculture criticism
 - label: CV

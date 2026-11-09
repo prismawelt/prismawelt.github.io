@@ -5,14 +5,15 @@ sitemap: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign pages_for_sitemap = site.pages | sort: "url" %}
-{% for page in pages_for_sitemap %}
-  {% unless page.sitemap == false or page.name == "404.html" or page.url == "/" or page.url == "/sitemap.xml" or page.url == "/robots.txt" %}
-    {% if page.url %}
+{% assign pages_for_sitemap = site.pages | sort: 'url' %}
+{% for entry in pages_for_sitemap %}
+  {% if entry.lang and entry.canonical_url and entry.sitemap != false and entry.url != '/' %}
   <url>
-    <loc>{{ page.url | absolute_url | xml_escape }}</loc>
+    <loc>{{ entry.canonical_url | xml_escape }}</loc>
+    {% if entry.last_modified_at %}<lastmod>{{ entry.last_modified_at }}</lastmod>{% endif %}
   </url>
-    {% endif %}
-  {% endunless %}
+  {% endif %}
 {% endfor %}
+  <url><loc>{{ '/assets/files/cv.pdf' | absolute_url }}</loc></url>
+  <url><loc>{{ '/assets/files/bachelor_thesis/Analytic_Thermal_Bootstrap.pdf' | absolute_url }}</loc></url>
 </urlset>

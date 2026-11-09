@@ -1,0 +1,37 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+# prismawelt — Iheon Kim (김이헌)
+
+> Personal website of Iheon Kim, a theoretical physics PhD student at POSTECH, and author of essays and criticism on anime, philosophy, memory, and everyday life.
+
+The Korean articles are the originals. English and Japanese versions are translations, identified as such on the pages. All article bodies are available in the initial HTML, without signing in or running JavaScript. The links below point to the published articles and their own footnotes and sources.
+
+## Profile and research
+
+- [Profile in Korean]({{ '/ko/' | absolute_url }})
+- [Profile in English]({{ '/en/' | absolute_url }})
+- [Profile in Japanese]({{ '/ja/' | absolute_url }})
+- [Curriculum vitae (PDF)]({{ '/assets/files/cv.pdf' | absolute_url }})
+- [Undergraduate thesis (PDF)]({{ '/assets/files/bachelor_thesis/Analytic_Thermal_Bootstrap.pdf' | absolute_url }})
+
+{% assign articles = site.pages | where: 'article', true | sort: 'date' | reverse %}
+{% for language in site.languages %}
+## Articles — {{ language | upcase }}
+{% for article in articles %}{% if article.lang == language %}
+- [{{ article.title }}]({{ article.url | absolute_url }}): {{ article.seo_description }}
+{% endif %}{% endfor %}
+{% endfor %}
+## Discovery
+
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }})
+- [Korean Atom feed]({{ '/ko/feed.xml' | absolute_url }})
+- [English Atom feed]({{ '/en/feed.xml' | absolute_url }})
+- [Japanese Atom feed]({{ '/ja/feed.xml' | absolute_url }})
+
+## Optional
+
+- [IHATOV: photography and music]({{ '/ko/ihatov/' | absolute_url }})
+- [Contact and links]({{ '/ko/links/' | absolute_url }})

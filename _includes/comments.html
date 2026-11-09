@@ -1,0 +1,18 @@
+{% if site.comments.enabled and page.comments != false %}
+{% assign comment_term = page.lang_ko | default: page.url %}
+<section class="article-comments" aria-labelledby="comments-heading"
+  data-comments
+  data-repo="{{ site.comments.repository | escape }}"
+  data-repo-id="{{ site.comments.repository_id | escape }}"
+  data-category="{{ site.comments.category | escape }}"
+  data-category-id="{{ site.comments.category_id | escape }}"
+  data-term="{{ comment_term | escape }}"
+  data-language="{{ page.lang | default: 'en' }}">
+  <h2 id="comments-heading">{% case page.lang %}{% when 'ko' %}댓글{% when 'ja' %}コメント{% else %}Comments{% endcase %}</h2>
+  <div class="giscus"></div>
+  <p class="comments-fallback">
+    <a href="https://github.com/{{ site.comments.repository }}/discussions?discussions_q={{ comment_term | cgi_escape }}" target="_blank" rel="noopener noreferrer">{% case page.lang %}{% when 'ko' %}GitHub에서 댓글 보기{% when 'ja' %}GitHubでコメントを見る{% else %}View comments on GitHub{% endcase %}</a>
+  </p>
+</section>
+<script defer src="{{ '/assets/js/comments.js' | relative_url }}"></script>
+{% endif %}

@@ -1,0 +1,17 @@
+.article-comments {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.article-comments h2 {
+  margin: 0 0 24px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.article-comments .giscus {
+  width: 100%;
+}
+.comments-fallback {
+  margin: 16px 0 0;
+  font-size: 13px;
+}

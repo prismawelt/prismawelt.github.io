@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /ko/feed.xml
+feed_lang: ko
+sitemap: false
+---
+{% include feed.xml %}
