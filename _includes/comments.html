@@ -2,6 +2,7 @@
 {% assign comment_term = page.lang_ko | default: page.url %}
 <section class="article-comments" id="comments-heading" aria-label="{% case page.lang %}{% when 'ko' %}댓글{% when 'ja' %}コメント{% else %}Comments{% endcase %}"
   data-comments
+  data-server="{{ site.comments.server | default: 'https://giscus.app' | escape }}"
   data-repo="{{ site.comments.repository | escape }}"
   data-repo-id="{{ site.comments.repository_id | escape }}"
   data-category="{{ site.comments.category | escape }}"
@@ -12,5 +13,5 @@
   data-language="{{ page.lang | default: 'en' }}">
   <div class="giscus"></div>
 </section>
-<script defer src="{{ '/assets/js/comments.js?v=2' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/comments.js?v=3' | relative_url }}"></script>
 {% endif %}

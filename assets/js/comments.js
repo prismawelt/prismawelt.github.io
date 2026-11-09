@@ -7,7 +7,7 @@
   const root = document.documentElement;
   const container = section.querySelector('.giscus');
   const script = document.createElement('script');
-  const origin = 'https://giscus.app';
+  const origin = section.dataset.server || 'https://giscus.app';
 
   function theme() {
     return root.getAttribute('data-theme') === 'dark'

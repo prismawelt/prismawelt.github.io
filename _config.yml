@@ -19,6 +19,7 @@ descriptions:
   ja: キム・イホンの理論物理研究、アニメーション批評とエッセイ。
 comments:
   enabled: true
+  server: https://prismawelt-comments.vercel.app
   repository: prismawelt/prismawelt.github.io
   repository_id: R_kgDOR1tSCQ
   category: Announcements

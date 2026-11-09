@@ -21,6 +21,7 @@ function setup({ language = 'ko', theme = 'light', hasComments = true } = {}) {
   const section = {
     dataset: {
       repo: 'prismawelt/prismawelt.github.io',
+      server: 'https://prismawelt-comments.vercel.app',
       repoId: 'R_kgDOR1tSCQ',
       category: 'Announcements',
       categoryId: 'DIC_kwDOR1tSCc4DKuik',
@@ -64,7 +65,7 @@ function setup({ language = 'ko', theme = 'light', hasComments = true } = {}) {
 test('all languages share one discussion with localized UI and strict matching', () => {
   for (const language of ['ko', 'en', 'ja']) {
     const { script } = setup({ language, theme: 'dark' });
-    assert.equal(script.src, 'https://giscus.app/client.js');
+    assert.equal(script.src, 'https://prismawelt-comments.vercel.app/client.js');
     assert.equal(script.attributes['data-term'], '/ko/nichijou/mono/');
     assert.equal(script.attributes['data-lang'], language);
     assert.equal(script.attributes['data-strict'], '1');
@@ -83,7 +84,7 @@ test('theme changes survive delayed iframe loading and target only giscus', () =
   assert.equal(app.sent[0].data.giscus.setConfig.theme, 'https://prismawelt.github.io/assets/css/giscus-dark.css?v=4');
   app.toggle('light');
   assert.equal(app.sent[1].data.giscus.setConfig.theme, 'https://prismawelt.github.io/assets/css/giscus-light.css?v=4');
-  assert.ok(app.sent.every(message => message.origin === 'https://giscus.app'));
+  assert.ok(app.sent.every(message => message.origin === 'https://prismawelt-comments.vercel.app'));
 });
 
 test('non-article pages do not load an external comment script', () => {
