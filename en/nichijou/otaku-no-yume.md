@@ -14,7 +14,7 @@ parent_permalink: /en/nichijou/
 permalink: /en/nichijou/otaku-no-yume/
 ---
 
-The original was written in Korean. This English translation was produced and revised with ChatGPT.
+The original text is in Korean, and this translation was produced by ChatGPT.
 
 What is logically possible is imaginable. So we can dream of anything, and have indeed dreamed of anything... When we say this, however, “dream” stands metonymically for mental images in general, the images we see when we close our eyes; of the dreams that come to us in sleep, it indicates only a possibility. Yet the problems of reality usually arise within just such restrictions—a restriction, for instance, from mental images in general to dreams we have in sleep. In this context, perhaps reality’s most intractable problem is that changing the order changes the result. Such a problem of order, that is, cannot arise in our mental image of a universe to which we have simply added another dimension of time (or there is the problem of knots that cannot be untied; only recently did I learn that the two are the same).
 What I mean is this: however logically possible something may be, it does not always appear before our eyes with concrete features. At the same time, the dreams we have in sleep are concrete enough (on the extent to which dreams and reality can be confused, see R. Descartes (1641)).

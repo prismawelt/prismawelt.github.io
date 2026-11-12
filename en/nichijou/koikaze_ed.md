@@ -14,7 +14,7 @@ parent_permalink: /en/nichijou/
 permalink: /en/nichijou/koikaze_ed/
 ---
 
-The original was written in Korean. This English translation was produced and revised with ChatGPT.
+The original text is in Korean, and this translation was produced by ChatGPT.
 
 Japanese animation in the Reiwa era has become highly standardized in its structure. An episode without ninety-second opening and ending sequences, or without a main body divided into two parts, is now a rarity. Even departures from the pattern, such as omitting the opening or ending in some episodes, have become clichés of their own. The particular images that appear in these openings and endings, too, are commonly thought to be clichés. If one searches YouTube and the like for “anime opening clichés,” “アニメOPあるある,” or “anime openings be like,” one can easily find videos parodying such images. In other words, viewers of Japanese animation treat its openings/endings as “predictable,” as videos that can be skipped without consequence. Yet at the same time, the opening and ending of Japanese animation are clearly sites of experimentation in animation ― places where great animators gather. The free overlapping of several layers of entirely unrelated images, or rhythm drawn through the motion of geometric figures, that is, so-called abstract animation, finds its licence to exist only there, in that special position within the world of Japanese animation. That special position lies somewhere between animation and visual design, between an independent music video and an opening/ending subordinated to a series.  
 

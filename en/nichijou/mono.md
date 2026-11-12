@@ -14,7 +14,7 @@ parent_permalink: /en/nichijou/
 permalink: /en/nichijou/mono/
 ---
 
-The original was written in Korean. This English translation was produced and revised with ChatGPT.
+The original text is in Korean, and this translation was produced by ChatGPT.
 
 https://youtu.be/OssMWb7KIO8
 

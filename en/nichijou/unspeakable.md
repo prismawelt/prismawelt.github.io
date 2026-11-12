@@ -14,7 +14,7 @@ parent_permalink: /en/nichijou/
 permalink: /en/nichijou/unspeakable/
 ---
 
-The original was written in Korean. This English translation was produced and revised with ChatGPT.
+The original text is in Korean, and this translation was produced by ChatGPT.
 
 > 6.522 There is indeed that which cannot be put into words. It shows itself; it is the mystical.
 

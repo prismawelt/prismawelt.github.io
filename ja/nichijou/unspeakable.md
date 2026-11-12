@@ -14,7 +14,7 @@ parent_permalink: /ja/nichijou/
 permalink: /ja/nichijou/unspeakable/
 ---
 
-原文は韓国語です。この日本語訳はChatGPTを用いて作成・改稿しました。
+原文は韓国語であり、本翻訳はChatGPTによるものです。
 
 > 6.522 たしかに、言葉に表せないものがある。それはおのずから示される。それが神秘的なものなのである。
 

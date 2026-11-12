@@ -14,7 +14,7 @@ parent_permalink: /en/nichijou/
 permalink: /en/nichijou/onimai/
 ---
 
-The original was written in Korean. This English translation was produced and revised with ChatGPT.
+The original text is in Korean, and this translation was produced by ChatGPT.
 
 As the SF mecha and moe of 『Neon Genesis Evangelion』 once were, as the fighting bishōjo of 『Saikano』 once was, 『Onimai: I’m Now Your Sister!』 is the romantic dream of the “weebs” of our age. Yet any attempt to make sense of this hazy longing encounters questions with several dimensions. 『Onimai』 keeps oscillating among nichijou-kei, lolicon anime, and TSF, producing images that belong exclusively to none of them. It continually draws the viewer into participation. As the elements of these genres become entangled, the longing takes root of its own accord within the viewer. Following the protagonist Oyama Mahiro’s path of anti-growth, I want to uncover the spirits of the age concealed within the TV anime 『Onimai』.
 
