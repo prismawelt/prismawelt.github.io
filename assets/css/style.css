@@ -801,6 +801,8 @@ video{
 @container article-gutter (min-width:5em){
   .article-toc{
     display:block;
+    -webkit-user-select:none;
+    user-select:none;
     margin-inline:clamp(.2em, calc((100cqi - 6em) / 6), var(--page-x));
     max-block-size:calc(100vh - var(--toc-top) - var(--page-x));
     overflow-x:hidden;
@@ -814,10 +816,15 @@ video{
     padding-inline-start:1em;
     text-indent:-1em;
     overflow-wrap:anywhere;
+    -webkit-user-drag:none;
     cursor:default;
     color:var(--fg);
     text-decoration:none;
     transition:color 500ms cubic-bezier(.35, 0, .25, 1);
+  }
+
+  .article-toc[data-drag-navigation] a{
+    touch-action:pinch-zoom;
   }
 
   .article-toc:lang(ko) a{

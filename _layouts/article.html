@@ -9,11 +9,11 @@ layout: default
   <div class="article-toc-gutter" data-nosnippet>
     <nav class="article-toc" aria-label="{% case page.lang %}{% when 'ko' %}목차{% when 'ja' %}目次{% else %}Table of contents{% endcase %}">
       {% for heading in headings %}
-      <a href="#{{ heading.id | uri_escape | escape }}" style="--toc-depth:{{ heading.level | minus: 2 }}">{{ heading.title | escape }}</a>
+      <a draggable="false" href="#{{ heading.id | uri_escape | escape }}" style="--toc-depth:{{ heading.level | minus: 2 }}">{{ heading.title | escape }}</a>
       {% endfor %}
     </nav>
   </div>
-  <script defer src="{{ '/assets/js/article-toc.js?v=1' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/article-toc.js?v=2' | relative_url }}"></script>
   {% endif %}
   <article id="article" aria-labelledby="article-title">
     <div class="detail-head">
