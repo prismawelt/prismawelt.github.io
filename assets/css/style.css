@@ -831,9 +831,23 @@ video{
     color:var(--toc-current);
   }
 
+  @supports (color:color-mix(in srgb, black, white)){
+    .article-toc a[aria-current="location"]{
+      color:color-mix(in srgb, var(--toc-current), var(--fg) var(--toc-blend, 0%));
+    }
+
+    .article-toc a[data-approaching]{
+      color:color-mix(in srgb, var(--fg), var(--toc-current) var(--toc-blend, 0%));
+    }
+  }
+
   @media (prefers-reduced-motion:no-preference){
     .article-toc a{
-      transition:color 240ms ease-in-out;
+      transition:color 900ms cubic-bezier(.35, 0, .25, 1);
+    }
+
+    .article-toc[data-tracking-scroll] a{
+      transition:color 270ms ease-out;
     }
   }
 }
