@@ -4,8 +4,10 @@ import datetime
 import json
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import sys
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
+from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
 
 BASE = "https://prismawelt.github.io"
@@ -16,6 +18,8 @@ class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
         self.meta, self.links, self.comments, self.schemas = {}, [], [], []
+        self.headings, self.anchors = [], []
+        self.body_divs = 0
         self.http_equiv = {}
         self.lang, self.in_schema, self.schema = None, False, ""
         self.feed(path.read_text(encoding="utf-8"))
@@ -28,6 +32,12 @@ class Page(HTMLParser):
             self.meta[attrs.get("name", attrs.get("property"))] = attrs.get("content")
         if tag == "meta" and "http-equiv" in attrs:
             self.http_equiv[attrs["http-equiv"]] = attrs.get("content")
+        if tag == "div" and (self.body_divs or "detail-body" in attrs.get("class", "").split()):
+            self.body_divs += 1
+        if tag == "h2" and self.body_divs and attrs.get("id"):
+            self.headings.append(attrs["id"])
+        if tag == "a" and attrs.get("href"):
+            self.anchors.append(attrs["href"])
         if tag == "link":
             self.links.append(attrs)
         if "data-comments" in attrs:
@@ -40,6 +50,8 @@ class Page(HTMLParser):
             self.schema += text
 
     def handle_endtag(self, tag):
+        if tag == "div" and self.body_divs:
+            self.body_divs -= 1
         if tag == "script" and self.in_schema:
             self.schemas.append(json.loads(self.schema))
             self.in_schema = False
@@ -91,6 +103,12 @@ def check(site):
                 for image in entry.get("image", []):
                     assert local(image).is_file(), image
                 articles[lang].append(canonical)
+            for thesis in (node for node in graph if node["@type"] == "Thesis"):
+                pdf = thesis["url"]
+                assert page.meta["citation_title"] == thesis["name"]
+                assert page.meta["citation_pdf_url"] == pdf and local(pdf).is_file()
+                assert urlsplit(pdf).path in page.anchors
+                assert page.meta["citation_publication_date"].replace("/", "-") == thesis["datePublished"]
             if not entries:
                 assert not page.comments, path
             pages[canonical] = page
@@ -102,6 +120,15 @@ def check(site):
         for lang in LANGUAGES:
             assert alts[lang] in pages, (url, lang)
             assert pages[alts[lang]].alternates() == alts, url
+
+    article_urls = {url for urls in articles.values() for url in urls}
+    for url, page in pages.items():
+        for node in page.schemas[0]["@graph"]:
+            if node["@type"] == "CollectionPage":
+                cards = [urljoin(url, href) for href in page.anchors if urljoin(url, href) in article_urls]
+                items = node["mainEntity"]["itemListElement"]
+                assert node["mainEntity"]["numberOfItems"] == len(cards), url
+                assert [item["url"] for item in items] == cards, url
 
     root = Page(site / "index.html")
     assert root.canonical() == BASE + "/ko/"
@@ -123,14 +150,26 @@ def check(site):
         entries = feed.findall("a:entry", atom)
         assert {entry.find("a:id", atom).text for entry in entries} == set(articles[lang])
         for entry in entries:
+            url = entry.findtext("a:id", namespaces=atom)
+            assert entry.get("{http://www.w3.org/XML/1998/namespace}base") == url
+            alternates = {link.get("hreflang"): link.get("href") for link in entry.findall("a:link", atom)
+                          if link.get("rel") == "alternate"}
+            assert alternates == {lang: href for lang, href in pages[url].alternates().items()
+                                  if lang != "x-default"}
             assert entry.find("a:content", atom).text
             datetime.datetime.fromisoformat(entry.find("a:updated", atom).text)
     index = (site / "llms.txt").read_text()
     for urls in articles.values():
         for url in urls:
             assert url in index, url
+    section_urls = {unquote(link) for link in re.findall(r"^  - .*?\]\((https://[^)]+)\)$", index, re.MULTILINE)}
+    assert section_urls == {url + "#" + heading for url in article_urls for heading in pages[url].headings}
     robots = (site / "robots.txt").read_text()
-    assert "Allow: /" in robots and BASE + "/sitemap.xml" in robots
+    policy = RobotFileParser()
+    policy.parse(robots.splitlines())
+    assert BASE + "/sitemap.xml" in (policy.site_maps() or [])
+    for agent in ("OAI-SearchBot", "Claude-SearchBot", "PerplexityBot", "Googlebot", "bingbot"):
+        assert all(policy.can_fetch(agent, url) for url in article_urls), agent
     for excluded in ("scripts", "tests", "Gemfile", "Gemfile.lock"):
         assert not (site / excluded).exists(), excluded
     print(f"PASS: {len(pages)} pages, {sum(map(len, articles.values()))} articles, "

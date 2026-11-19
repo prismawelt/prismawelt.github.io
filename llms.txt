@@ -7,7 +7,7 @@ sitemap: false
 
 > Personal website of Iheon Kim, a theoretical physics PhD student at POSTECH, and author of essays and criticism on anime, philosophy, memory, and everyday life.
 
-The Korean articles are the originals. English and Japanese versions are translations, identified as such on the pages. All article bodies are available in the initial HTML, without signing in or running JavaScript. The links below point to the published articles and their own footnotes and sources.
+The essays were written in Korean and translated into English and Japanese. Each HTML article contains the full essay and its footnotes. Section links below point directly into that language’s article. The undergraduate thesis is available as an English PDF.
 
 ## Profile and research
 
@@ -15,13 +15,16 @@ The Korean articles are the originals. English and Japanese versions are transla
 - [Profile in English]({{ '/en/' | absolute_url }})
 - [Profile in Japanese]({{ '/ja/' | absolute_url }})
 - [Curriculum vitae (PDF)]({{ '/assets/files/cv.pdf' | absolute_url }})
-- [Undergraduate thesis (PDF)]({{ '/assets/files/bachelor_thesis/Analytic_Thermal_Bootstrap.pdf' | absolute_url }})
+- [Analytic Thermal Bootstrap (undergraduate thesis, PDF)]({{ '/assets/files/bachelor_thesis/Analytic_Thermal_Bootstrap.pdf' | absolute_url }})
 
 {% assign articles = site.pages | where: 'article', true | sort: 'date' | reverse %}
 {% for language in site.languages %}
 ## Articles — {{ language | upcase }}
 {% for article in articles %}{% if article.lang == language %}
-- [{{ article.title }}]({{ article.url | absolute_url }}): {{ article.seo_description }}
+- [{{ article.title }}]({{ article.canonical_url }}): {{ article.seo_description }}
+{% assign headings = article.content | markdownify | linked_headings -%}
+{% for heading in headings %}  - [{{ heading.title }}]({{ article.canonical_url }}#{{ heading.id | uri_escape }})
+{% endfor -%}
 {% endif %}{% endfor %}
 {% endfor %}
 ## Discovery

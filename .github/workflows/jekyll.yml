@@ -53,6 +53,7 @@ jobs:
       - name: Validate discovery metadata and comments
         run: |
           python3 scripts/check_discovery.py _site
+          python3 -B tests/test_indexnow.py
           node --test tests/comments.test.cjs
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
@@ -77,7 +78,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Notify IndexNow of changed pages
-        continue-on-error: true
+        env:
+          INDEXNOW_BEFORE: ${{ github.event.before }}
         run: python3 scripts/notify_indexnow.py

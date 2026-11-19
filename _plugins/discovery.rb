@@ -1,9 +1,31 @@
 # Search metadata is generated separately from the visible article content.
+require "cgi"
 require "json"
+require "kramdown"
 require "open3"
 require "time"
 
 module Prismawelt
+  module HeadingLinks
+    # Read Kramdown's rendered anchors, including its suffixes for duplicate headings.
+    def linked_headings(html)
+      headings = []
+      collect_headings(Kramdown::Document.new(html, input: "html").root, headings)
+      headings
+    end
+
+    private
+
+    def collect_headings(node, headings)
+      if node.type == :header && node.options[:level] == 2 && node.attr["id"]
+        title = CGI.unescapeHTML(node.options.fetch(:raw_text))
+        title = title.gsub(/[\\\[\]]/) { |character| "\\#{character}" }
+        headings << { "title" => title, "id" => node.attr.fetch("id") }
+      end
+      node.children.each { |child| collect_headings(child, headings) }
+    end
+  end
+
   class Discovery < Jekyll::Generator
     safe true
     priority :low
@@ -13,8 +35,15 @@ module Prismawelt
       @base = site.config.fetch("url").sub(%r{/$}, "") + site.config.fetch("baseurl", "")
       @descriptions = site.data.fetch("descriptions", {})
       pages = site.pages.select { |page| %w[ko en ja].include?(page.data["lang"]) }
+      @articles = pages.select { |page| page.data["article"] }.group_by do |page|
+        [page.data["lang"], page.data["section"]]
+      end
       pages.each { |page| decorate(page) }
-      site.config["discovery_updated"] = pages.filter_map { |page| page.data["last_modified_at"] }.max
+      # A feed changes when a source article is added, revised, moved or removed.
+      archives = pages.select { |page| page.data["layout"] == "archive" }
+      site.config["feed_updated"] = archives.group_by { |page| page.data["lang"] }.transform_values do |list|
+        list.filter_map { |page| page.data["last_modified_at"] }.max_by { |stamp| Time.iso8601(stamp) }
+      end
     end
 
     def absolute(path)
@@ -23,6 +52,8 @@ module Prismawelt
 
     def last_modified(page)
       relative = page.path.sub(%r{\A#{Regexp.escape(@site.source)}/}, "")
+      # Archive rows and search text are built from the sources in the section directory.
+      relative = File.dirname(relative) if page.data["layout"] == "archive"
       output, status = Open3.capture2("git", "log", "-1", "--format=%cI", "--", relative,
                                      chdir: @site.source, err: File::NULL)
       status.success? && !output.strip.empty? ? Time.iso8601(output.strip).iso8601 : nil
@@ -77,6 +108,17 @@ module Prismawelt
       }
       webpage["dateModified"] = modified if modified
       webpage["mainEntity"] = { "@id" => person["@id"] } if home
+      if page.data["layout"] == "archive"
+        members = @articles.fetch([language, page.data["collection_name"]], [])
+        items = members.sort_by { |member| member.data["date"].to_s }.reverse
+        webpage["mainEntity"] = {
+          "@type" => "ItemList", "numberOfItems" => items.size,
+          "itemListElement" => items.map.with_index(1) do |member, position|
+            { "@type" => "ListItem", "position" => position, "name" => member.data["title"],
+              "url" => absolute(member.url), "item" => { "@id" => absolute(member.url) + "#article" } }
+          end
+        }
+      end
       graph = [person, website, webpage]
 
       if page.data["article"]
@@ -104,6 +146,17 @@ module Prismawelt
           }
         end
         webpage["mainEntity"] = { "@id" => article["@id"] }
+        publication = @site.data.fetch("publications", {})[page.data["lang_ko"]]
+        if publication
+          page.data["publication"] = publication
+          pdf = absolute(publication.fetch("pdf"))
+          article["about"] = { "@id" => pdf }
+          graph << {
+            "@type" => "Thesis", "@id" => pdf, "url" => pdf, "name" => publication.fetch("title"),
+            "author" => { "@id" => person["@id"] }, "datePublished" => publication.fetch("date"),
+            "inLanguage" => publication.fetch("language"), "encodingFormat" => "application/pdf"
+          }
+        end
         graph << article
       end
       page.data["structured_data"] = JSON.generate({ "@context" => "https://schema.org", "@graph" => graph })
@@ -111,3 +164,5 @@ module Prismawelt
     end
   end
 end
+
+Liquid::Template.register_filter(Prismawelt::HeadingLinks)

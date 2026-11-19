@@ -5,16 +5,20 @@
   <id>{{ '/' | append: page.feed_lang | append: '/' | absolute_url }}</id>
   <link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml"/>
   <link href="{{ '/' | append: page.feed_lang | append: '/nichijou/' | absolute_url }}"/>
-  <updated>{{ site.discovery_updated }}</updated>
+  <updated>{{ site.feed_updated[page.feed_lang] | default: site.time | date_to_xmlschema }}</updated>
   <author><name>Iheon Kim</name><uri>{{ '/ko/' | absolute_url }}</uri></author>
   {% assign articles = site.pages | where: 'article', true | where: 'lang', page.feed_lang | sort: 'date' | reverse %}
   {% for article in articles %}
-  <entry>
+  <entry xml:base="{{ article.canonical_url | xml_escape }}">
     <title>{{ article.title | xml_escape }}</title>
     <id>{{ article.url | absolute_url }}</id>
-    <link href="{{ article.url | absolute_url }}"/>
+    <link rel="alternate" type="text/html" hreflang="{{ article.lang }}" href="{{ article.canonical_url | xml_escape }}"/>
+    {% for language in site.languages %}{% unless language == article.lang %}
+    {% assign key = 'lang_' | append: language %}{% if article[key] %}
+    <link rel="alternate" type="text/html" hreflang="{{ language }}" href="{{ article[key] | absolute_url | xml_escape }}"/>
+    {% endif %}{% endunless %}{% endfor %}
     <published>{{ article.date | date_to_xmlschema }}</published>
-    <updated>{{ article.last_modified_at | default: site.discovery_updated }}</updated>
+    <updated>{{ article.last_modified_at | default: article.date | date_to_xmlschema }}</updated>
     <summary>{{ article.seo_description | xml_escape }}</summary>
     <content type="html">{{ article.content | markdownify | xml_escape }}</content>
   </entry>
