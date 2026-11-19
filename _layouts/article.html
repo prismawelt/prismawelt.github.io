@@ -4,15 +4,15 @@ layout: default
 <main class="page detail-page">
   <div class="detail-floating-title" aria-hidden="true" data-nosnippet>{{ page.title }}</div>
   <a class="back-link" href="{{ page.parent_permalink | relative_url }}">← BACK</a>
-  {% assign headings = content | linked_headings %}
+  {% assign headings = content | linked_headings: 6 %}
   {% if headings.size > 0 %}
-  <nav class="article-toc" aria-label="{% case page.lang %}{% when 'ko' %}목차{% when 'ja' %}目次{% else %}Table of contents{% endcase %}">
-    <div data-nosnippet>
+  <div class="article-toc-gutter" data-nosnippet>
+    <nav class="article-toc" aria-label="{% case page.lang %}{% when 'ko' %}목차{% when 'ja' %}目次{% else %}Table of contents{% endcase %}">
       {% for heading in headings %}
-      <a href="#{{ heading.id | uri_escape | escape }}">{{ heading.title | escape }}</a>
+      <a href="#{{ heading.id | uri_escape | escape }}" style="--toc-depth:{{ heading.level | minus: 2 }}">{{ heading.title | escape }}</a>
       {% endfor %}
-    </div>
-  </nav>
+    </nav>
+  </div>
   {% endif %}
   <article id="article" aria-labelledby="article-title">
     <div class="detail-head">

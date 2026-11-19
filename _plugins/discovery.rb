@@ -8,9 +8,9 @@ require "time"
 module Prismawelt
   module HeadingLinks
     # Read Kramdown's rendered anchors, including its suffixes for duplicate headings.
-    def linked_headings(html)
+    def linked_headings(html, max_level = 2)
       headings = []
-      collect_headings(Kramdown::Document.new(html, input: "html").root, headings)
+      collect_headings(Kramdown::Document.new(html, input: "html").root, headings, max_level)
       headings
     end
 
@@ -20,12 +20,12 @@ module Prismawelt
 
     private
 
-    def collect_headings(node, headings)
-      if node.type == :header && node.options[:level] == 2 && node.attr["id"]
+    def collect_headings(node, headings, max_level)
+      if node.type == :header && node.options[:level].between?(2, max_level) && node.attr["id"]
         title = CGI.unescapeHTML(node.options.fetch(:raw_text))
-        headings << { "title" => title, "id" => node.attr.fetch("id") }
+        headings << { "title" => title, "id" => node.attr.fetch("id"), "level" => node.options.fetch(:level) }
       end
-      node.children.each { |child| collect_headings(child, headings) }
+      node.children.each { |child| collect_headings(child, headings, max_level) }
     end
   end
 

@@ -18,7 +18,8 @@ class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
         self.meta, self.links, self.comments, self.schemas = {}, [], [], []
-        self.headings, self.anchors = [], []
+        self.headings, self.anchors, self.toc_targets = [], [], []
+        self.in_toc = False
         self.body_divs = 0
         self.http_equiv = {}
         self.lang, self.in_schema, self.schema = None, False, ""
@@ -34,10 +35,14 @@ class Page(HTMLParser):
             self.http_equiv[attrs["http-equiv"]] = attrs.get("content")
         if tag == "div" and (self.body_divs or "detail-body" in attrs.get("class", "").split()):
             self.body_divs += 1
-        if tag == "h2" and self.body_divs and attrs.get("id"):
-            self.headings.append(attrs["id"])
+        if self.body_divs and tag in {"h2", "h3", "h4", "h5", "h6"} and attrs.get("id"):
+            self.headings.append((tag, attrs["id"]))
+        if tag == "nav" and "article-toc" in attrs.get("class", "").split():
+            self.in_toc = True
         if tag == "a" and attrs.get("href"):
             self.anchors.append(attrs["href"])
+            if self.in_toc:
+                self.toc_targets.append(unquote(attrs["href"]))
         if tag == "link":
             self.links.append(attrs)
         if "data-comments" in attrs:
@@ -50,6 +55,8 @@ class Page(HTMLParser):
             self.schema += text
 
     def handle_endtag(self, tag):
+        if tag == "nav":
+            self.in_toc = False
         if tag == "div" and self.body_divs:
             self.body_divs -= 1
         if tag == "script" and self.in_schema:
@@ -88,6 +95,7 @@ def check(site):
             graph = page.schemas[0]["@graph"]
             entries = [entry for entry in graph if entry["@type"] in ("Article", "BlogPosting")]
             for entry in entries:
+                assert page.toc_targets == ["#" + anchor for _, anchor in page.headings], path
                 assert entry["url"] == canonical and entry["inLanguage"] == lang
                 datetime.date.fromisoformat(entry["datePublished"])
                 modified = datetime.datetime.fromisoformat(entry["dateModified"])
@@ -163,7 +171,8 @@ def check(site):
         for url in urls:
             assert url in index, url
     section_urls = {unquote(link) for link in re.findall(r"^  - .*?\]\((https://[^)]+)\)$", index, re.MULTILINE)}
-    assert section_urls == {url + "#" + heading for url in article_urls for heading in pages[url].headings}
+    assert section_urls == {url + "#" + anchor for url in article_urls
+                            for tag, anchor in pages[url].headings if tag == "h2"}
     robots = (site / "robots.txt").read_text()
     policy = RobotFileParser()
     policy.parse(robots.splitlines())

@@ -626,10 +626,15 @@ video{
   font-weight:700;
 }
 
+.detail-page{
+  --article-width:760px;
+  --toc-top:calc(var(--menu-h) + 3.5rem);
+}
+
 .back-link{
   display:block;
   width:100%;
-  max-width:calc(760px + (var(--page-x) * 2));
+  max-width:calc(var(--article-width) + (var(--page-x) * 2));
   margin:0 auto 16px auto;
   padding-left:var(--page-x);
   padding-right:var(--page-x);
@@ -648,7 +653,7 @@ video{
 .detail-head,
 .article-comments{
   width:100%;
-  max-width:calc(760px + (var(--page-x) * 2));
+  max-width:calc(var(--article-width) + (var(--page-x) * 2));
   margin-left:auto;
   margin-right:auto;
 }
@@ -680,17 +685,21 @@ video{
 }
 
 .detail-body{
-  max-width:760px;
+  max-width:var(--article-width);
   margin-left:auto;
   margin-right:auto;
   padding-left:var(--page-x);
   padding-right:var(--page-x);
 }
 
+.detail-body,
+.article-toc{
+  font-family:'Noto Serif KR', Georgia, serif;
+}
+
 .detail-body{
   margin-top:0;
   margin-bottom:0;
-  font-family:'Noto Serif KR', Georgia, serif;
   font-size:20px;
   line-height:1.72;
   color:var(--fg);
@@ -764,30 +773,41 @@ video{
   transform:translateY(0);
 }
 
-/* Use the right gutter of the centered 760px article column. */
+/* A fixed rail occupies exactly the space beyond the article's right-hand rule. */
+.article-toc-gutter,
 .article-toc{
   display:none;
 }
 
-@media screen and (min-width:70rem){
-  .detail-page{
-    --toc-top:calc(var(--menu-h) + 3.5rem);
-  }
-
-  .article-toc{
+@media screen{
+  .article-toc-gutter{
     display:block;
     position:fixed;
     inset-block-start:var(--toc-top);
-    inset-inline-start:calc(50% + 380px + var(--page-x) * 2);
-    inset-inline-end:var(--page-x);
+    inset-inline-end:0;
+    inline-size:max(0px, calc((100% - var(--article-width)) / 2 - var(--page-x)));
+    container:article-gutter / inline-size;
+    font-size:var(--small);
+  }
+
+  .detail-body :is(h2, h3, h4, h5, h6)[id]{
+    scroll-margin-block-start:var(--toc-top);
+  }
+}
+
+/* Show the links once the gutter has room for about five CJK characters. */
+@container article-gutter (min-width:5em){
+  .article-toc{
+    display:block;
+    margin-inline:clamp(.2em, calc((100cqi - 6em) / 6), var(--page-x));
     max-block-size:calc(100vh - var(--toc-top) - var(--page-x));
     overflow:auto;
-    font-size:var(--small);
     line-height:1.55;
   }
 
   .article-toc a{
     display:block;
+    margin-inline-start:calc(var(--toc-depth) * clamp(.25em, 3cqi, .75em));
     padding-inline-start:1em;
     text-indent:-1em;
     overflow-wrap:anywhere;
@@ -806,10 +826,6 @@ video{
   .article-toc a:hover,
   .article-toc a:focus-visible{
     text-decoration:underline;
-  }
-
-  .detail-body h2[id]{
-    scroll-margin-block-start:var(--toc-top);
   }
 }
 

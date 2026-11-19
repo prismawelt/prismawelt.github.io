@@ -29,7 +29,8 @@ html:lang(ja){
 html:lang(ja) .home-intro,
 html:lang(ja) .cv-value.serif,
 html:lang(ja) .home-after-text,
-html:lang(ja) .detail-body{
+html:lang(ja) .detail-body,
+html:lang(ja) .article-toc{
   font-family:var(--japanese-serif);
 }
 
