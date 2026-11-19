@@ -811,6 +811,7 @@ video{
     padding-inline-start:1em;
     text-indent:-1em;
     overflow-wrap:anywhere;
+    cursor:default;
     color:var(--fg);
     text-decoration:none;
   }
@@ -821,11 +822,6 @@ video{
 
   .article-toc a + a{
     margin-block-start:.45em;
-  }
-
-  .article-toc a:hover,
-  .article-toc a:focus-visible{
-    text-decoration:underline;
   }
 }
 
