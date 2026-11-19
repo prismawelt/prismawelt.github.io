@@ -817,7 +817,7 @@ video{
     cursor:default;
     color:var(--fg);
     text-decoration:none;
-    transition:color 900ms cubic-bezier(.35, 0, .25, 1);
+    transition:color 500ms cubic-bezier(.35, 0, .25, 1);
   }
 
   .article-toc:lang(ko) a{
