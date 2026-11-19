@@ -4,6 +4,16 @@ layout: default
 <main class="page detail-page">
   <div class="detail-floating-title" aria-hidden="true" data-nosnippet>{{ page.title }}</div>
   <a class="back-link" href="{{ page.parent_permalink | relative_url }}">← BACK</a>
+  {% assign headings = content | linked_headings %}
+  {% if headings.size > 0 %}
+  <nav class="article-toc" aria-label="{% case page.lang %}{% when 'ko' %}목차{% when 'ja' %}目次{% else %}Table of contents{% endcase %}">
+    <div data-nosnippet>
+      {% for heading in headings %}
+      <a href="#{{ heading.id | uri_escape | escape }}">{{ heading.title | escape }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+  {% endif %}
   <article id="article" aria-labelledby="article-title">
     <div class="detail-head">
       <div class="detail-meta">

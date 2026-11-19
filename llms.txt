@@ -23,7 +23,7 @@ The essays were written in Korean and translated into English and Japanese. Each
 {% for article in articles %}{% if article.lang == language %}
 - [{{ article.title }}]({{ article.canonical_url }}): {{ article.seo_description }}
 {% assign headings = article.content | markdownify | linked_headings -%}
-{% for heading in headings %}  - [{{ heading.title }}]({{ article.canonical_url }}#{{ heading.id | uri_escape }})
+{% for heading in headings %}  - [{{ heading.title | markdown_link_label }}]({{ article.canonical_url }}#{{ heading.id | uri_escape }})
 {% endfor -%}
 {% endif %}{% endfor %}
 {% endfor %}

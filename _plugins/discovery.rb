@@ -14,12 +14,15 @@ module Prismawelt
       headings
     end
 
+    def markdown_link_label(title)
+      title.gsub(/[\\\[\]]/) { |character| "\\#{character}" }
+    end
+
     private
 
     def collect_headings(node, headings)
       if node.type == :header && node.options[:level] == 2 && node.attr["id"]
         title = CGI.unescapeHTML(node.options.fetch(:raw_text))
-        title = title.gsub(/[\\\[\]]/) { |character| "\\#{character}" }
         headings << { "title" => title, "id" => node.attr.fetch("id") }
       end
       node.children.each { |child| collect_headings(child, headings) }

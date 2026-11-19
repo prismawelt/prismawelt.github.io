@@ -764,6 +764,55 @@ video{
   transform:translateY(0);
 }
 
+/* Use the right gutter of the centered 760px article column. */
+.article-toc{
+  display:none;
+}
+
+@media screen and (min-width:70rem){
+  .detail-page{
+    --toc-top:calc(var(--menu-h) + 3.5rem);
+  }
+
+  .article-toc{
+    display:block;
+    position:fixed;
+    inset-block-start:var(--toc-top);
+    inset-inline-start:calc(50% + 380px + var(--page-x) * 2);
+    inset-inline-end:var(--page-x);
+    max-block-size:calc(100vh - var(--toc-top) - var(--page-x));
+    overflow:auto;
+    font-size:var(--small);
+    line-height:1.55;
+  }
+
+  .article-toc a{
+    display:block;
+    padding-inline-start:1em;
+    text-indent:-1em;
+    overflow-wrap:anywhere;
+    color:var(--fg);
+    text-decoration:none;
+  }
+
+  .article-toc:lang(ko) a{
+    word-break:keep-all;
+  }
+
+  .article-toc a + a{
+    margin-block-start:.45em;
+  }
+
+  .article-toc a:hover,
+  .article-toc a:focus-visible{
+    text-decoration:underline;
+  }
+
+  .detail-body h2[id]{
+    scroll-margin-block-start:var(--toc-top);
+  }
+}
+
 .links-page h1{
   margin:0 0 18px 0;
   padding-left:var(--page-x);
