@@ -817,6 +817,7 @@ video{
     cursor:default;
     color:var(--fg);
     text-decoration:none;
+    transition:color 900ms cubic-bezier(.35, 0, .25, 1);
   }
 
   .article-toc:lang(ko) a{
@@ -841,14 +842,8 @@ video{
     }
   }
 
-  @media (prefers-reduced-motion:no-preference){
-    .article-toc a{
-      transition:color 900ms cubic-bezier(.35, 0, .25, 1);
-    }
-
-    .article-toc[data-tracking-scroll] a{
-      transition:color 270ms ease-out;
-    }
+  .article-toc[data-tracking-scroll] a{
+    transition:color 270ms ease-out;
   }
 }
 
