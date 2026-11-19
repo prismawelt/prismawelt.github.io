@@ -7,6 +7,7 @@
   --fg:#000000;
   --line:#111111;
   --link:#FF78A9;
+  --toc-current:#a34d6c;
   --muted:#777777;
   --subtle-bg:#f4f4f4;
   --overlay:rgba(255,255,255,.92);
@@ -31,6 +32,7 @@
   --fg:#EDEDED;
   --line:#D6D6D6;
   --link:#ff8fba;
+  --toc-current:var(--link);
   --muted:#AAAAAA;
   --subtle-bg:#303030;
   --overlay:rgba(30,30,30,.94);
@@ -801,7 +803,8 @@ video{
     display:block;
     margin-inline:clamp(.2em, calc((100cqi - 6em) / 6), var(--page-x));
     max-block-size:calc(100vh - var(--toc-top) - var(--page-x));
-    overflow:auto;
+    overflow-x:hidden;
+    overflow-y:auto;
     line-height:1.55;
   }
 
@@ -822,6 +825,16 @@ video{
 
   .article-toc a + a{
     margin-block-start:.45em;
+  }
+
+  .article-toc a[aria-current="location"]{
+    color:var(--toc-current);
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .article-toc a{
+      transition:color 240ms ease-in-out;
+    }
   }
 }
 
